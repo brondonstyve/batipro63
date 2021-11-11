@@ -1,0 +1,34 @@
+/*===========================
+  Skin: Classy
+============================ */
+
+/*________  Purple  ________  */
+#stage .inner,.preloader span,.nav.nav-tabs>li>a:hover,.nav.nav-tabs > li.active > a:hover,.nav.nav-tabs > li.active > a:focus,.nav.nav-tabs>li.active>a,.blog-date,.sidebar-nav li a:hover,.sidebar-nav li.active a,.blog-tags a,.nav-side-menu .brand,form .field label,.offer-box .border:before,.offer-box .border:after,.offer-box .border div:before,.offer-box .border div:after,.tint:before,.color-section,.social-media a i,.breadcrumb,.pagination>li>a,.pagination>li>span,.hamburger.is-open:hover,.testimonial img,.bootstrap-datetimepicker-widget table td.day:hover,.bootstrap-datetimepicker-widget table td.hour:hover,.bootstrap-datetimepicker-widget table td.minute:hover,.bootstrap-datetimepicker-widget table td.second:hover,.bootstrap-datetimepicker-widget table thead tr:first-child th:hover,.dropdown-menu>.active>a,.dropdown-menu>.active>a:focus,.dropdown-menu>.active>a:hover {
+background-color:#821C4B;
+}
+
+ul.social-list li a i,.blog-preview h4:hover,a,h2,.menu-item-price,h1,.nav.nav-pills > li > .active,.nav.nav-pills > li > a:focus,.nav.nav-pills > li > a:hover,.gallery-thumb i:hover,.owl-prev i:hover,.owl-next i:hover,.jumbotron .h1,.jumbotron h1,.blog-post h4 a:hover,.panel-heading:hover a,blockquote:before,blockquote:after {
+color:#821C4B;
+}
+
+.btn:hover:after,.btn:hover:before,.panel-group .panel-heading,.box-block,#prices h3,#prices .tab-pane img,.gallery-thumb:hover .overlay-mask,form .field,.nav-pills>li.active>a,.nav.nav-pills > li > a:focus,.nav.nav-pills > li > a:hover,.nav.nav-pills > li > .active,.well,.elements h5,hr,.accordion-group li article h6,.open>.dropdown-toggle.btn-default:focus,.open>.dropdown-toggle.btn-default:hover {
+border-color:#821C4B;
+}
+
+#stage .inner,.well,.square,.social-media a:hover,#blog-page blockquote,.testimonial blockquote {
+outline-color:#821C4B;
+}
+.form-control{box-shadow:0 2px 0px #821C4B;}
+
+/*________ Almost Black ________  */
+.owl-theme .owl-dots .owl-dot span,.owl-theme .owl-dots .owl-dot span:before,.owl-theme .owl-dots .owl-dot.active span,.owl-theme .owl-dots .owl-dot:hover span,.pager li>a:hover,.back-to-top i:hover,.pagination>li>a:hover,.pagination>li>a:focus,.pager li > a:hover,.pager li > a:focus,.navbar-toggle:focus,.navbar-toggle:active,.navbar-toggle:hover,.nav .open>a,.nav .open>a:focus,.nav .open>a:hover,.pagination>.active>a,.pagination>.active>a:focus,.blog-tags a:hover,#layerslider,.table-striped,.dropdown-menu,#sidebar-wrapper,.nav.nav-tabs > li > a {
+background-color:#372D2B;
+}
+
+a:hover,a:focus,.breadcrumb a:hover,.breadcrumb a:focus,.media-heading small,#about .media i,.nav-pills > li.active > a,.nav-pills > li.active > a:hover,.nav-pills > li.active > a:focus,.nav-pills>li>a:hover,.nav-pills>li>a,.nav-pills .nav > li > a:hover {
+color:#372D2B;
+}
+
+.nav-pills>li>a {
+border-color:#372D2B;
+}

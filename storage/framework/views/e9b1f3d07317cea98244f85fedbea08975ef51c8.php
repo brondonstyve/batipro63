@@ -11,16 +11,23 @@
       <div class="container-main-bloc">
         <div class="container flex">
            <div class="container-main">
-              <section class="container-banner" style="background-image:url(<?php echo e(asset('/front-end/assets/img/logement-collectif.jpg')); ?>)">
-                <div class="container">
+                    <?php if($infos): ?>
+                    <?php if($infos->imageEnt): ?>
+                <section class="container-banner" style="background-image:url(<?php echo e(asset('/app/maison/'.$infos->imageEnt)); ?>)">
+                        
+                    <?php else: ?>
+                <section class="container-banner" style="background-image:url(<?php echo e(asset('/front-end/assets/img/logement-collectif.jpg')); ?>)">
+                        
+                    <?php endif; ?>
+                <?php else: ?>
+                <section class="container-banner" style="background-image:url(<?php echo e(asset('/front-end/assets/img/logement-collectif.jpg')); ?>)">
+                    
+                <?php endif; ?>                <div class="container">
                   <div class="inner-container">
                       <div class="content-title-banner">
                         <h1>Maçonnerie Générale</h1>
                         <div class="content-subtitle">
                           <a class="active-sub" href="<?php echo e(route('aboutus')); ?> ">Présentation</a>
-                          <a href=" <?php echo e(route('projet-front')); ?> ">Maisons</a>
-                          <a href="<?php echo e(route('terrain-front')); ?> ">Terrains</a>
-                          <a href="<?php echo e(route('service-front')); ?> ">Nos conseils</a>
                         </div>
                       </div>
                   </div>
@@ -34,15 +41,15 @@
             <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('projet-mg')->html();
-} elseif ($_instance->childHasBeenRendered('55DhJCA')) {
-    $componentId = $_instance->getRenderedChildComponentId('55DhJCA');
-    $componentTag = $_instance->getRenderedChildComponentTagName('55DhJCA');
+} elseif ($_instance->childHasBeenRendered('YAukj3g')) {
+    $componentId = $_instance->getRenderedChildComponentId('YAukj3g');
+    $componentTag = $_instance->getRenderedChildComponentTagName('YAukj3g');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('55DhJCA');
+    $_instance->preserveRenderedChild('YAukj3g');
 } else {
     $response = \Livewire\Livewire::mount('projet-mg');
     $html = $response->html();
-    $_instance->logRenderedChild('55DhJCA', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('YAukj3g', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>

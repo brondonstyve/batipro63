@@ -460,7 +460,7 @@
                 
                       <div class="col-md-12 mt-4">
 
-                        @if ($showSuccesNotification1)
+                        @if ($showSuccesNotification1) 
                         <div
                             class="mt-3 alert alert-success alert-dismissible fade show" role="alert">
                             <span class="alert-icon text-white"><i class="ni ni-like-2"></i></span>

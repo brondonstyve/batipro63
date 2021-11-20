@@ -267,7 +267,7 @@ unset($__errorArgs, $__bag); ?>
 
                                             <label for="apropos-name" class="form-control-label">Description</label>
                                             <div class="">
-                                                <textarea wire:model.lazy="apropos.description2" class="form-control" id="about" rows="7" required ></textarea>
+                                                <textarea wire:model.lazy="apropos.description2" class="form-control" id="about" rows="7" ></textarea>
                                             </div>
                                          </div>
                                     </div>
@@ -545,7 +545,7 @@ unset($__errorArgs, $__bag); ?>
                                         <div class="form-group">
                                             <label for="apropos-name" class="form-control-label">Nombre d'année d'expérience</label>
                                             <div class="">
-                                                <input wire:model.lazy="apropos.annee_experience" class="form-control" type="number" placeholder="Nombre d'année d'expérience" id="apropos-name" min="1" required="">
+                                                <input wire:model.lazy="apropos.annee_experience" class="form-control" type="number" placeholder="Nombre d'année d'expérience" id="apropos-name" min="1">
                                             </div>
                                          </div>
                                     </div>

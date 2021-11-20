@@ -19,11 +19,11 @@ class CreateActualitesTable extends Migration
             $table->string('domaine');
             $table->string('auteur');
             $table->text('desc_auteur');
-            $table->string('image');
+            $table->string('image')->nullable();
 
 
-            $table->string('titre1');
-            $table->text('article1');
+            $table->string('titre1')->nullable();
+            $table->text('article1')->nullable();
             $table->string('image1')->nullable();
             $table->string('video1')->nullable();
             

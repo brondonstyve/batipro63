@@ -16,6 +16,7 @@ class Actu extends Component
     public $modification;
     public $supp;
     public $image;
+    public $imageVue;
     public $image1;
     public $collapse='collapse';
     public $image2;
@@ -38,8 +39,8 @@ class Actu extends Component
         'actualite.image3' => '',
         'actualite.image4' => '',
         'actualite.image5' => '',
-        'actualite.titre1' => 'required',
-        'actualite.article1' => 'required',
+        'actualite.titre1' => '',
+        'actualite.article1' => '',
         'actualite.video1'=> '',
         'actualite.titre2'=> '',
         'actualite.article2'=> '',
@@ -63,9 +64,13 @@ class Actu extends Component
     }
 
 
+    public function updatedActualite(){
+        $this->collapse="";
+    }
 
     public function updatedImage1()
     {
+        
         $this->collapse='';
         $this->validate([
             'image1' => 'image|max:100000', // 1MB Max
@@ -114,8 +119,8 @@ class Actu extends Component
 
 
 
-    public function getactualitesProperty(){
-        return actualite::get();
+    public function getActualitesProperty(){
+        return actualite::orderBy('id','desc')->get();
     }
 
     public function save(){
@@ -125,37 +130,31 @@ class Actu extends Component
          } else {
 
             try {
-                if ($this->image1) {
-                    $name=Image::traitementA($this->image,'png',1920,1095);
-                    $this->actualite->image=$name;
+                if ($this->image) {
+                    $this->actualite->image=Image::traitementA($this->image,'png',1920,1095);
                 }
 
                 if ($this->image1) {
-                    $name1=Image::traitementA($this->image1,'png',1920,1095);
-                    $this->actualite->image1=$name1;
+                    $this->actualite->image1=Image::traitementA($this->image1,'png',1920,1095);
                 }
 
                 if ($this->image2) {
-                    $name2=Image::traitementA($this->image2,'png',1920,1095);
-                    $this->actualite->image2=$name2;
+                    $this->actualite->image2=Image::traitementA($this->image2,'png',1920,1095);
 
                 }
 
                 if ($this->image3) {
-                    $name3=Image::traitementA($this->image3,'png',1920,1095);
-                    $this->actualite->image3=$name3;
+                    $this->actualite->image3=Image::traitementA($this->image3,'png',1920,1095);
 
                 }
 
                 if ($this->image4) {
-                    $name4=Image::traitementA($this->image4,'png',1920,1095);
-                    $this->actualite->image4=$name4;
+                    $this->actualite->image4=Image::traitementA($this->image4,'png',1920,1095);
 
                 }
 
                 if ($this->image5) {
-                    $name5=Image::traitementA($this->image5,'png',1920,1095);
-                    $this->actualite->image5=$name5;
+                    $this->actualite->image5=Image::traitementA($this->image5,'png',1920,1095);
 
                 }
                 
@@ -244,18 +243,27 @@ class Actu extends Component
     }
 
     public function update($id){
-        
+        $this->imageVue=null;
+        $this->image=null;
+        $this->image1=null;
+        $this->image2=null;
+        $this->image3=null;
+        $this->image4=null;
+        $this->image5=null;
         $this->actualite=actualite::find($id);
         $this->modification=2;
+        $this->imageVue=$this->actualite->image;
+        $this->imageVue1=$this->actualite->image1;
+        $this->imageVue2=$this->actualite->image2;
+        $this->imageVue3=$this->actualite->image3;
+        $this->imageVue4=$this->actualite->image4;
+        $this->imageVue5=$this->actualite->image5;
         $this->showSuccesNotification = false;
         $this->showErrorNotification = false;
         $this->collapse="";
         
     }
 
-    public function updatedActualite(){
-        $this->collapse='';
-    }
 
     
 

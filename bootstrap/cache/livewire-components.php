@@ -9,6 +9,7 @@
   'billing' => 'App\\Http\\Livewire\\Billing',
   'brochure' => 'App\\Http\\Livewire\\Brochure',
   'dashboard' => 'App\\Http\\Livewire\\Dashboard',
+  'etape' => 'App\\Http\\Livewire\\Etape',
   'front.actus' => 'App\\Http\\Livewire\\Front\\Actus',
   'home-config' => 'App\\Http\\Livewire\\HomeConfig',
   'laravel-examples.user-management' => 'App\\Http\\Livewire\\LaravelExamples\\UserManagement',

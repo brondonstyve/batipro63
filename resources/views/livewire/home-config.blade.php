@@ -517,6 +517,14 @@
                                             </div>
                                          </div>
                                     </div>
+
+
+                                    
+
+
+
+
+
                                           
                                     <h3>Bloc 5</h3>
 
@@ -535,6 +543,71 @@
                                             <div class="">
                                                 <textarea wire:model.lazy="home.resume8" class="form-control" id="about" rows="5" placeholder="description"></textarea>
                                             </div>
+                                         </div>
+                                    </div>
+
+                                    <h3 for="">Bloc 6</h3>
+                             
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+
+                                            <label for="apropos-name" class="form-control-label">titre </label>
+                                            <div class="">
+                                                <input wire:model.lazy="home.titreE" class="form-control" type="text" >
+                                            </div>
+                                            <label for="apropos-name" class="form-control-label">description de l'équipe</label>
+                                            <div class="">
+                                                <textarea wire:model.lazy="home.descriptionE" class="form-control" id="about" rows="10"></textarea>
+                                            </div>
+                                         </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="apropos-name" class="form-control-label">Image d'équipe</label>
+                                            <div class="">
+                                                <input wire:model="image9" class="form-control" type="file" accept="image/*"> 
+                                            </div>
+                                            @error('image9') <span class="text text-danger error">Erreur lors du téléchargement</span> @enderror
+                                            <button class="btn btn-primary btn-sm mt-2" type="button" disabled wire:loading wire:target='image9'>
+                                                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                                                Patientez le chargement de l'image...
+                                              </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="apropos-name" class="form-control-label">visuel de l'équipe</label>
+
+                                            @if ($image9)
+                                            <div class="row">
+                                                <div class="col-xl-6 mx-auto col-md-12 mb-xl-0 mt-2">
+                                                    <div class="card card-blog card-plain">
+                                                        <div class="position-relative">
+                                                            <a class="d-block shadow-xl border-radius-xl">
+                                                                <img src=" {{$image9->temporaryUrl()}} " alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            @else
+                                            @if ($this->home->imageE)
+                                            <div class="row">
+                                                <div class="col-xl-6 mx-auto col-md-12 mb-xl-0 mt-2">
+                                                    <div class="card card-blog card-plain">
+                                                        <div class="position-relative">
+                                                            <a class="d-block shadow-xl border-radius-xl">
+                                                                <img src=" {{ asset('/app/accueil/'.$this->home->imageE)}} " alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            @endif
+                                            @endif
                                          </div>
                                     </div>
 

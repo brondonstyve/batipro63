@@ -5,7 +5,14 @@
     <link rel="stylesheet" href="<?php echo e(asset('/front-end/assets/masterslider/skins/default/style.css')); ?>" />
     <script src="<?php echo e(asset('/front-end/assets/masterslider/masterslider.min.js')); ?>"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-    
+ 
+    <link rel="stylesheet" href="<?php echo e(asset('/modal/fonts/icomoon/style.css')); ?>">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="<?php echo e(asset('/modal/css/bootstrap.min.css')); ?>">
+
+    <!-- Style -->
+    <link rel="stylesheet" href="<?php echo e(asset('/modal/css/style.css')); ?>">
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('content'); ?>
@@ -28,9 +35,9 @@
                 
             <?php endif; ?>
             <!-- slide text layer -->
-            <div class="ms-thumb">
+            <div class="ms-thumb" onmouseover="bigImg()">
                 <a href=" <?php echo e(route('mc')); ?> ">
-                    <div class="content-thumbs ">
+                    <div class="content-thumbs">
                         <h3>Maison</h3>
                         <p>Contemporaine</p>
                     </div>
@@ -55,7 +62,7 @@
             
             <?php endif; ?>
             <!-- slide text layer -->
-            <div class="ms-thumb">
+            <div class="ms-thumb"  onmouseover="bigImg()">
                 <a href=" <?php echo e(route('lc')); ?> ">
                     <div class="content-thumbs ">
                     <h3>Logement</h3>
@@ -82,7 +89,7 @@
             
         <?php endif; ?>
             <!-- slide text layer -->
-            <div class="ms-thumb">
+            <div class="ms-thumb"  onmouseover="bigImg()">
                 <a href=" <?php echo e(route('mg')); ?> ">
                     <div class="content-thumbs ">
                     <h3>Maçonnerie</h3>
@@ -103,16 +110,16 @@
         <div class="container flex ">
         <div class="left-bloc-text">
             <div class="header-title">
-                <h3 class="green"><?php echo e($infos->titreVert1); ?></h3>
-                <h4><?php echo e($infos->titre1); ?></h4>
+                <h3 class="green"><?php echo $infos->titreVert1; ?></h3>
+                <h4><?php echo $infos->titre1; ?></h4>
             </div>
             <div class="content-bloc-description add-square">
                 <p class="head green">
-                    <?php echo e($infos->slogan1); ?>
+                    <?php echo $infos->slogan1; ?>
 
                 </p>
                 <p class="jost-style jost-style-100">
-                    <?php echo e($infos->resume1); ?>
+                    <?php echo $infos->resume1; ?>
 
                 </p>
                 <div class="content-exp flex align-center">
@@ -217,105 +224,85 @@
                                         <h4>Aucun projet enregistré pour le moment.</h4>
                                         </div>
                             <?php endif; ?>
-                                <div class="content-list-projects1 line-plus line-3">
+                                
                                     
                                     
 
 
-                                    <div class="content-projects-wrapper1">
-                                        <div id="grid" class="flex my-shuffle-container space-around">
+                                    
+
+                                <div class="content-list-projects line-plus line-3">
+                                    <br>
+                                    <br>
+                                    <div class="content-projects-wrapper">
+                                       <div id="grid" class="flex my-shuffle-container space-around shuffle" style="position: relative; overflow: hidden; height: 995px; transition: height 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s;">
                                           
                                         <?php $__currentLoopData = $projets; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key=>$item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                         <?php if($item->service=='Maison individuelle' || $item->service=='Maison contemporaine'): ?>
-                                        <div class="content-project-wrapper1 hg-height"  style="margin-bottom: -5%">
+
+                                        <div class="content-project-wrapper hg-height shuffle-item shuffle-item--visible" style="background: url(<?php echo e(asset('/app/projet/'.$item->img_principale)); ?>); position: absolute; top: 0px; visibility: visible; will-change: transform; left: 0px; opacity: 1; transition-duration: 250ms; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-property: transform, opacity;">
                                             <div class="project-inner">
-                                              <a href="<?php echo e(route('detailProjet',encrypt($item->id))); ?>">
-                                
-                                            
-                                              <img src="<?php echo e(asset('/app/projet/'.$item->img_principale)); ?>" style="width: 100%;height: 350px;">
-                                            
-                                
-                                              <div class="inner-overlay">
-                                                 <div class="content-overlay"> 
-                                                    <div class="content-icone-plus"></div>           
-                                                    <div class="title-project">
-                                                       <h3> <?php echo e($item->libelle); ?> </h3>
-                                                    </div>
-                                                    <div class="content-title-category">
-                                                      <?php if($item->service=='Maison individuelle'): ?><?php echo e('Maison contemporaine'); ?><?php else: ?><?php echo e($item->service); ?><?php endif; ?>  
-                                                    </div>
-                                                 </div>
-                                              </div>
-                                        </a>
-                                          </div>
-                                        </div>
+                                               <div class="inner-overlay">
+                                                  <div class="content-overlay">
+                                                     <div class="content-icone-plus"><a href="#!">+</a></div>
+                                                     <div class="title-project">
+                                                        <h3><?php echo e($item->libelle); ?></h3>
+                                                     </div>
+                                                     <div class="content-title-category"> <?php if($item->service=='Maison individuelle'): ?><?php echo e('Maison contemporaine'); ?><?php else: ?><?php echo e($item->service); ?><?php endif; ?>  </div>
+                                                  </div>
+                                               </div>
+                                            </div>
+                                         </div>
                                         <?php endif; ?>
                                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                       
 
                                         <?php $__currentLoopData = $projets; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key=>$item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                         <?php if($item->service=='Logement collectif'): ?>
-                                        <div class="content-project-wrapper1 hg-height"  style="margin-bottom: -5%">
+                                        <div class="content-project-wrapper hg-height shuffle-item shuffle-item--visible" style="background: url(<?php echo e(asset('/app/projet/'.$item->img_principale)); ?>); position: absolute; top: 0px; visibility: visible; will-change: transform; left: 0px; opacity: 1; transition-duration: 250ms; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-property: transform, opacity;">
                                             <div class="project-inner">
-                                              <a href="<?php echo e(route('detailProjet',encrypt($item->id))); ?>">
-                                
-                                            
-                                              <img src="<?php echo e(asset('/app/projet/'.$item->img_principale)); ?>" style="width: 100%;height: 350px;">
-                                            
-                                
-                                              <div class="inner-overlay">
-                                                 <div class="content-overlay"> 
-                                                    <div class="content-icone-plus"></div>           
-                                                    <div class="title-project">
-                                                       <h3> <?php echo e($item->libelle); ?> </h3>
-                                                    </div>
-                                                    <div class="content-title-category">
-                                                      <?php if($item->service=='Maison individuelle'): ?><?php echo e('Maison contemporaine'); ?><?php else: ?><?php echo e($item->service); ?><?php endif; ?>  
-                                                    </div>
-                                                 </div>
-                                              </div>
-                                        </a>
-                                          </div>
-                                        </div>
+                                               <div class="inner-overlay">
+                                                  <div class="content-overlay">
+                                                     <div class="content-icone-plus"><a href="#!">+</a></div>
+                                                     <div class="title-project">
+                                                        <h3><?php echo e($item->libelle); ?></h3>
+                                                     </div>
+                                                     <div class="content-title-category"> <?php if($item->service=='Maison individuelle'): ?><?php echo e('Maison contemporaine'); ?><?php else: ?><?php echo e($item->service); ?><?php endif; ?>  </div>
+                                                  </div>
+                                               </div>
+                                            </div>
+                                         </div>
+
                                         <?php endif; ?>
                                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
                                         <?php $__currentLoopData = $projets; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key=>$item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                         <?php if($item->service=='Maçonnerie générale'): ?>
-                                        <div class="content-project-wrapper1 hg-height"  style="margin-bottom: -5%">
+                                       
+                                        <div class="content-project-wrapper hg-height shuffle-item shuffle-item--visible" style="background: url(<?php echo e(asset('/app/projet/'.$item->img_principale)); ?>); position: absolute; top: 0px; visibility: visible; will-change: transform; left: 0px; opacity: 1; transition-duration: 250ms; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-property: transform, opacity;">
                                             <div class="project-inner">
-                                              <a href="<?php echo e(route('detailProjet',encrypt($item->id))); ?>">
-                                
-                                            
-                                              <img src="<?php echo e(asset('/app/projet/'.$item->img_principale)); ?>" style="width: 100%;height: 350px;">
-                                            
-                                
-                                              <div class="inner-overlay">
-                                                 <div class="content-overlay"> 
-                                                    <div class="content-icone-plus"></div>           
-                                                    <div class="title-project">
-                                                       <h3> <?php echo e($item->libelle); ?> </h3>
-                                                    </div>
-                                                    <div class="content-title-category">
-                                                      <?php if($item->service=='Maison individuelle'): ?><?php echo e('Maison contemporaine'); ?><?php else: ?><?php echo e($item->service); ?><?php endif; ?>  
-                                                    </div>
-                                                 </div>
-                                              </div>
-                                        </a>
-                                          </div>
-                                        </div>
+                                               <div class="inner-overlay">
+                                                  <div class="content-overlay">
+                                                     <div class="content-icone-plus"><a href="#!">+</a></div>
+                                                     <div class="title-project">
+                                                        <h3><?php echo e($item->libelle); ?></h3>
+                                                     </div>
+                                                     <div class="content-title-category"> <?php if($item->service=='Maison individuelle'): ?><?php echo e('Maison contemporaine'); ?><?php else: ?><?php echo e($item->service); ?><?php endif; ?>  </div>
+                                                  </div>
+                                               </div>
+                                            </div>
+                                         </div>
+                                        
                                         <?php endif; ?>
                                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
-                                        
-                                        
-                                      </div>
-                                      <div class="my-sizer-element"></div>
-                                
+                                         
+
+                                       </div>
+                                       <div class="my-sizer-element"></div>
                                     </div>
+                                 </div>
 
-                                </div>
-
-                                <br>
                                 <br>
 
                                 <div class="content-btn-action-">
@@ -462,7 +449,7 @@
         <p>​PARTENAIRE OFFICIEL DU CLERMONT FOOT 63</p>
         <div class="content-btn-action-">
             <?php if($infos): ?>
-            <a href="<?php echo e(($infos)? $infos->savoir : ''); ?>"><span>En savoir +</span></a>
+            <a href="<?php echo e(($infos)? $infos->savoir : ''); ?>" target="_blank"><span>En savoir +</span></a>
                 
             <?php else: ?>
                 
@@ -478,16 +465,76 @@
     <br>
     <br>
     <br>
+
+    <?php if($infos): ?>
     <div class="header-title">
-        <h3 class="green">Notre équipe</h3>
+        <h3 class="green"> <?php echo e($infos->titreE); ?></h3>
+        <h4><?php echo e($infos->descriptionE); ?></h4>
+    </div>
+    <?php if($infos->imageE): ?>
+    <br>
+    <br>
+    <br>
+    <section class="work-method" style="background-image: url(<?php echo e(asset('/app/accueil/'.$infos->imageE)); ?>);">
+        <div class="container">
+          
+        </div>
+      </section>
+        <?php else: ?>
+        <br>
+    <br>
+    <br>
+        <section class="work-method" style="background-image: url(<?php echo e(asset('front-end/assets/img/equipe.png')); ?>);">
+            <div class="container">
+          
+            </div>
+          </section>
+        <?php endif; ?>
+        
+    <?php else: ?>
+    <div class="header-title">
+        <h3 class="green">  NOTRE FORCE</h3>
         <h4>UNE ENTREPRISE À TAILLE HUMAINE</h4>
     </div>
+    <br>
+    <br>
+    <br>
+    <section class="work-method" style="background-image: url(<?php echo e(asset('front-end/assets/img/equipe.png')); ?>);">
+        <div class="container">
+          
+        </div>
+      </section>
+    <?php endif; ?>
 
-    <section class="content-partner-bloc1" style="min-height:10%;margin-top: 3px">
+    
 
-    </section>
-
-
+          <input type="hidden" name="" data-toggle="modal" data-target="#exampleModalCenter" id='s'>
+  
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+          <div class="modal-content rounded-0">
+            <div class="modal-body py-0">
+  
+              
+              <div class="d-flex main-content">
+                <div class="bg-image promo-img mr-3" style="background-image: url(<?php echo e(asset('app/accueil/DIrmfSRaeVLKxRlp1636971327.jpg')); ?>);">
+                  <span class="price">$2000</span>
+                </div>
+                <div class="content-text p-4 px-5 align-item-stretch">
+                  <div class="text-center">
+                      <a href="#" class="share"><span class="icon-share"></span></a>
+                      <h3 class="mb-3 line">Grand Prix 4000</h3>
+                      <p class="mb-5">All their equipment and instruments are alive. The sky was this is cloudless and of a deep dark blue. A shining crescent far beneath the flying vessel.</p>
+  
+                  </div>
+                </div>
+              </div>
+  
+            </div>
+          </div>
+        </div>
+      </div>
   
     
 
@@ -496,6 +543,8 @@
 
 <?php $__env->startSection('script'); ?>
     
+
+  
 <script src='https://unpkg.com/shufflejs@5'></script>
 <script  src="<?php echo e(asset('/front-end/assets/js/script.js')); ?>"></script>
 <script type="text/javascript">
@@ -513,9 +562,23 @@
         // more slider options goes here...
         // check slider options section in documentation for more options.
    });
+
    // adds Arrows navigation control to the slider.
-   slider.control('thumblist' , {autohide:false  , dir:"h",align:'bottom',type:'thumbs'});
+    slider.control('thumblist' , {autohide:false  , dir:"h",align:'bottom',type:'thumbs'});
     slider.control('timebar'    ,{ autohide:false, overVideo:false, align:'bottom', color:'#51bbb1' , hideUnder:3 , width:5 });
+
+   
 </script>
+
+
+<script src="<?php echo e(asset('/modal/js/jquery-3.3.1.min.js')); ?>"></script>
+    <script src="<?php echo e(asset('/modal/js/popper.min.js')); ?>"></script>
+    <script src="<?php echo e(asset('/modal/js/bootstrap.min.js')); ?>"></script>
+
+    <script>
+        /*$( document ).ready(function() {
+            $('#s').click();
+        });*/
+    </script>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('front-end/defaut/base', ['title' => 'Accueil | '] , \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /home/styve/dev/laravel/batipro/resources/views/front-end/home.blade.php ENDPATH**/ ?>

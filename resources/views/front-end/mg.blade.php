@@ -28,9 +28,6 @@
                         <h1>Maçonnerie Générale</h1>
                         <div class="content-subtitle">
                           <a class="active-sub" href="{{route('aboutus')}} ">Présentation</a>
-                          <a href=" {{route('projet-front')}} ">Maisons</a>
-                          <a href="{{route('terrain-front')}} ">Terrains</a>
-                          <a href="{{route('service-front')}} ">Nos conseils</a>
                         </div>
                       </div>
                   </div>

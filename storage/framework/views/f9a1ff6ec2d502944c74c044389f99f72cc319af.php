@@ -138,61 +138,54 @@ unset($__errorArgs, $__bag); ?>
                             </div>
 
                             <?php if($modification!=null): ?>
-                     
-                                    
-                                    <?php if($image): ?>
-                                    <div class="card-body p-3">
-                                        <div class="row">
-                                            <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
-                                                <div class="card card-blog card-plain">
-                                                    <div class="position-relative">
-                                                        <a class="d-block shadow-xl border-radius-xl">
-                                                            <img src=" <?php echo $image->temporaryUrl(); ?> " alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            
-                                            
-                                        </div>
-                                    </div>
-                                    <?php else: ?>
-                                    <?php if($actualite->image): ?>
-                                    <div class="card-body p-3">
-                                        <div class="row">
-                                            <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
-                                                <div class="card card-blog card-plain">
-                                                    <div class="position-relative">
-                                                        <a class="d-block shadow-xl border-radius-xl">
-                                                            <img src="<?php echo e(asset('/app/actualite/'.$actualite->image)); ?> " alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
-                                                        </a>
-                                                    </div>
-                                                </div>
+                            <?php if($image): ?>
+                            <div class="card-body p-3">
+                                <div class="row">
+                                    <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
+                                        <div class="card card-blog card-plain">
+                                            <div class="position-relative">
+                                                <a class="d-block shadow-xl border-radius-xl">
+                                                    <img src="<?php echo e($image->temporaryUrl()); ?>" alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
-                                    <?php endif; ?>
-                                    <?php endif; ?>
-
-                                    <?php else: ?>
-                                        <?php if($image): ?>
-                                        <div class="card-body p-3">
-                                            <div class="row">
-                                                <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
-                                                    <div class="card card-blog card-plain">
-                                                        <div class="position-relative">
-                                                            <a class="d-block shadow-xl border-radius-xl">
-                                                                <img src=" <?php echo $image->temporaryUrl(); ?> " alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
-                                                            </a>
-
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                </div>
+                            </div>
+                            <?php else: ?>
+                            <div class="card-body p-3">
+                                <div class="row">
+                                    <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
+                                        <div class="card card-blog card-plain">
+                                            <div class="position-relative">
+                                                <a class="d-block shadow-xl border-radius-xl">
+                                                    <img src="<?php echo e(asset('/app/actualite/'.$imageVue)); ?>" alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
+                                                </a>
                                             </div>
                                         </div>
-                                        <?php endif; ?>
-                                                        
-                                     <?php endif; ?>
+                                    </div>
+                                </div>
+                            </div>
+                            <?php endif; ?>
+                            
+                            <?php else: ?>
+                            <?php if($image): ?>
+                            <div class="card-body p-3">
+                                <div class="row">
+                                    <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
+                                        <div class="card card-blog card-plain">
+                                            <div class="position-relative">
+                                                <a class="d-block shadow-xl border-radius-xl">
+                                                    <img src="<?php echo e($image->temporaryUrl()); ?>" alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <?php endif; ?>
+                           
+                            <?php endif; ?>
 
 
 
@@ -233,7 +226,7 @@ unset($__errorArgs, $__bag); ?>
                             <div class="form-group">
                                 <label for="user-name" class="form-control-label">Titre du bloc</label>
                                 <div class="">
-                                    <input wire:model.lazy="actualite.titre<?php echo e($i); ?>" class="form-control" type="text" placeholder="titre du bloc <?php echo e($i); ?>" id="user-name" <?php if($i==1): ?> required <?php endif; ?>>
+                                    <input wire:model.lazy="actualite.titre<?php echo e($i); ?>" class="form-control" type="text" placeholder="titre du bloc <?php echo e($i); ?>" id="user-name" >
                                 </div>
                               </div>
                               
@@ -243,7 +236,7 @@ unset($__errorArgs, $__bag); ?>
                     <div class="form-group">
                         <label for="about">Article  </label>
                         <div class="">
-                            <textarea wire:model.lazy="actualite.article<?php echo e($i); ?>" class="form-control" id="about" rows="7" placeholder="Ecrivez à propos de l'article" <?php if($i==1): ?> required <?php endif; ?>></textarea>
+                            <textarea wire:model.lazy="actualite.article<?php echo e($i); ?>" class="form-control" id="about" rows="7" placeholder="Ecrivez à propos de l'article" ></textarea>
                         </div>
                      </div>
                      
@@ -269,295 +262,295 @@ unset($__errorArgs, $__bag); ?>
                                 Patientez le chargement de(s) image(s)...
                               </button>
                         </div>
+                        <?php if($i==1): ?>
+                        <?php if($modification!=null): ?>
+                        <?php if($image1): ?>
+                        <div class="card-body p-3">
+                            <div class="row">
+                                <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
+                                    <div class="card card-blog card-plain">
+                                        <div class="position-relative">
+                                            <a class="d-block shadow-xl border-radius-xl">
+                                                <img src="<?php echo e($image1->temporaryUrl()); ?>" alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <?php else: ?>
+                        <?php if($imageVue1): ?>
+                        <div class="card-body p-3">
+                            <div class="row">
+                                <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
+                                    <div class="card card-blog card-plain">
+                                        <div class="position-relative">
+                                            <a class="d-block shadow-xl border-radius-xl">
+                                                <img src="<?php echo e(asset('/app/actualite/'.$imageVue1)); ?>" alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <?php endif; ?>
+                       
+                        <?php endif; ?>
                         
-                     <?php if($modification!=null): ?>
-                     
-                     <?php if($i==1): ?>
-                     <?php if($image1): ?>
-                     <div class="card-body p-3">
-                        <div class="row">
-                            <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
-                                <div class="card card-blog card-plain">
-                                    <div class="position-relative">
-                                        <a class="d-block shadow-xl border-radius-xl">
-                                            <img src=" <?php echo $image1->temporaryUrl(); ?> " alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            
-                        </div>
-                    </div>
-                     <?php else: ?>
-                     <?php if($actualite->image1): ?>
-                     <div class="card-body p-3">
-                         <div class="row">
-                             <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
-                                 <div class="card card-blog card-plain">
-                                     <div class="position-relative">
-                                         <a class="d-block shadow-xl border-radius-xl">
-                                             <img src="<?php echo e(asset('/app/actualite/'.$actualite->image1)); ?> " alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
-                                         </a>
-                                         <button type="button" class="btn bg-gradient-danger btn-md mt-4 mb-4" wire:click='removeImg("<?php echo e($actualite->image1); ?>",<?php echo e($i); ?>)'>Enlever</button>
-
-                                     </div>
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-                     <?php endif; ?>
-                     <?php endif; ?>
-                    <?php endif; ?>
-
-
-                    <?php if($i==2): ?>
-                     <?php if($image2): ?>
-                     <div class="card-body p-3">
-                        <div class="row">
-                            <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
-                                <div class="card card-blog card-plain">
-                                    <div class="position-relative">
-                                        <a class="d-block shadow-xl border-radius-xl">
-                                            <img src=" <?php echo $image2->temporaryUrl(); ?> " alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            
-                        </div>
-                    </div>
-                     <?php else: ?>
-                     <?php if($actualite->image2): ?>
-                     <div class="card-body p-3">
-                         <div class="row">
-                             <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
-                                 <div class="card card-blog card-plain">
-                                     <div class="position-relative">
-                                         <a class="d-block shadow-xl border-radius-xl">
-                                             <img src="<?php echo e(asset('/app/actualite/'.$actualite->image2)); ?> " alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
-                                         </a>
-                                         <button type="button" class="btn bg-gradient-danger btn-md mt-4 mb-4" wire:click='removeImg("<?php echo e($actualite->image2); ?>",<?php echo e($i); ?>)'>Enlever</button>
-
-                                     </div>
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-                     <?php endif; ?>
-                     <?php endif; ?>
-                    <?php endif; ?>
-                    
-
-                    <?php if($i==3): ?>
-                     <?php if($image3): ?>
-                     <div class="card-body p-3">
-                        <div class="row">
-                            <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
-                                <div class="card card-blog card-plain">
-                                    <div class="position-relative">
-                                        <a class="d-block shadow-xl border-radius-xl">
-                                            <img src=" <?php echo $image3->temporaryUrl(); ?> " alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            
-                        </div>
-                    </div>
-                     <?php else: ?>
-                     <?php if($actualite->image3): ?>
-                     <div class="card-body p-3">
-                         <div class="row">
-                             <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
-                                 <div class="card card-blog card-plain">
-                                     <div class="position-relative">
-                                         <a class="d-block shadow-xl border-radius-xl">
-                                             <img src="<?php echo e(asset('/app/actualite/'.$actualite->image3)); ?> " alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
-                                         </a>
-                                         <button type="button" class="btn bg-gradient-danger btn-md mt-4 mb-4" wire:click='removeImg("<?php echo e($actualite->image3); ?>",<?php echo e($i); ?>)'>Enlever</button>
-
-                                     </div>
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-                     <?php endif; ?>
-                     <?php endif; ?>
-                    <?php endif; ?>
-
-
-                    <?php if($i==4): ?>
-                     <?php if($image4): ?>
-                     <div class="card-body p-3">
-                        <div class="row">
-                            <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
-                                <div class="card card-blog card-plain">
-                                    <div class="position-relative">
-                                        <a class="d-block shadow-xl border-radius-xl">
-                                            <img src=" <?php echo $image4->temporaryUrl(); ?> " alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            
-                        </div>
-                    </div>
-                     <?php else: ?>
-                     <?php if($actualite->image4): ?>
-                     <div class="card-body p-3">
-                         <div class="row">
-                             <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
-                                 <div class="card card-blog card-plain">
-                                     <div class="position-relative">
-                                         <a class="d-block shadow-xl border-radius-xl">
-                                             <img src="<?php echo e(asset('/app/actualite/'.$actualite->image4)); ?> " alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
-                                         </a>
-                                         <button type="button" class="btn bg-gradient-danger btn-md mt-4 mb-4" wire:click='removeImg("<?php echo e($actualite->image4); ?>",<?php echo e($i); ?>)'>Enlever</button>
-                                        </div>
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-                     <?php endif; ?>
-                     <?php endif; ?>
-                    <?php endif; ?>
-
-                    <?php if($i==5): ?>
-                     <?php if($image5): ?>
-                     <div class="card-body p-3">
-                        <div class="row">
-                            <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
-                                <div class="card card-blog card-plain">
-                                    <div class="position-relative">
-                                        <a class="d-block shadow-xl border-radius-xl">
-                                            <img src=" <?php echo $image5->temporaryUrl(); ?> " alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            
-                        </div>
-                    </div>
-                     <?php else: ?>
-                     <?php if($actualite->image5): ?>
-                     <div class="card-body p-3">
-                         <div class="row">
-                             <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
-                                 <div class="card card-blog card-plain">
-                                     <div class="position-relative">
-                                         <a class="d-block shadow-xl border-radius-xl">
-                                             <img src="<?php echo e(asset('/app/actualite/'.$actualite->image5)); ?> " alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
-                                         </a>
-                                         <button type="button" class="btn bg-gradient-danger btn-md mt-4 mb-4" wire:click='removeImg("<?php echo e($actualite->image5); ?>",<?php echo e($i); ?>)'>Enlever</button>
-                                        </div>
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-                     <?php endif; ?>
-                     <?php endif; ?>
-                    <?php endif; ?>
-                     
-                     <?php else: ?>
-                         
-                    
-
-                        <?php if($i==1 && $image1): ?>
+                        <?php else: ?>
+                        <?php if($image1): ?>
                         <div class="card-body p-3">
                             <div class="row">
                                 <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
                                     <div class="card card-blog card-plain">
                                         <div class="position-relative">
                                             <a class="d-block shadow-xl border-radius-xl">
-                                                <img src=" <?php echo $image1->temporaryUrl(); ?> " alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
+                                                <img src="<?php echo e($image1->temporaryUrl()); ?>" alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
                                             </a>
-
                                         </div>
                                     </div>
                                 </div>
-                                
-                                
                             </div>
                         </div>
                         <?php endif; ?>
+                       
+                        <?php endif; ?>
+                            
+                        <?php endif; ?>
 
-                        <?php if($i==2 && $image2): ?>
+
+
+
+                        <?php if($i==2): ?>
+                        <?php if($modification!=null): ?>
+                        <?php if($image2): ?>
                         <div class="card-body p-3">
                             <div class="row">
                                 <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
                                     <div class="card card-blog card-plain">
                                         <div class="position-relative">
                                             <a class="d-block shadow-xl border-radius-xl">
-                                                <img src=" <?php echo $image2->temporaryUrl(); ?> " alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
+                                                <img src="<?php echo e($image2->temporaryUrl()); ?>" alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
                                             </a>
                                         </div>
                                     </div>
                                 </div>
-                                
-                                
                             </div>
                         </div>
-                        <?php endif; ?>
-
-                        <?php if($i==3 && $image3): ?>
+                        <?php else: ?>
+                        <?php if($imageVue2): ?>
                         <div class="card-body p-3">
                             <div class="row">
                                 <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
                                     <div class="card card-blog card-plain">
                                         <div class="position-relative">
                                             <a class="d-block shadow-xl border-radius-xl">
-                                                <img src=" <?php echo $image3->temporaryUrl(); ?> " alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
+                                                <img src="<?php echo e(asset('/app/actualite/'.$imageVue2)); ?>" alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
                                             </a>
                                         </div>
                                     </div>
                                 </div>
-                                
-                                
                             </div>
                         </div>
                         <?php endif; ?>
-
-                        <?php if($i==4 && $image4): ?>
+                        
+                        <?php endif; ?>
+                        
+                        <?php else: ?>
+                        <?php if($image2): ?>
                         <div class="card-body p-3">
                             <div class="row">
                                 <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
                                     <div class="card card-blog card-plain">
                                         <div class="position-relative">
                                             <a class="d-block shadow-xl border-radius-xl">
-                                                <img src=" <?php echo $image4->temporaryUrl(); ?> " alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
+                                                <img src="<?php echo e($image2->temporaryUrl()); ?>" alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
                                             </a>
                                         </div>
                                     </div>
                                 </div>
-                                
-                                
                             </div>
                         </div>
                         <?php endif; ?>
+                       
+                        <?php endif; ?>
+                            
+                        <?php endif; ?>
 
-                        <?php if($i==5 && $image5): ?>
+
+
+
+                        <?php if($i==3): ?>
+                        <?php if($modification!=null): ?>
+                        <?php if($image3): ?>
                         <div class="card-body p-3">
                             <div class="row">
                                 <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
                                     <div class="card card-blog card-plain">
                                         <div class="position-relative">
                                             <a class="d-block shadow-xl border-radius-xl">
-                                                <img src=" <?php echo $image5->temporaryUrl(); ?> " alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
+                                                <img src="<?php echo e($image3->temporaryUrl()); ?>" alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
                                             </a>
                                         </div>
                                     </div>
                                 </div>
-                                
-                                
+                            </div>
+                        </div>
+                        <?php else: ?>
+                        <?php if($imageVue3): ?>
+                        <div class="card-body p-3">
+                            <div class="row">
+                                <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
+                                    <div class="card card-blog card-plain">
+                                        <div class="position-relative">
+                                            <a class="d-block shadow-xl border-radius-xl">
+                                                <img src="<?php echo e(asset('/app/actualite/'.$imageVue3)); ?>" alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <?php endif; ?>
+                       
                         <?php endif; ?>
+                        
+                        <?php else: ?>
+                        <?php if($image3): ?>
+                        <div class="card-body p-3">
+                            <div class="row">
+                                <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
+                                    <div class="card card-blog card-plain">
+                                        <div class="position-relative">
+                                            <a class="d-block shadow-xl border-radius-xl">
+                                                <img src="<?php echo e($image3->temporaryUrl()); ?>" alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <?php endif; ?>
+                       
+                        <?php endif; ?>
+                            
+                        <?php endif; ?>
+
+
+
+                        <?php if($i==4): ?>
+                        <?php if($modification!=null): ?>
+                        <?php if($image4): ?>
+                        <div class="card-body p-3">
+                            <div class="row">
+                                <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
+                                    <div class="card card-blog card-plain">
+                                        <div class="position-relative">
+                                            <a class="d-block shadow-xl border-radius-xl">
+                                                <img src="<?php echo e($image4->temporaryUrl()); ?>" alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <?php else: ?>
+                        <?php if($imageVue4): ?>
+                        <div class="card-body p-3">
+                            <div class="row">
+                                <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
+                                    <div class="card card-blog card-plain">
+                                        <div class="position-relative">
+                                            <a class="d-block shadow-xl border-radius-xl">
+                                                <img src="<?php echo e(asset('/app/actualite/'.$imageVue4)); ?>" alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <?php endif; ?>
+                        
+                        <?php endif; ?>
+                        
+                        <?php else: ?>
+                        <?php if($image4): ?>
+                        <div class="card-body p-3">
+                            <div class="row">
+                                <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
+                                    <div class="card card-blog card-plain">
+                                        <div class="position-relative">
+                                            <a class="d-block shadow-xl border-radius-xl">
+                                                <img src="<?php echo e($image4->temporaryUrl()); ?>" alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <?php endif; ?>
+                       
+                        <?php endif; ?>
+                            
+                        <?php endif; ?>
+
+
+                        <?php if($i==5): ?>
+                        <?php if($modification!=null): ?>
+                        <?php if($image5): ?>
+                        <div class="card-body p-3">
+                            <div class="row">
+                                <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
+                                    <div class="card card-blog card-plain">
+                                        <div class="position-relative">
+                                            <a class="d-block shadow-xl border-radius-xl">
+                                                <img src="<?php echo e($image5->temporaryUrl()); ?>" alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <?php else: ?>
+                        <?php if($imageVue5): ?>
+                        <div class="card-body p-3">
+                            <div class="row">
+                                <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
+                                    <div class="card card-blog card-plain">
+                                        <div class="position-relative">
+                                            <a class="d-block shadow-xl border-radius-xl">
+                                                <img src="<?php echo e(asset('/app/actualite/'.$imageVue5)); ?>" alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <?php endif; ?>
+                        
+                        <?php endif; ?>
+                        
+                        <?php else: ?>
+                        <?php if($image5): ?>
+                        <div class="card-body p-3">
+                            <div class="row">
+                                <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
+                                    <div class="card card-blog card-plain">
+                                        <div class="position-relative">
+                                            <a class="d-block shadow-xl border-radius-xl">
+                                                <img src="<?php echo e($image5->temporaryUrl()); ?>" alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <?php endif; ?>
+                       
+                        <?php endif; ?>
+                            
+                        <?php endif; ?>
+                        
 
                         <div class="form-group">
                             <label for="user.location" class="form-control-label">Lien de vidéo relative à l'article?  (contactez les concepteurs en cas de non comprehension)</label>

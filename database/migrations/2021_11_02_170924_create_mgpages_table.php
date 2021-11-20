@@ -15,8 +15,8 @@ class CreateMgpagesTable extends Migration
     {
         Schema::create('mgpages', function (Blueprint $table) {
             $table->id();
-            $table->string('titre');
-            $table->text('description');
+            $table->string('titre')->nullable();
+            $table->text('description')->nullable();
             $table->text('description2')->nullable();
             $table->string('image')->nullable();
             $table->timestamps();

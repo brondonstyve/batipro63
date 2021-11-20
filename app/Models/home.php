@@ -42,5 +42,8 @@ class home extends Model
         'video',
         'offre',
         'savoir',
+        'titreE',
+        'descriptionE',
+        'imageE',
     ];
 }

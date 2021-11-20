@@ -5,6 +5,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
       <link rel="stylesheet" href="{{ asset('/front-end/assets/css/master.css') }}">
+      {{-- <link rel="stylesheet" href="{{ asset('/front-end/assets/css/responsive.css') }}"> --}}
       <script src="{{ asset('/front-end/assets/js/jquery-1.8.2.min.js') }}"></script>
       
       @yield('css_js')

@@ -54,8 +54,8 @@ class CreateProposTable extends Migration
             $table->string('bureau');
             $table->string('depot');
             $table->string('nb_salarie')->default(0);
-            $table->string('annee_experience');
-            $table->text('description');
+            $table->string('annee_experience')->nullable();
+            $table->text('description')->nullable();
             $table->string('dg');
             
             $table->string('image')->nullable();

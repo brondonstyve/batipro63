@@ -15,12 +15,6 @@
 </section>
 
 
-<section class="container-realisation-projets"   style="background-color: white">
-  <div class="container ">
-    
-  </div>
-</section> 
-
 
 <section class="container-maison-terrain" id="container-intro-projets">
   <div class="container ">
@@ -79,7 +73,7 @@
             
 
               <div class="inner-overlay">
-                 <div class="content-overlay"> 
+                 <div class="content-overlay text-center"> 
                     <div class="content-icone-plus"></div>           
                     <div class="title-project">
                        <h3> <?php echo e($item->libelle); ?> </h3>

@@ -36,11 +36,11 @@ class Billing extends Component
 
     protected $rules=[
         'projet.libelle'=>'required',
-        'projet.annee'=>'required|numeric',
+        'projet.annee'=>'',
         'projet.duree'=>'',
-        'projet.description'=>'required',
+        'projet.description'=>'',
         'projet.lieu'=>'required',
-        'projet.entreprise'=>'required',
+        'projet.entreprise'=>'',
         'projet.service'=>'required',
         'projet.superficie'=>'',
 
@@ -68,7 +68,6 @@ class Billing extends Component
     }
 
     public function updatedImage(){
-
         $this->validate([
             'image.*' => 'image|max:100000', // 1MB Max
         ]);
@@ -79,17 +78,19 @@ class Billing extends Component
                 $this->fill(['image'=>null]);
                 session()->flash('image','Vous ne pouvez télécharger que 6 images maximun');
             }
-            $this->imageAnc=null;
+            
         }
         
         
     }
 
     public function save(){
+
+        ini_set('memory_limit', '-1');
+
         if ($this->projet->duree==null) {
              $this->projet->duree=0;
         }
-        ini_set('memory_limit', '-1');
         $name='';
         $principal='';
         $this->showSuccesNotification = false;
@@ -110,11 +111,11 @@ class Billing extends Component
                 $this->validate(
                     [
                         'projet.libelle'=>'required',
-                        'projet.annee'=>'required|numeric',
+                        'projet.annee'=>'',
                         'projet.duree'=>'',
-                        'projet.description'=>'required',
+                        'projet.description'=>'',
                         'projet.lieu'=>'required',
-                        'projet.entreprise'=>'required',
+                        'projet.entreprise'=>'',
                         'projet.service'=>'required',
                         'projet.superficie'=>'',
                     ]
@@ -141,11 +142,11 @@ class Billing extends Component
                     $this->validate(
                         [
                             'projet.libelle'=>'required',
-                            'projet.annee'=>'required|numeric',
+                            'projet.annee'=>'',
                             'projet.duree'=>'',
-                            'projet.description'=>'required',
+                            'projet.description'=>'',
                             'projet.lieu'=>'required',
-                            'projet.entreprise'=>'required',
+                            'projet.entreprise'=>'',
                             'projet.service'=>'required',
                             'projet.superficie'=>'',
                         ]

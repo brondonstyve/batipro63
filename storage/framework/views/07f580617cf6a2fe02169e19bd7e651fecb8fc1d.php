@@ -15,135 +15,112 @@
           <h1>Vidéos</h1>
           <?php endif; ?>
           
-          <div class="content-subtitle filter-options">  
-            <a href="#"  onclick="present()" id="present"> PRéSENTATIONS </a>
-            <a href="#"  onclick="temoignage()" id='temoignage' > Témoignages </a>
-         </div>
         </div>
     </div>
   </div>
 </section>
 
 
-
-<section class="container-maison-terrain" id="container-intro-maisons">
+<section class="container-maison-terrain" id="container-intro-projets">
   <div class="container ">
-    <br>
-    <br>
+    <?php if(sizeOf($temoignage)==0): ?>
+               
+    <div class="left-bloc-text">
+       <div class="content-text-up">
+         <div class="header-title">
+          <h4>Aucun témoignage enregistré pour le moment.</h4>
+         </div>
+       </div>
+     </div> 
+ <?php endif; ?>
 
-    <div id="p">
-      <div  class="text-center">
-        <div >
-          <div >
-            <?php if($infos): ?>
-          <h3 class="green" style="text-transform: uppercase"> <?php echo e($infos->titre1); ?> </h3>
-          <h1> <?php echo e($infos->description1); ?> </h1>
-              
-          <?php else: ?>
-          <h3 class="green" style="text-transform: uppercase"> Présentation </h3>
-          <h1>Parcourez nos différentes presentations vidéo ici.</h1>
-
-              
-          <?php endif; ?>
-          </div>
-        </div>
-      </div> 
-      <br>
-
-
-      <div class="flex" style=" padding: 30px" > 
-        <?php if(sizeOf($temoignage)==0): ?>
-            <h1>Aucune presentation enregistrée pour le moment.</h1>
-            
-        <?php else: ?>
-            <?php $__currentLoopData = $temoignage; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-            <?php if($item->type=='Presentation'): ?>
-                  <div class="" style="margin-right: 1%">
-                    <div class="" >
-                        <iframe title="<?php echo e($item->description); ?>" src="<?php echo e($item->lien); ?>" width="560" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen=""></iframe>
-                    </div>
-                    <div class="wpb_wrapper">
-                      <p><strong><?php echo e($item->auteur); ?></strong>
-                        <br>
-                        <br>
-                       <?php echo e($item->description); ?>
-
-                    </p>
-                
-                    </div>
-                    
-                  </div>
-                  <?php endif; ?>
-          <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+ <div class="left-bloc-text" data-groups='["t"]'>
+  <div class="content-text-up">
+    <div class="header-title">
+      <?php if($infos): ?>
+      <h3 class="green"><?php echo e($infos->titre); ?></h3>
+      <h4><?php echo e($infos->description); ?></h4>
+      
       <?php endif; ?>
-</div>
+      
+    </div>
+  </div>
+</div> 
+    <div class="content-list-projects1">
 
-</div>
+      <div class="projects-categories filter-options">
 
+        
+        <button  data-group="p">Présentation</button>
+        <button  data-group="t">Témoignage</button>
+        
+               
+        
+         
+      </div>
 
-  <div id="t">
-
-    <div  class="text-center">
-      <div >
-        <div >
+       <div class="content-projects-wrapper1">
+        <div id="grid" class="flex my-shuffle-container space-around">
           
+        <?php $__currentLoopData = $temoignage; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key=>$item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+        <?php if($item->type=='Temoignage'): ?> 
+        <div class="content-project-wrapper1 hg-height" data-groups='["t"]'>
+          <div class="project-inner">
+          
+            <iframe title="<?php echo e($item->description); ?>" src="<?php echo e($item->lien); ?>" class="frame" style="width: 100%;height: 300px;" width="400" height="300" frameborder="0" allow="autoplay; fullscreen" allowfullscreen=""></iframe>
 
-          <br>
-          <?php if($infos): ?>
-          <h3 class="green" style="text-transform: uppercase"> <?php echo e($infos->titre); ?> </h3>
-          <h1> <?php echo e($infos->description); ?> </h1>
-              
-          <?php else: ?>
-          <h3 class="green" style="text-transform: uppercase"> Témoignages </h3>
-          <h1>Parcourez nos différents témoignages vidéo ici.</h1>
+               <div class="content-overlay">          
+                  <div class="title-project">
+                     <h3> <?php echo e($item->auteur); ?> </h3>
+                  </div>
+                  <div class="content-title-category">
+                    <?php echo e($item->description); ?>
 
-              
-          <?php endif; ?>
+                  </div>
+               </div>
+
         </div>
       </div>
-    </div> 
-    <br>
 
-   
+      <?php else: ?>
+      <div class="content-project-wrapper1 hg-height" data-groups='["p"]'>
+        <div class="project-inner">
+        
+          <iframe title="<?php echo e($item->description); ?>" src="<?php echo e($item->lien); ?>" class="frame" style="width: 100%;height: 300px;" width="400" height="300" frameborder="0" allow="autoplay; fullscreen" allowfullscreen=""></iframe>
 
-          
-        <div class="flex" style=" padding: 30px"> 
-              <?php if(sizeOf($temoignage)==0): ?>
-                  <h1>Aucun témoignage enregistré pour le moment.</h1>
-                  
-              <?php else: ?>
-                  <?php $__currentLoopData = $temoignage; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                  <?php if($item->type=='Temoignage'): ?>
-                  <div class="" style="margin-right: 1%">
-                    <div class="" >
-                        <iframe title="<?php echo e($item->description); ?>" src="<?php echo e($item->lien); ?>" width="560" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen=""></iframe>
-                    </div>
-                    <div class="wpb_wrapper">
-                      <p><strong><?php echo e($item->auteur); ?></strong>
-                        <br>
-                        <br>
-                       <?php echo e($item->description); ?>
+             <div class="content-overlay">          
+                <div class="title-project">
+                   <h3> <?php echo e($item->auteur); ?> </h3>
+                </div>
+                <div class="content-title-category">
+                  <?php echo e($item->description); ?>
 
-                    </p>
-                
-                    </div>
-                    
-                  </div>
-                  <?php endif; ?>
-                 
-                  <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-              <?php endif; ?>
+                </div>
+             </div>
+
       </div>
     </div>
+        <?php endif; ?>
+         
+  
+            
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+        
+      </div>
+      <div class="my-sizer-element"></div>
 
+    </div>
 
-
-    
-
-
-
+    </div>
   </div>
 </section>
+
+
+
+
+
+
+
 
 <?php $__env->stopSection(); ?>
 
@@ -175,7 +152,8 @@ $( document ).ready(function() {
 
 
 </script>
-
+<script src='https://unpkg.com/shufflejs@5'></script>
+<script  src="<?php echo e(asset('/front-end/assets/js/script.js')); ?>"></script>
 <?php $__env->startSection('script'); ?>
 
 

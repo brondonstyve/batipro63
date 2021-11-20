@@ -31,15 +31,15 @@
                     <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('send-mail-terrain')->html();
-} elseif ($_instance->childHasBeenRendered('oFdBO9a')) {
-    $componentId = $_instance->getRenderedChildComponentId('oFdBO9a');
-    $componentTag = $_instance->getRenderedChildComponentTagName('oFdBO9a');
+} elseif ($_instance->childHasBeenRendered('WoV2hfD')) {
+    $componentId = $_instance->getRenderedChildComponentId('WoV2hfD');
+    $componentTag = $_instance->getRenderedChildComponentTagName('WoV2hfD');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('oFdBO9a');
+    $_instance->preserveRenderedChild('WoV2hfD');
 } else {
     $response = \Livewire\Livewire::mount('send-mail-terrain');
     $html = $response->html();
-    $_instance->logRenderedChild('oFdBO9a', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('WoV2hfD', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>
@@ -50,26 +50,11 @@ echo $html;
               </section>
 <section class="container-maison-terrain" id="container-intro-projets">
   <div class="container ">
-    <div class="left-bloc-text">
-      <div class="content-text-up">
-        <div class="header-title">
-          <h3 class="green">sur le territoire français</h3>
-          <h4>Des terrains disponibles pour vous.</h4>
-        </div>
-      </div>
-    </div>
+    
 
-
-    <?php if(sizeOf($projets)==0): ?>
-
-    <div class="left-bloc-text">
-      <div class="content-text-up">
-        <div class="header-title">
-          <h4>Aucun terrain enregistré pour le moment.</h4>
-        </div>
-      </div>
-    </div>
-    <?php endif; ?>
+    <br>
+    <br>
+   
     <div class="content-list-projects ">
       <div class="content-projects-wrapper">
         <div id="grid" class="flex my-shuffle-container space-around">

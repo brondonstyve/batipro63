@@ -18,10 +18,13 @@ class Actus extends Component
         return actualite::where([
             [
                 'domaine','like',"%$this->domaine%"
-            ]
+                
+            ],
+            ['titre','<>','Choisir ses menuiseries'],
+            
         ])
         ->orderBy('id','desc')
-        ->paginate(6);
+        ->paginate(12);
 
     }
 

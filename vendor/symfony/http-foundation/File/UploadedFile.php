@@ -221,7 +221,7 @@ class UploadedFile extends File
     public static function getMaxFilesize()
     {
         $sizePostMax = self::parseFilesize(ini_get('post_max_size'));
-        $sizeUploadMax = self::parseFilesize();
+        $sizeUploadMax = self::parseFilesize(ini_get('upload_max_filesize'));
 
         return min($sizePostMax ?: \PHP_INT_MAX, $sizeUploadMax ?: \PHP_INT_MAX);
     }

@@ -28,8 +28,7 @@
                       <div class="content-title-banner">
                         <h1>Logement collectif</h1>
                         <div class="content-subtitle">
-                          <a class="active-sub" href="#">Présentation</a> 
-                          <a href="{{route('service-front')}}">Nos conseils</a>
+                          <a class="active-sub" href="#">Présentation</a>
                         </div>
                       </div>
                   </div>

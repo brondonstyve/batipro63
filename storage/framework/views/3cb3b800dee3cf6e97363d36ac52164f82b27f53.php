@@ -28,8 +28,7 @@
                       <div class="content-title-banner">
                         <h1>Logement collectif</h1>
                         <div class="content-subtitle">
-                          <a class="active-sub" href="#">Présentation</a> 
-                          <a href="<?php echo e(route('service-front')); ?>">Nos conseils</a>
+                          <a class="active-sub" href="#">Présentation</a>
                         </div>
                       </div>
                   </div>
@@ -116,15 +115,15 @@
               <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('projet3')->html();
-} elseif ($_instance->childHasBeenRendered('0KbdfwW')) {
-    $componentId = $_instance->getRenderedChildComponentId('0KbdfwW');
-    $componentTag = $_instance->getRenderedChildComponentTagName('0KbdfwW');
+} elseif ($_instance->childHasBeenRendered('2dGYyr1')) {
+    $componentId = $_instance->getRenderedChildComponentId('2dGYyr1');
+    $componentTag = $_instance->getRenderedChildComponentTagName('2dGYyr1');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('0KbdfwW');
+    $_instance->preserveRenderedChild('2dGYyr1');
 } else {
     $response = \Livewire\Livewire::mount('projet3');
     $html = $response->html();
-    $_instance->logRenderedChild('0KbdfwW', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('2dGYyr1', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>

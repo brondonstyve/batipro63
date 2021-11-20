@@ -12,7 +12,7 @@
         <div class="container flex">
             
            <div class="container-main">
-              <section class="container-banner" style="background-image:url({{ asset('/app/projet/'.$projet->img_principale)}}); width: 1422px;height: 500px;background-repeat: no-repeat">
+              <section class="container-banner" style="background-image:url({{ asset('/app/projet/'.$projet->img_principale)}}); min-width: 1422px;height: 500px;background-repeat: repeat">
                 <div class="container">
                   <div class="inner-container">
                       <div class="content-title-banner">

@@ -28,8 +28,6 @@
                         <h1>Maisons Contemporaines</h1>
                         <div class="content-subtitle">
                           <a class="active-sub" href="#">Présentation</a>
-                          <a href="{{route('service-front')}}">Notre approche</a>
-                          <a href="{{route('service-front')}}">Nos conseils</a>
                         </div>
                       </div>
                   </div>

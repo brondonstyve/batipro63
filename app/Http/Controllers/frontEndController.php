@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\actualite;
+use App\Models\etape;
 use App\Models\home;
 use App\Models\maison;
 use App\Models\maisonContemporaine;
@@ -11,6 +12,7 @@ use App\Models\maisonpage;
 use App\Models\mcpage;
 use App\Models\lcpage;
 use App\Models\membre;
+use App\Models\mgpage;
 use App\Models\projet;
 use App\Models\projetpage;
 use App\Models\propo;
@@ -159,7 +161,9 @@ class frontEndController extends Controller
     public function mg(){
 
         $about=propo::first();
-        return view('front-end.mg',compact('about'));
+        $infos=mgpage::first();
+
+        return view('front-end.mg',compact('about','infos'));
     }
 
     public function lc(){
@@ -254,6 +258,18 @@ class frontEndController extends Controller
         $infos=tpage::first();
 
         return view('front-end.temoignage',compact('about','temoignage','infos'));
+    }
+
+    public function mo(){ 
+
+        $about=propo::first();
+
+        return view('front-end.maitriseOeuvre',compact('about'));
+    }
+
+    public function etape(){
+        $etape=etape::first();
+        return view('front-end.etape',compact('etape'));
     }
     
 }

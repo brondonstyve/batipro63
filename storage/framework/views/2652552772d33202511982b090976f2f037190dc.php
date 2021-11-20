@@ -6,15 +6,15 @@
 <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('front.actus')->html();
-} elseif ($_instance->childHasBeenRendered('IoMPsAx')) {
-    $componentId = $_instance->getRenderedChildComponentId('IoMPsAx');
-    $componentTag = $_instance->getRenderedChildComponentTagName('IoMPsAx');
+} elseif ($_instance->childHasBeenRendered('JZ0xe1j')) {
+    $componentId = $_instance->getRenderedChildComponentId('JZ0xe1j');
+    $componentTag = $_instance->getRenderedChildComponentTagName('JZ0xe1j');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('IoMPsAx');
+    $_instance->preserveRenderedChild('JZ0xe1j');
 } else {
     $response = \Livewire\Livewire::mount('front.actus');
     $html = $response->html();
-    $_instance->logRenderedChild('IoMPsAx', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('JZ0xe1j', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>

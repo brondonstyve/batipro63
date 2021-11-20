@@ -131,61 +131,54 @@
                             </div>
 
                             @if ($modification!=null)
-                     
-                                    
-                                    @if ($image)
-                                    <div class="card-body p-3">
-                                        <div class="row">
-                                            <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
-                                                <div class="card card-blog card-plain">
-                                                    <div class="position-relative">
-                                                        <a class="d-block shadow-xl border-radius-xl">
-                                                            <img src=" {!! $image->temporaryUrl() !!} " alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            
-                                            
-                                        </div>
-                                    </div>
-                                    @else
-                                    @if ($actualite->image)
-                                    <div class="card-body p-3">
-                                        <div class="row">
-                                            <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
-                                                <div class="card card-blog card-plain">
-                                                    <div class="position-relative">
-                                                        <a class="d-block shadow-xl border-radius-xl">
-                                                            <img src="{{asset('/app/actualite/'.$actualite->image)}} " alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
-                                                        </a>
-                                                    </div>
-                                                </div>
+                            @if ($image)
+                            <div class="card-body p-3">
+                                <div class="row">
+                                    <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
+                                        <div class="card card-blog card-plain">
+                                            <div class="position-relative">
+                                                <a class="d-block shadow-xl border-radius-xl">
+                                                    <img src="{{$image->temporaryUrl()}}" alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
-                                    @endif
-                                    @endif
-
-                                    @else
-                                        @if ($image)
-                                        <div class="card-body p-3">
-                                            <div class="row">
-                                                <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
-                                                    <div class="card card-blog card-plain">
-                                                        <div class="position-relative">
-                                                            <a class="d-block shadow-xl border-radius-xl">
-                                                                <img src=" {!! $image->temporaryUrl() !!} " alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
-                                                            </a>
-
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                </div>
+                            </div>
+                            @else
+                            <div class="card-body p-3">
+                                <div class="row">
+                                    <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
+                                        <div class="card card-blog card-plain">
+                                            <div class="position-relative">
+                                                <a class="d-block shadow-xl border-radius-xl">
+                                                    <img src="{{asset('/app/actualite/'.$imageVue)}}" alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
+                                                </a>
                                             </div>
                                         </div>
-                                        @endif
-                                                        
-                                     @endif
+                                    </div>
+                                </div>
+                            </div>
+                            @endif
+                            
+                            @else
+                            @if ($image)
+                            <div class="card-body p-3">
+                                <div class="row">
+                                    <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
+                                        <div class="card card-blog card-plain">
+                                            <div class="position-relative">
+                                                <a class="d-block shadow-xl border-radius-xl">
+                                                    <img src="{{$image->temporaryUrl()}}" alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            @endif
+                           
+                            @endif
 
 
 
@@ -226,7 +219,7 @@
                             <div class="form-group">
                                 <label for="user-name" class="form-control-label">Titre du bloc</label>
                                 <div class="">
-                                    <input wire:model.lazy="actualite.titre{{$i}}" class="form-control" type="text" placeholder="titre du bloc {{$i}}" id="user-name" @if($i==1) required @endif>
+                                    <input wire:model.lazy="actualite.titre{{$i}}" class="form-control" type="text" placeholder="titre du bloc {{$i}}" id="user-name" >
                                 </div>
                               </div>
                               
@@ -236,7 +229,7 @@
                     <div class="form-group">
                         <label for="about">Article  </label>
                         <div class="">
-                            <textarea wire:model.lazy="actualite.article{{$i}}" class="form-control" id="about" rows="7" placeholder="Ecrivez à propos de l'article" @if($i==1) required @endif></textarea>
+                            <textarea wire:model.lazy="actualite.article{{$i}}" class="form-control" id="about" rows="7" placeholder="Ecrivez à propos de l'article" ></textarea>
                         </div>
                      </div>
                      
@@ -255,295 +248,295 @@
                                 Patientez le chargement de(s) image(s)...
                               </button>
                         </div>
+                        @if ($i==1)
+                        @if ($modification!=null)
+                        @if ($image1)
+                        <div class="card-body p-3">
+                            <div class="row">
+                                <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
+                                    <div class="card card-blog card-plain">
+                                        <div class="position-relative">
+                                            <a class="d-block shadow-xl border-radius-xl">
+                                                <img src="{{$image1->temporaryUrl()}}" alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        @else
+                        @if ($imageVue1)
+                        <div class="card-body p-3">
+                            <div class="row">
+                                <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
+                                    <div class="card card-blog card-plain">
+                                        <div class="position-relative">
+                                            <a class="d-block shadow-xl border-radius-xl">
+                                                <img src="{{asset('/app/actualite/'.$imageVue1)}}" alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        @endif
+                       
+                        @endif
                         
-                     @if ($modification!=null)
-                     
-                     @if ($i==1)
-                     @if ($image1)
-                     <div class="card-body p-3">
-                        <div class="row">
-                            <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
-                                <div class="card card-blog card-plain">
-                                    <div class="position-relative">
-                                        <a class="d-block shadow-xl border-radius-xl">
-                                            <img src=" {!! $image1->temporaryUrl() !!} " alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            
-                        </div>
-                    </div>
-                     @else
-                     @if ($actualite->image1)
-                     <div class="card-body p-3">
-                         <div class="row">
-                             <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
-                                 <div class="card card-blog card-plain">
-                                     <div class="position-relative">
-                                         <a class="d-block shadow-xl border-radius-xl">
-                                             <img src="{{asset('/app/actualite/'.$actualite->image1)}} " alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
-                                         </a>
-                                         <button type="button" class="btn bg-gradient-danger btn-md mt-4 mb-4" wire:click='removeImg("{{$actualite->image1}}",{{$i}})'>Enlever</button>
-
-                                     </div>
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-                     @endif
-                     @endif
-                    @endif
-
-
-                    @if ($i==2)
-                     @if ($image2)
-                     <div class="card-body p-3">
-                        <div class="row">
-                            <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
-                                <div class="card card-blog card-plain">
-                                    <div class="position-relative">
-                                        <a class="d-block shadow-xl border-radius-xl">
-                                            <img src=" {!! $image2->temporaryUrl() !!} " alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            
-                        </div>
-                    </div>
-                     @else
-                     @if ($actualite->image2)
-                     <div class="card-body p-3">
-                         <div class="row">
-                             <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
-                                 <div class="card card-blog card-plain">
-                                     <div class="position-relative">
-                                         <a class="d-block shadow-xl border-radius-xl">
-                                             <img src="{{asset('/app/actualite/'.$actualite->image2)}} " alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
-                                         </a>
-                                         <button type="button" class="btn bg-gradient-danger btn-md mt-4 mb-4" wire:click='removeImg("{{$actualite->image2}}",{{$i}})'>Enlever</button>
-
-                                     </div>
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-                     @endif
-                     @endif
-                    @endif
-                    
-
-                    @if ($i==3)
-                     @if ($image3)
-                     <div class="card-body p-3">
-                        <div class="row">
-                            <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
-                                <div class="card card-blog card-plain">
-                                    <div class="position-relative">
-                                        <a class="d-block shadow-xl border-radius-xl">
-                                            <img src=" {!! $image3->temporaryUrl() !!} " alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            
-                        </div>
-                    </div>
-                     @else
-                     @if ($actualite->image3)
-                     <div class="card-body p-3">
-                         <div class="row">
-                             <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
-                                 <div class="card card-blog card-plain">
-                                     <div class="position-relative">
-                                         <a class="d-block shadow-xl border-radius-xl">
-                                             <img src="{{asset('/app/actualite/'.$actualite->image3)}} " alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
-                                         </a>
-                                         <button type="button" class="btn bg-gradient-danger btn-md mt-4 mb-4" wire:click='removeImg("{{$actualite->image3}}",{{$i}})'>Enlever</button>
-
-                                     </div>
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-                     @endif
-                     @endif
-                    @endif
-
-
-                    @if ($i==4)
-                     @if ($image4)
-                     <div class="card-body p-3">
-                        <div class="row">
-                            <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
-                                <div class="card card-blog card-plain">
-                                    <div class="position-relative">
-                                        <a class="d-block shadow-xl border-radius-xl">
-                                            <img src=" {!! $image4->temporaryUrl() !!} " alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            
-                        </div>
-                    </div>
-                     @else
-                     @if ($actualite->image4)
-                     <div class="card-body p-3">
-                         <div class="row">
-                             <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
-                                 <div class="card card-blog card-plain">
-                                     <div class="position-relative">
-                                         <a class="d-block shadow-xl border-radius-xl">
-                                             <img src="{{asset('/app/actualite/'.$actualite->image4)}} " alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
-                                         </a>
-                                         <button type="button" class="btn bg-gradient-danger btn-md mt-4 mb-4" wire:click='removeImg("{{$actualite->image4}}",{{$i}})'>Enlever</button>
-                                        </div>
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-                     @endif
-                     @endif
-                    @endif
-
-                    @if ($i==5)
-                     @if ($image5)
-                     <div class="card-body p-3">
-                        <div class="row">
-                            <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
-                                <div class="card card-blog card-plain">
-                                    <div class="position-relative">
-                                        <a class="d-block shadow-xl border-radius-xl">
-                                            <img src=" {!! $image5->temporaryUrl() !!} " alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            
-                        </div>
-                    </div>
-                     @else
-                     @if ($actualite->image5)
-                     <div class="card-body p-3">
-                         <div class="row">
-                             <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
-                                 <div class="card card-blog card-plain">
-                                     <div class="position-relative">
-                                         <a class="d-block shadow-xl border-radius-xl">
-                                             <img src="{{asset('/app/actualite/'.$actualite->image5)}} " alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
-                                         </a>
-                                         <button type="button" class="btn bg-gradient-danger btn-md mt-4 mb-4" wire:click='removeImg("{{$actualite->image5}}",{{$i}})'>Enlever</button>
-                                        </div>
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-                     @endif
-                     @endif
-                    @endif
-                     
-                     @else
-                         
-                    
-
-                        @if ($i==1 && $image1)
+                        @else
+                        @if ($image1)
                         <div class="card-body p-3">
                             <div class="row">
                                 <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
                                     <div class="card card-blog card-plain">
                                         <div class="position-relative">
                                             <a class="d-block shadow-xl border-radius-xl">
-                                                <img src=" {!! $image1->temporaryUrl() !!} " alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
+                                                <img src="{{$image1->temporaryUrl()}}" alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
                                             </a>
-
                                         </div>
                                     </div>
                                 </div>
-                                
-                                
                             </div>
                         </div>
                         @endif
+                       
+                        @endif
+                            
+                        @endif
 
-                        @if ($i==2 && $image2)
+
+
+
+                        @if ($i==2)
+                        @if ($modification!=null)
+                        @if ($image2)
                         <div class="card-body p-3">
                             <div class="row">
                                 <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
                                     <div class="card card-blog card-plain">
                                         <div class="position-relative">
                                             <a class="d-block shadow-xl border-radius-xl">
-                                                <img src=" {!! $image2->temporaryUrl() !!} " alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
+                                                <img src="{{$image2->temporaryUrl()}}" alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
                                             </a>
                                         </div>
                                     </div>
                                 </div>
-                                
-                                
                             </div>
                         </div>
-                        @endif
-
-                        @if ($i==3 && $image3)
+                        @else
+                        @if ($imageVue2)
                         <div class="card-body p-3">
                             <div class="row">
                                 <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
                                     <div class="card card-blog card-plain">
                                         <div class="position-relative">
                                             <a class="d-block shadow-xl border-radius-xl">
-                                                <img src=" {!! $image3->temporaryUrl() !!} " alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
+                                                <img src="{{asset('/app/actualite/'.$imageVue2)}}" alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
                                             </a>
                                         </div>
                                     </div>
                                 </div>
-                                
-                                
                             </div>
                         </div>
                         @endif
-
-                        @if ($i==4 && $image4)
+                        
+                        @endif
+                        
+                        @else
+                        @if ($image2)
                         <div class="card-body p-3">
                             <div class="row">
                                 <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
                                     <div class="card card-blog card-plain">
                                         <div class="position-relative">
                                             <a class="d-block shadow-xl border-radius-xl">
-                                                <img src=" {!! $image4->temporaryUrl() !!} " alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
+                                                <img src="{{$image2->temporaryUrl()}}" alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
                                             </a>
                                         </div>
                                     </div>
                                 </div>
-                                
-                                
                             </div>
                         </div>
                         @endif
+                       
+                        @endif
+                            
+                        @endif
 
-                        @if ($i==5 && $image5)
+
+
+
+                        @if ($i==3)
+                        @if ($modification!=null)
+                        @if ($image3)
                         <div class="card-body p-3">
                             <div class="row">
                                 <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
                                     <div class="card card-blog card-plain">
                                         <div class="position-relative">
                                             <a class="d-block shadow-xl border-radius-xl">
-                                                <img src=" {!! $image5->temporaryUrl() !!} " alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
+                                                <img src="{{$image3->temporaryUrl()}}" alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
                                             </a>
                                         </div>
                                     </div>
                                 </div>
-                                
-                                
+                            </div>
+                        </div>
+                        @else
+                        @if ($imageVue3)
+                        <div class="card-body p-3">
+                            <div class="row">
+                                <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
+                                    <div class="card card-blog card-plain">
+                                        <div class="position-relative">
+                                            <a class="d-block shadow-xl border-radius-xl">
+                                                <img src="{{asset('/app/actualite/'.$imageVue3)}}" alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         @endif
+                       
                         @endif
+                        
+                        @else
+                        @if ($image3)
+                        <div class="card-body p-3">
+                            <div class="row">
+                                <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
+                                    <div class="card card-blog card-plain">
+                                        <div class="position-relative">
+                                            <a class="d-block shadow-xl border-radius-xl">
+                                                <img src="{{$image3->temporaryUrl()}}" alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        @endif
+                       
+                        @endif
+                            
+                        @endif
+
+
+
+                        @if ($i==4)
+                        @if ($modification!=null)
+                        @if ($image4)
+                        <div class="card-body p-3">
+                            <div class="row">
+                                <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
+                                    <div class="card card-blog card-plain">
+                                        <div class="position-relative">
+                                            <a class="d-block shadow-xl border-radius-xl">
+                                                <img src="{{$image4->temporaryUrl()}}" alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        @else
+                        @if ($imageVue4)
+                        <div class="card-body p-3">
+                            <div class="row">
+                                <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
+                                    <div class="card card-blog card-plain">
+                                        <div class="position-relative">
+                                            <a class="d-block shadow-xl border-radius-xl">
+                                                <img src="{{asset('/app/actualite/'.$imageVue4)}}" alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        @endif
+                        
+                        @endif
+                        
+                        @else
+                        @if ($image4)
+                        <div class="card-body p-3">
+                            <div class="row">
+                                <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
+                                    <div class="card card-blog card-plain">
+                                        <div class="position-relative">
+                                            <a class="d-block shadow-xl border-radius-xl">
+                                                <img src="{{$image4->temporaryUrl()}}" alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        @endif
+                       
+                        @endif
+                            
+                        @endif
+
+
+                        @if ($i==5)
+                        @if ($modification!=null)
+                        @if ($image5)
+                        <div class="card-body p-3">
+                            <div class="row">
+                                <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
+                                    <div class="card card-blog card-plain">
+                                        <div class="position-relative">
+                                            <a class="d-block shadow-xl border-radius-xl">
+                                                <img src="{{$image5->temporaryUrl()}}" alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        @else
+                        @if ($imageVue5)
+                        <div class="card-body p-3">
+                            <div class="row">
+                                <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
+                                    <div class="card card-blog card-plain">
+                                        <div class="position-relative">
+                                            <a class="d-block shadow-xl border-radius-xl">
+                                                <img src="{{asset('/app/actualite/'.$imageVue5)}}" alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        @endif
+                        
+                        @endif
+                        
+                        @else
+                        @if ($image5)
+                        <div class="card-body p-3">
+                            <div class="row">
+                                <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
+                                    <div class="card card-blog card-plain">
+                                        <div class="position-relative">
+                                            <a class="d-block shadow-xl border-radius-xl">
+                                                <img src="{{$image5->temporaryUrl()}}" alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        @endif
+                       
+                        @endif
+                            
+                        @endif
+                        
 
                         <div class="form-group">
                             <label for="user.location" class="form-control-label">Lien de vidéo relative à l'article?  (contactez les concepteurs en cas de non comprehension)</label>

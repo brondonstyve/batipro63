@@ -13,7 +13,7 @@
       <div class="container-main-bloc">
         <div class="container flex">
            <div class="container-main">
-            <section class="container-banner" style="background-image:url({{asset('assets/img/bg-detail-blog.jpg')}})">
+            <section class="container-banner" style="background-image:url({{asset('assets/img/bg-detail-blog.jpg')}});">
 
                 <div class="container">
                   <div class="inner-container">
@@ -36,10 +36,10 @@
                     
                         <h3>{!!$actualite->titre1!!}</h3>
                         <p class="text-justify">{!!$actualite->article1!!}</p>
-                        <div class="content-image-video ">
+                        <div class="content-image-video">
 
                             @if ($actualite->image1!=null)
-                                <img src="{{asset('/app/actualite/'.$actualite->image1)}}" alt="">
+                                <img src="{{asset('/app/actualite/'.$actualite->image1)}}" alt="" style="max-height: 500px;max-width: 500;"> 
                                 
                             @endif
                         
@@ -56,13 +56,13 @@
                         <br>
                         <br>
 
-                        @if ($actualite->titre2!=null)
+                        
                             <h3>{!!$actualite->titre2!!}</h3>
                             <p class="text-justify">{!!$actualite->article2!!}</p>
                             <div class="content-image-video ">
 
                                 @if ($actualite->image2!=null)
-                                    <img src="{{asset('/app/actualite/'.$actualite->image2)}}" alt="">
+                                    <img src="{{asset('/app/actualite/'.$actualite->image2)}}" alt="" style="max-height: 500px;max-width: 500;"> 
                                     
                                 @endif
                             
@@ -75,18 +75,18 @@
                             <iframe width="560" height="315" src=" {{$actualite->video2}} " title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                          
                             @endif
                             </div>
-                        @endif
+                            
 
                         <br>
                         <br>
 
-                        @if ($actualite->titre3!=null)
+                        
                             <h3>{!!$actualite->titre3!!}</h3>
                             <p class="text-justify">{!!$actualite->article3!!}</p>
                             <div class="content-image-video ">
 
                                 @if ($actualite->image3!=null)
-                                    <img src="{{asset('/app/actualite/'.$actualite->image3)}}" alt="">
+                                    <img src="{{asset('/app/actualite/'.$actualite->image3)}}" alt="" style="max-height: 500px;max-width: 500;">
                                     
                                 @endif
                             
@@ -99,18 +99,18 @@
                             <iframe width="560" height="315" src=" {{$actualite->video3}} " title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                          
                             @endif
                             </div>
-                        @endif
+                            
 
                         <br>
                         <br>
 
-                        @if ($actualite->titre4!=null)
+                        
                             <h3>{!!$actualite->titre4!!}</h3>
                             <p class="text-justify">{!!$actualite->article4!!}</p>
                             <div class="content-image-video ">
 
                                 @if ($actualite->image4!=null)
-                                    <img src="{{asset('/app/actualite/'.$actualite->image4)}}" alt="">
+                                    <img src="{{asset('/app/actualite/'.$actualite->image4)}}" alt="" style="max-height: 500px;max-width: 500;">
                                     
                                 @endif
                             
@@ -123,18 +123,17 @@
                             <iframe width="560" height="315" src=" {{$actualite->video4}} " title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                          
                             @endif
                             </div>
-                        @endif
 
                         <br>
                         <br>
 
-                        @if ($actualite->titre5!=null)
+                        
                             <h3>{!!$actualite->titre5!!}</h3>
                             <p class="text-justify">{!!$actualite->article5!!}</p>
                             <div class="content-image-video ">
 
                                 @if ($actualite->image5!=null)
-                                    <img src="{{asset('/app/actualite/'.$actualite->image5)}}" alt="">
+                                    <img src="{{asset('/app/actualite/'.$actualite->image5)}}" alt="" style="max-height: 500px;max-width: 500;">
                                     
                                 @endif
                             
@@ -147,7 +146,6 @@
                             <iframe width="560" height="315" src=" {{$actualite->video5}} " title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                          
                             @endif
                             </div>
-                        @endif
 
                     
                     <div class="content-social-media">
@@ -173,7 +171,7 @@
                     <br>
                     <div class="content-author flex">
                       <div class="content-img-Author">
-                        <img src="{{asset('/app/actualite/'.$actualite->image)}}" alt="">
+                        <img src="{{asset('/app/actualite/'.$actualite->image)}}" alt="" style="max-height: 70px;max-width: 80;">
                       </div>
                       <div class="cntent-name ">
                         <h6>{{$actualite->auteur}}</h6>

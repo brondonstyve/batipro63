@@ -2,7 +2,7 @@
     <section class="container-banner" >
         <div class="container">
           <div class="inner-container">
-              <div class="content-title-banner">
+              <div class="content-title-banner"  style="min-width: 100%">
                 <h1>Blog</h1>
                 <div class="content-subtitle">
                   @if (sizeOf($this->domain)>0)
@@ -31,8 +31,8 @@
               @else
               @foreach ($this->actualite as $actua)
               <article class="article-wrapper">
-                <div class="image-article ">
-                  <img src="{{asset('/app/actualite/'.$actua->image)}}" alt="">
+                <div class="image-article " >
+                  <img src="{{asset('/app/actualite/'.$actua->image)}}" alt="" style="max-height: 250px;"> 
                 </div>
                 <div class="conent-text-article-wrapper">
                   <div class="category-article green"> {{$actua->domaine}} </div>

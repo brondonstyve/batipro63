@@ -2,9 +2,16 @@
 {{--  @extends('front-end/partials/base', ['title' => 'Batipro63 – Notre métier, la construction sur mesure ', ] )  --}}
 
 @section('css_js')
+
+      <link rel="stylesheet" href="{{ asset('/front-end/assets/masterslider/style/masterslider.css') }}"/>
+
     <link rel="stylesheet" href="{{ asset('/front-end/assets/slick/slick-theme.css') }}">
     <link rel="stylesheet" href="{{ asset('/front-end/assets/slick/slick.css') }}">
-        
+
+    
+    <link rel="stylesheet" href="{{ asset('/front-end/assets/masterslider/skins/default/style.css') }}"/>
+    <script src="{{ asset('/front-end/assets/masterslider/masterslider.min.js') }}"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 @endsection
 @section('content')
 @if ($about)
@@ -63,25 +70,9 @@
           <img src="{!!asset('/app/apropos/'.$about->imageB1)!!}" alt="">
           <img src="{!!asset('/app/apropos/'.$about->imageB2)!!}" alt="">
         </div>
-        <div class="content-btn-navigation">
-          <div class="prev ">
-            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 34.075 34.075" style="enable-background:new 0 0 34.075 34.075;" xml:space="preserve">
-                    <path style="fill:#010002;" d="M24.57,34.075c-0.505,0-1.011-0.191-1.396-0.577L8.11,18.432c-0.771-0.771-0.771-2.019,0-2.79
-                        L23.174,0.578c0.771-0.771,2.02-0.771,2.791,0s0.771,2.02,0,2.79l-13.67,13.669l13.67,13.669c0.771,0.771,0.771,2.021,0,2.792
-                        C25.58,33.883,25.075,34.075,24.57,34.075z"/>
-            </svg>
-          </div>
-          <div class="next ">
-            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"  viewBox="0 0 34.1 34.1" style="enable-background:new 0 0 34.1 34.1;" xml:space="preserve">
-
-                      <path class="st0" d="M9.1,0.2c0.5,0,1,0.2,1.4,0.5l15.4,14.7c0.8,0.8,0.8,2,0.1,2.8L11.3,33.6c-0.8,0.8-2,0.8-2.8,0.1
-                        s-0.8-2-0.1-2.8l13.4-14L7.8,3.6C7,2.8,7,1.6,7.7,0.8C8.1,0.4,8.6,0.2,9.1,0.2z"/>
-
-            </svg>
-          </div>
-        </div>
       </div>
     </div>
+
   </div>
   @else
   <div class="container flex between">
@@ -463,38 +454,47 @@
         @endif
           
       </div>
-      <div class="content-navigation">
-          <div class="prev"><img src="{{ asset('/front-end/assets/img/arrow.png') }}" alt=""></div>
-          <div class="next"><img src="{{ asset('/front-end/assets/img/right-arrow.png') }}" alt=""></div>
-      </div>
     </div>
   </div>
 </section>
+
+
 @endsection
 
 @section('script')
 <script src="{{ asset('/front-end/assets/slick/slick.min.js') }}"></script>
+
+
 <script type="text/javascript">
   $('#content-innner-slider').slick({
-    prevArrow: $('#inner-team .prev'),
-    nextArrow: $('#inner-team .next'),
+    dots: false,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows:true,
+    prevArrow: '<div class="prev "><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 34.075 34.075" style="enable-background:new 0 0 34.075 34.075;" xml:space="preserve"><path style="fill:#010002;" d="M24.57,34.075c-0.505,0-1.011-0.191-1.396-0.577L8.11,18.432c-0.771-0.771-0.771-2.019,0-2.79L23.174,0.578c0.771-0.771,2.02-0.771,2.791,0s0.771,2.02,0,2.79l-13.67,13.669l13.67,13.669c0.771,0.771,0.771,2.021,0,2.792C25.58,33.883,25.075,34.075,24.57,34.075z"/></svg></div>',
+    nextArrow:'<div class="next "> <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"  viewBox="0 0 34.1 34.1" style="enable-background:new 0 0 34.1 34.1;" xml:space="preserve"> <path class="st0" d="M9.1,0.2c0.5,0,1,0.2,1.4,0.5l15.4,14.7c0.8,0.8,0.8,2,0.1,2.8L11.3,33.6c-0.8,0.8-2,0.8-2.8,0.1s-0.8-2-0.1-2.8l13.4-14L7.8,3.6C7,2.8,7,1.6,7.7,0.8C8.1,0.4,8.6,0.2,9.1,0.2z"/></svg></div>',
   });
+
+
   $('#inner-team').slick({
     dots: false,
     infinite: true,
     speed: 300,
     slidesToShow: 6,
     slidesToScroll: 1,
-    prevArrow: $('.inner-img-wrapper .prev'),
-    nextArrow: $('.inner-img-wrapper .next'),
+    arrows:true,
+    prevArrow: '<div class="prev"><img src="front-end/assets/img/arrow.png" alt=""></div>',
+    nextArrow: '<div class="next"><img src="front-end/assets/img/right-arrow.png" alt=""></div>',
     responsive: [
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 6,
+          slidesToShow: 4,
           slidesToScroll: 1,
           infinite: true,
-          dots: true
+          dots: false
         }
       },
       {
@@ -518,9 +518,13 @@
   });
 </script>
 
+
+
+
 <script src="{{ asset('front-end/assets/js/jquery.countup.min.js') }}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
 <script type="text/javascript">
+
     $(document).ready(function(){
         $('.number-key').countUp({
             'time': 2000,

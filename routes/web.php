@@ -11,6 +11,7 @@ use App\Http\Livewire\Auth\SignUp;
 use App\Http\Livewire\Auth\Login;
 use App\Http\Livewire\Dashboard;
 use App\Http\Livewire\Billing;
+use App\Http\Livewire\Etape;
 use App\Http\Livewire\HomeConfig;
 use App\Http\Livewire\Profile;
 use App\Http\Livewire\Tables;
@@ -58,8 +59,9 @@ Route::name("lc")->get('/logement-collectif', 'App\Http\Controllers\frontEndCont
 Route::name("detailLc")->get('/actualite-logement-collectif/{id}', 'App\Http\Controllers\frontEndController@detailLc');
 Route::name("mg")->get('/maçonnerie-generale', 'App\Http\Controllers\frontEndController@mg');
 Route::name("detailMg")->get('/actualite-maconnerie-generale/{id}', 'App\Http\Controllers\frontEndController@detailMg');
-Route::name("mo")->get('/maitrise-d-oeuvre', 'App\Http\Controllers\frontEndController@mo');
+Route::name("mo")->get('/maitrise-d-œuvre', 'App\Http\Controllers\frontEndController@mo');
 Route::name("contact")->get('/contact', 'App\Http\Controllers\frontEndController@contact');
+Route::name("etape")->get('/etape', 'App\Http\Controllers\frontEndController@etape');
 Route::get('/mail',SendMail::class)->name('Mail');
 Route::name("down")->get('/download', 'App\Http\Controllers\frontEndController@download');
 Route::name("politique")->get('/Politique-de-confidentialité', 'App\Http\Controllers\frontEndController@politique');
@@ -115,5 +117,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/laravel-user-profile', UserProfile::class)->name('user-profile');
     Route::get('/laravel-user-management', UserManagement::class)->name('user-management');
     Route::get('/témoignage-admin', Temoignage::class)->name('temoignageAdmin');
+    Route::get('/etape-admin', Etape::class)->name('etapeAdmin');
 });
 

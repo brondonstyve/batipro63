@@ -39,26 +39,18 @@
               </section>
 <section class="container-maison-terrain" id="container-intro-projets">
   <div class="container ">
-    <div class="left-bloc-text">
+    {{-- <div class="left-bloc-text">
       <div class="content-text-up">
         <div class="header-title">
           <h3 class="green">sur le territoire français</h3>
           <h4>Des terrains disponibles pour vous.</h4>
         </div>
       </div>
-    </div>
+    </div> --}}
 
-
-    @if (sizeOf($projets)==0)
-
-    <div class="left-bloc-text">
-      <div class="content-text-up">
-        <div class="header-title">
-          <h4>Aucun terrain enregistré pour le moment.</h4>
-        </div>
-      </div>
-    </div>
-    @endif
+    <br>
+    <br>
+   
     <div class="content-list-projects ">
       <div class="content-projects-wrapper">
         <div id="grid" class="flex my-shuffle-container space-around">

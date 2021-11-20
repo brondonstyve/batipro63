@@ -107,57 +107,34 @@
   </div>
   
   <section id="nav-off">
-                  <div class="infobul">
-                      <ul class="icon" style="">
-                          <li></li>
-                          <li></li>
-                          <li></li>
-                      </ul>
-                      <i class="icon" style="display: none;"></i>
-                      <ul class="list">
-                          
-                            @if ($about)
-                            <a href="tel:{{$about->telephone1}}" class="lien">
-                            <li class="call">
-                              <h6>Appelez au</h6>
-                              <p>{{$about->telephone1}}</p>
-                              <p>{{$about->telephone2}}</p>
-                            </li>
-                            </a>
-                              @else
-                              <a href="tel:0473312397" class="lien">
-                              <li class="call">
-                              <p>
-                                04 73 31 23 97
-                              </p>
-                            </li>
-                              </a>
-                            @endif
-                          
-
-                          <a href="{{route('contact')}}" class="lien">
-                            <li class="mail">
-                                <h6>Envoyez</h6>
-                                <p>Un message</p>
-                            </li>
-                          </a>
-
-                          <a href="#">
-                            <li class="tchat">
-                              <h6>Tchatez</h6>
-                              <p>Sur messenger</p>
-                          </li>
-                          </a>
-
-                          <a href="{{route('brochure')}}">
-                          <li class="pdf">
-                              <h6>Consultez</h6>
-                              <p>La brochure</p>
-                          </li>
-                        </a>
-                      </ul>
-                  </div>
-  </section>
+    <div class="infobul">
+      <ul class="icon" style="">
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+      <i class="icon" style="display: none;"></i>
+      <ul class="list">
+        <li class="call">
+          <h6>Appelez au</h6>
+          <p>04 73 31 23 97</p>
+        </li>
+        <li class="mail">
+          <h6>Envoyez</h6>
+          <p><a href="#">Un message</a></p>
+        </li>
+        <li class="tchat">
+          <h6>Tchatez</h6>
+          <p><a href="#">Sur messenger</a></p>
+        </li>
+        <li class="pdf">
+          <h6>Consultez</h6>
+          <p><a href="#">La brochure</a></p>
+        </li>
+      </ul>
+    </div>
+</section>
+  
   <script type="text/javascript">
     $('.list').click(function(){
       $('.infobul').toggleClass('open')
@@ -171,5 +148,8 @@
                     setTimeout(function(){ jQuery('#loading').fadeOut(1000); }, 2000);
   
   });
+  $('.content-btn-responsive').click(function(){
+                      $(this).parent().toggleClass("active-menu-responsive")
+                    })
   </script>
   

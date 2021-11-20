@@ -18,169 +18,174 @@
           <h1>Vidéos</h1>
           @endif
           
-          <div class="content-subtitle filter-options">  
-            <a href="#"  onclick="present()" id="present"> PRéSENTATIONS </a>
-            <a href="#"  onclick="temoignage()" id='temoignage' > Témoignages </a>
-         </div>
         </div>
     </div>
   </div>
 </section>
 
 
-
-<section class="container-maison-terrain" id="container-intro-maisons">
+<section class="container-maison-terrain" id="container-intro-projets">
   <div class="container ">
-    <br>
-    <br>
-
-    <div id="p">
-      <div  class="text-center">
-        <div >
-          <div >
-            @if ($infos)
-          <h3 class="green" style="text-transform: uppercase"> {{$infos->titre1}} </h3>
-          <h1> {{$infos->description1}} </h1>
-              
-          @else
-          <h3 class="green" style="text-transform: uppercase"> Présentation </h3>
-          <h1>Parcourez nos différentes presentations vidéo ici.</h1>
-
-              
-          @endif
-          </div>
-        </div>
-      </div> 
-      <br>
-
-
-      <div class="flex" style=" padding: 30px" > 
-        @if (sizeOf($temoignage)==0)
-            <h1>Aucune presentation enregistrée pour le moment.</h1>
-            
-        @else
-            @foreach ($temoignage as $item)
-            @if ($item->type=='Presentation')
-                  <div class="" style="margin-right: 1%">
-                    <div class="" >
-                        <iframe title="{{$item->description}}" src="{{$item->lien}}" width="560" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen=""></iframe>
-                    </div>
-                    <div class="wpb_wrapper">
-                      <p><strong>{{$item->auteur}}</strong>
-                        <br>
-                        <br>
-                       {{$item->description}}
-                    </p>
-                
-                    </div>
-                    
-                  </div>
-                  @endif
-          @endforeach
-      @endif
-</div>
-
-</div>
-
-
-  <div id="t">
-
-    <div  class="text-center">
-      <div >
-        <div >
-          
-
-          <br>
-          @if ($infos)
-          <h3 class="green" style="text-transform: uppercase"> {{$infos->titre}} </h3>
-          <h1> {{$infos->description}} </h1>
-              
-          @else
-          <h3 class="green" style="text-transform: uppercase"> Témoignages </h3>
-          <h1>Parcourez nos différents témoignages vidéo ici.</h1>
-
-              
-          @endif
-        </div>
-      </div>
-    </div> 
-    <br>
-
-   
-
-          
-        <div class="flex" style=" padding: 30px"> 
-              @if (sizeOf($temoignage)==0)
-                  <h1>Aucun témoignage enregistré pour le moment.</h1>
-                  
-              @else
-                  @foreach ($temoignage as $item)
-                  @if ($item->type=='Temoignage')
-                  <div class="" style="margin-right: 1%">
-                    <div class="" >
-                        <iframe title="{{$item->description}}" src="{{$item->lien}}" width="560" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen=""></iframe>
-                    </div>
-                    <div class="wpb_wrapper">
-                      <p><strong>{{$item->auteur}}</strong>
-                        <br>
-                        <br>
-                       {{$item->description}}
-                    </p>
-                
-                    </div>
-                    
-                  </div>
-                  @endif
-                 
-                  @endforeach
-              @endif
-      </div>
-    </div>
-
-
-
-    {{-- @if (sizeOf($maisons)==0)
+    @if (sizeOf($temoignage)==0)
                
-    <div class="">
-       <div style="text-align: center;margin-top: 5px">
-         <div class="" >
-          <h2>Aucune maison virtuelle enregistrée pour le moment.</h2>
+    <div class="left-bloc-text">
+       <div class="content-text-up">
+         <div class="header-title">
+          <h4>Aucun témoignage enregistré pour le moment.</h4>
          </div>
        </div>
      </div> 
-     <br>
-     <br>
  @endif
-    <div class="content-list-projects ">
-       <div class="content-projects-wrapper">
-          <div id="grid" class="flex my-shuffle-container space-around">
 
-            @foreach ($maisons as $maison)
-               <div class="content-project-wrapper hg-height"  data-groups='["all","all"]' style="background:url({{asset('/app/maison/'.$maison->img_principale)}});background-repeat: no-repeat">
-              <div class="project-inner">
-            <a href="{{route('detailmaisonVirtuelle',encrypt($maison->id))}}">
-                 <div class="inner-overlay">
-                    <div class="content-overlay">
-                       <div class="content-icone-plus"></div>
-                       <div class="title-project">
-                          <h3> {{$maison->libelle}} </h3>
-                       </div>
-                    </div>
-                 </div>
-               </a>
-              </div>
-           </div>
-                  
-                  @endforeach
-          </div>
-          <div class="my-sizer-element"></div>
-       </div>
-    </div> --}}
+ <div class="left-bloc-text" data-groups='["t"]'>
+  <div class="content-text-up">
+    <div class="header-title">
+      @if ($infos)
+      <h3 class="green">{{$infos->titre}}</h3>
+      <h4>{{$infos->description}}</h4>
+      
+      @endif
+      
+    </div>
+  </div>
+</div> 
+    <div class="content-list-projects1">
 
+      <div class="projects-categories filter-options">
 
+        {{-- @if (sizeOf($projets)!=0) --}}
+        <button  data-group="p">Présentation</button>
+        <button  data-group="t">Témoignage</button>
+        {{-- @foreach ($services as $service)
+        <button data-group="{{$service->service}}" >{{$service->service}}</button>
+        @endforeach --}}
+               
+        {{-- @endif --}}
+         
+      </div>
 
+       <div class="content-projects-wrapper1">
+        <div id="grid" class="flex my-shuffle-container space-around">
+          
+        @foreach ($temoignage as $key=>$item)
+        @if ($item->type=='Temoignage') 
+        <div class="content-project-wrapper1 hg-height" data-groups='["t"]'>
+          <div class="project-inner">
+          
+            <iframe title="{{$item->description}}" src="{{$item->lien}}" class="frame" style="width: 100%;height: 300px;" width="400" height="300" frameborder="0" allow="autoplay; fullscreen" allowfullscreen=""></iframe>
+
+               <div class="content-overlay">          
+                  <div class="title-project">
+                     <h3> {{$item->auteur}} </h3>
+                  </div>
+                  <div class="content-title-category">
+                    {{$item->description}}
+                  </div>
+               </div>
+
+        </div>
+      </div>
+
+      @else
+      <div class="content-project-wrapper1 hg-height" data-groups='["p"]'>
+        <div class="project-inner">
+        
+          <iframe title="{{$item->description}}" src="{{$item->lien}}" class="frame" style="width: 100%;height: 300px;" width="400" height="300" frameborder="0" allow="autoplay; fullscreen" allowfullscreen=""></iframe>
+
+             <div class="content-overlay">          
+                <div class="title-project">
+                   <h3> {{$item->auteur}} </h3>
+                </div>
+                <div class="content-title-category">
+                  {{$item->description}}
+                </div>
+             </div>
+
+      </div>
+    </div>
+        @endif
+         
+  
+            
+        @endforeach
+        
+      </div>
+      <div class="my-sizer-element"></div>
+
+    </div>
+
+    </div>
   </div>
 </section>
+
+
+
+{{-- 
+
+<section class="container-maison-terrain" id="container-intro-projets">
+  <div class="container ">
+    @if (sizeOf($temoignage)==0)
+               
+    <div class="left-bloc-text">
+       <div class="content-text-up">
+         <div class="header-title">
+          <h4>Aucune présentation enregistrée pour le moment.</h4>
+         </div>
+       </div>
+     </div> 
+ @endif
+
+ <div class="left-bloc-text">
+  <div class="content-text-up">
+    <div class="header-title">
+      @if ($infos)
+      <h3 class="green">{{$infos->titre1}}</h3>
+      <h4>{{$infos->description1}}</h4>
+      
+      @endif
+      
+    </div>
+  </div>
+</div> 
+    <div class="content-list-projects1">
+       <div class="content-projects-wrapper1">
+        <div id="grid" class="flex my-shuffle-container space-around">
+          
+        @foreach ($temoignage as $key=>$item)
+        @if ($item->type=='Presentation')
+        <div class="content-project-wrapper1 hg-height" data-groups='t'>
+          <div class="project-inner">
+          
+            <iframe title="{{$item->description}}" src="{{$item->lien}}" class="frame" style="width: 500px;height: 300px;" width="400" height="300" frameborder="0" allow="autoplay; fullscreen" allowfullscreen=""></iframe>
+
+               <div class="content-overlay">          
+                  <div class="title-project">
+                     <h3> {{$item->auteur}} </h3>
+                  </div>
+                  <div class="content-title-category">
+                    {{$item->description}}
+                  </div>
+               </div>
+
+        </div>
+      </div>
+        @endif
+         
+  
+            
+        @endforeach
+        
+      </div>
+      <div class="my-sizer-element"></div>
+
+    </div>
+
+    </div>
+  </div>
+</section> --}}
+
+
+
 
 @endsection
 
@@ -212,7 +217,8 @@ $( document ).ready(function() {
 
 
 </script>
-
+<script src='https://unpkg.com/shufflejs@5'></script>
+<script  src="{{ asset('/front-end/assets/js/script.js') }}"></script>
 @section('script')
 
 

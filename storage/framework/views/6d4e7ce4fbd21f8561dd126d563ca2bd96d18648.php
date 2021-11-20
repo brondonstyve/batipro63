@@ -31,7 +31,7 @@
           <a href=" <?php echo e(route('detailActualite',encrypt($actualite->id))); ?> ">
         <div class="other-article flex align-center">
           <div class="img-article ">
-            <img src="<?php echo e(asset('/app/actualite/'.$actualite->image)); ?>" alt="">
+            <img src="<?php echo e(asset('/app/actualite/'.$actualite->image)); ?>" alt="" style="max-height: 80px;max-width: 100px;">
           </div>
           <div class="cntent-orther-article ">
             <p> 

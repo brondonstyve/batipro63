@@ -1,0 +1,1 @@
+<?php /**PATH /home/styve/dev/laravel/batipro/resources/views/livewire/static-sign-up.blade.php ENDPATH**/ ?>

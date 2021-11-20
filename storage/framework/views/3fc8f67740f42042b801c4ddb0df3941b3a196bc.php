@@ -2,7 +2,7 @@
     <section class="container-banner" >
         <div class="container">
           <div class="inner-container">
-              <div class="content-title-banner">
+              <div class="content-title-banner"  style="min-width: 100%">
                 <h1>Blog</h1>
                 <div class="content-subtitle">
                   <?php if(sizeOf($this->domain)>0): ?>
@@ -31,8 +31,8 @@
               <?php else: ?>
               <?php $__currentLoopData = $this->actualite; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $actua): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
               <article class="article-wrapper">
-                <div class="image-article ">
-                  <img src="<?php echo e(asset('/app/actualite/'.$actua->image)); ?>" alt="">
+                <div class="image-article " >
+                  <img src="<?php echo e(asset('/app/actualite/'.$actua->image)); ?>" alt="" style="max-height: 250px;"> 
                 </div>
                 <div class="conent-text-article-wrapper">
                   <div class="category-article green"> <?php echo e($actua->domaine); ?> </div>

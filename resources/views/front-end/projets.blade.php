@@ -18,12 +18,6 @@
 </section>
 
 
-<section class="container-realisation-projets"   style="background-color: white">
-  <div class="container ">
-    
-  </div>
-</section> 
-
 
 <section class="container-maison-terrain" id="container-intro-projets">
   <div class="container ">

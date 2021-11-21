@@ -47,9 +47,9 @@
           </div>
         
         <div class="line-input1 flex " >
-          <div class="line-input1 full">
-            <input type="submit"  Value="Demande d'informations sur les terrains disponibles" wire:loading.remove class="btn-sub">
-            <input type="button"  Value="Patienter..." wire:loading class="btn-sub">
+          <div class="line-input1 full text-center">
+            <span wire:loading>Patientez ...</span>
+            <input type="submit"  Value="Demander" wire:loading.remove class="btn-sub">
           </div>
         </div>
 

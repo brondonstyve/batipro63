@@ -601,24 +601,16 @@
         <h3 class="green"> {{$infos->titreE}}</h3>
         <h4>{{$infos->descriptionE}}</h4>
     </div>
-    @if ($infos->imageE)
     <br>
     <br>
     <br>
-    <section class="work-method" style="background-image: url({{asset('/app/accueil/'.$infos->imageE)}});">
+    <section class="work-method">
         <div class="container">
-          
-        </div>
-      </section>
+    @if ($infos->imageE)
+          <img src="{{asset('/app/accueil/'.$infos->imageE)}}" alt="" >
         @else
-        <br>
-    <br>
-    <br>
-        <section class="work-method" style="background-image: url({{asset('front-end/assets/img/equipe.png')}});">
-            <div class="container">
-          
-            </div>
-          </section>
+                <img src="{{asset('front-end/assets/img/equipe.png')}}" alt="">
+
         @endif
         
     @else
@@ -629,11 +621,10 @@
     <br>
     <br>
     <br>
-    <section class="work-method" style="background-image: url({{asset('front-end/assets/img/equipe.png')}});">
+    <section class="work-method">
         <div class="container">
-          
-        </div>
-      </section>
+          <img src="{{asset('front-end/assets/img/equipe.png')}}" alt="">
+        
     @endif
 
     

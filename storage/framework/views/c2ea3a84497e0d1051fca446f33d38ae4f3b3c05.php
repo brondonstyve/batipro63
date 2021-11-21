@@ -14,6 +14,19 @@
     <link rel="stylesheet" href="<?php echo e(asset('/front-end/mo/css/style.css')); ?>">
 </head>
 
+<style>
+    @media  screen and (max-width:450px) {
+        .btn{
+            display: none;
+        }
+    }
+
+    @media  screen and (max-width:600px) {
+        .btn{
+            display: none;
+        }
+    }
+</style>
 <body>
 
     <section class="ftco-section">

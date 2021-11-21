@@ -37,7 +37,8 @@
      </div> 
  @endif
 
- <div class="left-bloc-text" data-groups='["t"]'>
+
+ <div class="left-bloc-text" id="t">
   <div class="content-text-up">
     <div class="header-title">
       @if ($infos)
@@ -49,13 +50,26 @@
     </div>
   </div>
 </div> 
+
+<div class="left-bloc-text" id="p">
+  <div class="content-text-up">
+    <div class="header-title">
+      @if ($infos)
+      <h3 class="green">{{$infos->titre1}}</h3>
+      <h4>{{$infos->description1}}</h4>
+      
+      @endif
+      
+    </div>
+  </div>
+</div> 
     <div class="content-list-projects1">
 
       <div class="projects-categories filter-options">
 
         {{-- @if (sizeOf($projets)!=0) --}}
-        <button  data-group="p">Présentation</button>
-        <button  data-group="t">Témoignage</button>
+        <button  data-group="p" onclick="present()">Présentation</button>
+        <button  data-group="t" onclick="temoignage()">Témoignage</button>
         {{-- @foreach ($services as $service)
         <button data-group="{{$service->service}}" >{{$service->service}}</button>
         @endforeach --}}
@@ -196,23 +210,17 @@
 $( document ).ready(function() {
   jQuery('#t').hide();
     jQuery('#p').show();
-    jQuery('#present').addClass("activation_l");
-    jQuery('#temoignage').removeClass("activation_l");
 });
 
 
   function present(){
     jQuery('#t').hide();
     jQuery('#p').show();
-    jQuery('#present').addClass("activation_l");
-    jQuery('#temoignage').removeClass("activation_l");
   };
 
   function temoignage(){
     jQuery('#p').hide();
     jQuery('#t').show();
-    jQuery('#temoignage').addClass("activation_l");
-    jQuery('#present').removeClass("activation_l");
   }
 
 

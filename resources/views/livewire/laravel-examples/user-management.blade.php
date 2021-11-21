@@ -80,7 +80,7 @@
                                         {{$item->telephone}}
                                     </td>
                                     <td class="text-center">
-                                        {{$item->created_at}}
+                                        {{date_format($item->created_at, 'd-M-Y')}}
                                     </td>
                                 </tr>
                                 <tr >

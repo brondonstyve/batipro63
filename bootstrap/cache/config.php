@@ -516,11 +516,11 @@
       'smtp' => 
       array (
         'transport' => 'smtp',
-        'host' => 'mail.big-vente.com',
+        'host' => 'ssl0.ovh.net',
         'port' => '587',
         'encryption' => '',
-        'username' => 'FlexVote@big-vente.com',
-        'password' => 'FlexVoteMail_Pass1234',
+        'username' => 'contact@batipro63.fr',
+        'password' => 'Securite2012',
         'timeout' => NULL,
         'auth_mode' => NULL,
       ),
@@ -553,7 +553,7 @@
     ),
     'from' => 
     array (
-      'address' => 'FlexVote@big-vente.com',
+      'address' => 'contact@batipro63.fr',
       'name' => 'Groupe-Batipro',
     ),
     'markdown' => 

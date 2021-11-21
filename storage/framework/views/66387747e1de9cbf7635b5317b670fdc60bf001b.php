@@ -471,24 +471,16 @@
         <h3 class="green"> <?php echo e($infos->titreE); ?></h3>
         <h4><?php echo e($infos->descriptionE); ?></h4>
     </div>
-    <?php if($infos->imageE): ?>
     <br>
     <br>
     <br>
-    <section class="work-method" style="background-image: url(<?php echo e(asset('/app/accueil/'.$infos->imageE)); ?>);">
+    <section class="work-method">
         <div class="container">
-          
-        </div>
-      </section>
+    <?php if($infos->imageE): ?>
+          <img src="<?php echo e(asset('/app/accueil/'.$infos->imageE)); ?>" alt="" >
         <?php else: ?>
-        <br>
-    <br>
-    <br>
-        <section class="work-method" style="background-image: url(<?php echo e(asset('front-end/assets/img/equipe.png')); ?>);">
-            <div class="container">
-          
-            </div>
-          </section>
+                <img src="<?php echo e(asset('front-end/assets/img/equipe.png')); ?>" alt="">
+
         <?php endif; ?>
         
     <?php else: ?>
@@ -499,11 +491,10 @@
     <br>
     <br>
     <br>
-    <section class="work-method" style="background-image: url(<?php echo e(asset('front-end/assets/img/equipe.png')); ?>);">
+    <section class="work-method">
         <div class="container">
-          
-        </div>
-      </section>
+          <img src="<?php echo e(asset('front-end/assets/img/equipe.png')); ?>" alt="">
+        
     <?php endif; ?>
 
     

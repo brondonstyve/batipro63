@@ -762,8 +762,8 @@ section#solution {
 }
 
 section.work-method {
-    padding: 150px 100px 70px 100px;
-    background: #3d7d77;
+    /* padding: 150px 100px 70px 100px;
+    background: #3d7d77; */
     color: #fff;
     min-height: 10%;
 }
@@ -2745,6 +2745,7 @@ section#nav-off ul.list li.pdf:before {
 
 section#nav-off ul.list li.pdf:after {
     display: none;
+    z-index: 999999999;
 }
 
 section#nav-off {

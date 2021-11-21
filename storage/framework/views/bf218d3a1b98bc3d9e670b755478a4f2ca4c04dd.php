@@ -73,7 +73,7 @@
             
 
               <div class="inner-overlay">
-                 <div class="content-overlay text-center"> 
+                 <div class="content-overlay"> 
                     <div class="content-icone-plus"></div>           
                     <div class="title-project">
                        <h3> <?php echo e($item->libelle); ?> </h3>

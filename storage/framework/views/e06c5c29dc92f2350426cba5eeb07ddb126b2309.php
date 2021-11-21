@@ -81,7 +81,7 @@
 
                                     </td>
                                     <td class="text-center">
-                                        <?php echo e($item->created_at); ?>
+                                        <?php echo e(date_format($item->created_at, 'd-M-Y')); ?>
 
                                     </td>
                                 </tr>

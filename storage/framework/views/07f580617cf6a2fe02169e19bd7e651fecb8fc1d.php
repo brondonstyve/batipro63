@@ -34,7 +34,8 @@
      </div> 
  <?php endif; ?>
 
- <div class="left-bloc-text" data-groups='["t"]'>
+
+ <div class="left-bloc-text" id="t">
   <div class="content-text-up">
     <div class="header-title">
       <?php if($infos): ?>
@@ -46,13 +47,26 @@
     </div>
   </div>
 </div> 
+
+<div class="left-bloc-text" id="p">
+  <div class="content-text-up">
+    <div class="header-title">
+      <?php if($infos): ?>
+      <h3 class="green"><?php echo e($infos->titre1); ?></h3>
+      <h4><?php echo e($infos->description1); ?></h4>
+      
+      <?php endif; ?>
+      
+    </div>
+  </div>
+</div> 
     <div class="content-list-projects1">
 
       <div class="projects-categories filter-options">
 
         
-        <button  data-group="p">Présentation</button>
-        <button  data-group="t">Témoignage</button>
+        <button  data-group="p" onclick="present()">Présentation</button>
+        <button  data-group="t" onclick="temoignage()">Témoignage</button>
         
                
         
@@ -131,23 +145,17 @@
 $( document ).ready(function() {
   jQuery('#t').hide();
     jQuery('#p').show();
-    jQuery('#present').addClass("activation_l");
-    jQuery('#temoignage').removeClass("activation_l");
 });
 
 
   function present(){
     jQuery('#t').hide();
     jQuery('#p').show();
-    jQuery('#present').addClass("activation_l");
-    jQuery('#temoignage').removeClass("activation_l");
   };
 
   function temoignage(){
     jQuery('#p').hide();
     jQuery('#t').show();
-    jQuery('#temoignage').addClass("activation_l");
-    jQuery('#present').removeClass("activation_l");
   }
 
 

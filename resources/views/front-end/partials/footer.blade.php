@@ -115,21 +115,41 @@
       </ul>
       <i class="icon" style="display: none;"></i>
       <ul class="list">
-        <li class="call">
+          <li class="call">
+        <a href="tel:{{$about->telephone1}}">
           <h6>Appelez au</h6>
+          @if ($about)
+              <p>{{$about->telephone1}}</p>
+              <p>{{$about->telephone2}}</p>
+          @else
           <p>04 73 31 23 97</p>
-        </li>
+          @endif
+      </a>
+    </li>
+
+
+
         <li class="mail">
-          <h6>Envoyez</h6>
-          <p><a href="#">Un message</a></p>
-        </li>
+      <a href=" {{route('contact')}} ">
+        <h6>Envoyez</h6>
+          <p>Un message</p>
+        </a>
+      </li>
+
         <li class="tchat">
+        <a href="#">
           <h6>Tchatez</h6>
-          <p><a href="#">Sur messenger</a></p>
-        </li>
+          <p>Sur messenger</p>
+      </a>
+    </li>
+
+
+          
         <li class="pdf">
+          <a href="{{route('brochure')}}">
           <h6>Consultez</h6>
-          <p><a href="#">La brochure</a></p>
+          <p>La brochure</p>
+        </a>
         </li>
       </ul>
     </div>

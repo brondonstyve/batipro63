@@ -133,11 +133,7 @@
                                                                 
                                         </div>
                                     </div>
-                                    <?php if($item->projet_principal==null): ?>
-                                        <div class="d-flex align-items-center justify-content-between mt-1" >
-                                            <button type="button" class="btn btn-info btn-sm mb-0" wire:click="maisonPrinc(<?php echo e($item->id); ?>,'<?php echo e($item->service); ?>')">Définir comme image accueil pour <?php if($item->service=='Maison individuelle'): ?> Maison contempaoraine <?php else: ?> <?php echo e($item->service); ?> <?php endif; ?></button>
-                                        </div>
-                                    <?php endif; ?>
+                                    
                                    
 
                                 </div>
@@ -554,7 +550,7 @@ unset($__errorArgs, $__bag); ?>
                             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
                             </button>
                         </div>
-                        <?php endif; ?>
+                        <?php endif; ?> 
 
                         <?php if($showErrorNotification1): ?>
                         <div

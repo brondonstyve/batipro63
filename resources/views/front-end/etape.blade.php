@@ -52,7 +52,6 @@
 
                         <div class="item">
                             <div class="work-wrap d-md-flex">
-                                <div class="img order-md-last" style="background-image: url({{asset('/app/maison/'.$etape->image1)}});"></div>
                                 <div class="text text-left text-lg-right p-4 px-xl-5 d-flex align-items-center ">
                                     <div class="desc w-100">
                                         <h2 class="mb-2">{{$etape->etape1}}</h2>
@@ -72,12 +71,13 @@
                                         
                                     </div>
                                 </div>
+                                <div class="img order-md-last" style="background-image: url({{asset('/app/maison/'.$etape->image1)}});"></div>
+
                             </div>
                         </div>
 
                         <div class="item">
                             <div class="work-wrap d-md-flex">
-                                <div class="img order-md-last" style="background-image: url({{asset('/app/maison/'.$etape->image2)}});"></div>
                                 <div class="text text-left text-lg-right p-4 px-xl-5 d-flex align-items-center ">
                                     <div class="desc w-100">
                                         <h2 class="mb-2">{{$etape->etape2}}</h2>
@@ -96,12 +96,13 @@
                                         </p>
                                     </div>
                                 </div>
+                                <div class="img order-md-last" style="background-image: url({{asset('/app/maison/'.$etape->image2)}});"></div>
+
                             </div>
                         </div>
 
                         <div class="item">
                             <div class="work-wrap d-md-flex">
-                                <div class="img order-md-last" style="background-image: url({{asset('/app/maison/'.$etape->image3)}});"></div>
                                 <div class="text text-left text-lg-right p-4 px-xl-5 d-flex align-items-center ">
                                     <div class="desc w-100">
                                         <h2 class="mb-2">{{$etape->etape3}}</h2>
@@ -120,13 +121,14 @@
                                         </p>
                                     </div>
                                 </div>
+                                <div class="img order-md-last" style="background-image: url({{asset('/app/maison/'.$etape->image3)}});"></div>
+
                             </div>
                         </div>
 
 
                         <div class="item">
                             <div class="work-wrap d-md-flex">
-                                <div class="img order-md-last" style="background-image: url({{asset('/app/maison/'.$etape->image4)}});"></div>
                                 <div class="text text-left text-lg-right p-4 px-xl-5 d-flex align-items-center ">
                                     <div class="desc w-100">
                                         <h2 class="mb-2">{{$etape->etape4}}</h2>
@@ -145,12 +147,13 @@
                                         </p>
                                     </div>
                                 </div>
+                                <div class="img order-md-last" style="background-image: url({{asset('/app/maison/'.$etape->image4)}});"></div>
+
                             </div>
                         </div>
 
                         <div class="item">
                             <div class="work-wrap d-md-flex">
-                                <div class="img order-md-last" style="background-image: url({{asset('/app/maison/'.$etape->image5)}});"></div>
                                 <div class="text text-left text-lg-right p-4 px-xl-5 d-flex align-items-center ">
                                     <div class="desc w-100">
                                         <h2 class="mb-2">{{$etape->etape5}}</h2>
@@ -169,6 +172,8 @@
                                         </p>
                                     </div>
                                 </div>
+                                <div class="img order-md-last" style="background-image: url({{asset('/app/maison/'.$etape->image5)}});"></div>
+
                             </div>
                         </div>
 
@@ -193,12 +198,13 @@
                                         </p>
                                     </div>
                                 </div>
+                                <div class="img order-md-last" style="background-image: url({{asset('/app/maison/'.$etape->image5)}});"></div>
+
                             </div>
                         </div>
 
                         <div class="item">
                             <div class="work-wrap d-md-flex">
-                                <div class="img order-md-last" style="background-image: url({{asset('/app/maison/'.$etape->image7)}});"></div>
                                 <div class="text text-left text-lg-right p-4 px-xl-5 d-flex align-items-center ">
                                     <div class="desc w-100">
                                         <h2 class="mb-2">{{$etape->etape7}}</h2>
@@ -217,10 +223,13 @@
                                         </p>
                                     </div>
                                 </div>
+                                <div class="img order-md-last" style="background-image: url({{asset('/app/maison/'.$etape->image7)}});"></div>
+
                             </div>
+
                         </div>
 
-                        <div class="item">
+                        {{-- <div class="item">
                             <div class="work-wrap d-md-flex">
                                 <div class="img order-md-last" style="background-image: url({{asset('/app/maison/'.$etape->image8)}});"></div>
                                 <div class="text text-left text-lg-right p-4 px-xl-5 d-flex align-items-center ">
@@ -289,7 +298,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
 
 
 
@@ -360,39 +369,41 @@
             $('.owl-next').click();
         });
 
+
+
         $("#precedent1").click(function() {
-    $('.owl-prev').click();
-});
+            $('.owl-prev').click();
+        });
 
-$("#precedent2").click(function() {
-    $('.owl-prev').click();
-});
-$("#precedent3").click(function() {
-    $('.owl-prev').click();
-});
-$("#precedent4").click(function() {
-    $('.owl-prev').click();
-});
-$("#precedent5").click(function() {
-    $('.owl-prev').click();
-});
+        $("#precedent2").click(function() {
+            $('.owl-prev').click();
+        });
+        $("#precedent3").click(function() {
+            $('.owl-prev').click();
+        });
+        $("#precedent4").click(function() {
+            $('.owl-prev').click();
+        });
+        $("#precedent5").click(function() {
+            $('.owl-prev').click();
+        });
 
-$("#precedent6").click(function() {
-    $('.owl-prev').click();
-});
-$("#precedent7").click(function() {
-    $('.owl-prev').click();
-});
-$("#precedent8").click(function() {
-    $('.owl-prev').click();
-});
-$("#precedent9").click(function() {
-    $('.owl-prev').click();
-});
+        $("#precedent6").click(function() {
+            $('.owl-prev').click();
+        });
+        $("#precedent7").click(function() {
+            $('.owl-prev').click();
+        });
+        $("#precedent8").click(function() {
+            $('.owl-prev').click();
+        });
+        $("#precedent9").click(function() {
+            $('.owl-prev').click();
+        });
 
-$("#precedent10").click(function() {
-    $('.owl-prev').click();
-});
+        $("#precedent10").click(function() {
+            $('.owl-prev').click();
+        });
     </script>
     <script src="{{asset('/front-end/mo/js/popper.js')}}"></script>
     <script src="{{asset('/front-end/mo/js/bootstrap.min.js')}}"></script>

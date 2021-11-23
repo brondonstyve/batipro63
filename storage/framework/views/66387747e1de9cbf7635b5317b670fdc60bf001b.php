@@ -187,13 +187,13 @@
                         <?php if($infos): ?>
                         <div class="content-text-up">
                             <div class="header-title">
-                                <h3 class="green"> <?php echo e($infos->titreVert2); ?> </h3>
-                                <h4><?php echo e($infos->titre2); ?> </h4>
+                                <h3 class="green"> <?php echo $infos->titreVert2; ?> </h3>
+                                <h4><?php echo $infos->titre2; ?> </h4>
                             </div>
                             <div class="content-bloc-description add-square" style="max-width: 60%;text-align: justify; ">
-                                <p class="head green"><?php echo e($infos->slogan2); ?></p>
+                                <p class="head green"><?php echo $infos->slogan2; ?></p>
                                 <?php if($infos->resume2): ?>
-                                <p class="jost-style jost-style-100"><?php echo e($infos->resume2); ?></p>
+                                <p class="jost-style jost-style-100"><?php echo $infos->resume2; ?></p>
                                     
                                 <?php else: ?>
                                 <p class="jost-style jost-style-100">Fort Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
@@ -216,14 +216,6 @@
                         <br>
                         <br>
 
-                            <?php if(sizeOf($projets)==0): ?>
-                    <br>
-                    <br>
-                                    
-                                        <div class="header-title">
-                                        <h4>Aucun projet enregistré pour le moment.</h4>
-                                        </div>
-                            <?php endif; ?>
                                 
                                     
                                     
@@ -237,64 +229,57 @@
                                     <div class="content-projects-wrapper">
                                        <div id="grid" class="flex my-shuffle-container space-around shuffle" style="position: relative; overflow: hidden; height: 995px; transition: height 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s;">
                                           
-                                        <?php $__currentLoopData = $projets; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key=>$item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                        <?php if($item->service=='Maison individuelle' || $item->service=='Maison contemporaine'): ?>
+                                        <?php if($infos): ?>
 
-                                        <div class="content-project-wrapper hg-height shuffle-item shuffle-item--visible" style="background: url(<?php echo e(asset('/app/projet/'.$item->img_principale)); ?>); position: absolute; top: 0px; visibility: visible; will-change: transform; left: 0px; opacity: 1; transition-duration: 250ms; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-property: transform, opacity;">
-                                            <div class="project-inner">
-                                               <div class="inner-overlay">
-                                                  <div class="content-overlay">
-                                                     <div class="content-icone-plus"><a href="#!">+</a></div>
-                                                     <div class="title-project">
-                                                        <h3><?php echo e($item->libelle); ?></h3>
-                                                     </div>
-                                                     <div class="content-title-category"> <?php if($item->service=='Maison individuelle'): ?><?php echo e('Maison contemporaine'); ?><?php else: ?><?php echo e($item->service); ?><?php endif; ?>  </div>
-                                                  </div>
-                                               </div>
-                                            </div>
+                                        <div class="content-project-wrapper hg-height shuffle-item shuffle-item--visible" style="background: url(<?php echo e(asset('/app/accueil/'.$infos->projetMC)); ?>); position: absolute; top: 0px; visibility: visible; will-change: transform; left: 0px; opacity: 1; transition-duration: 250ms; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-property: transform, opacity;background-repeat:no-repeat">
+                                            <a href="<?php echo e(route('mc')); ?>">
+                                                <div class="project-inner">
+                                                    <div class="inner-overlay">
+                                                       <div class="content-overlay">
+                                                          <div class="title-project">
+                                                             <h3>Maisons Contemporaines</h3>
+                                                          </div>
+                                                         </div>
+                                                    </div>
+                                                 </div>
+                                            </a>
+                                            
                                          </div>
+
+                                         <div class="content-project-wrapper hg-height shuffle-item shuffle-item--visible" style="background: url(<?php echo e(asset('/app/accueil/'.$infos->projetLC)); ?>); position: absolute; top: 0px; visibility: visible; will-change: transform; left: 0px; opacity: 1; transition-duration: 250ms; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-property: transform, opacity;background-repeat:no-repeat">
+                                            <a href="<?php echo e(route('lc')); ?>">
+                                                <div class="project-inner">
+                                                    <div class="inner-overlay">
+                                                       <div class="content-overlay">
+                                                          <div class="title-project">
+                                                             <h3>Logements Collectifs</h3>
+                                                          </div>
+                                                         </div>
+                                                    </div>
+                                                 </div>
+                                            </a>
+                                            
+                                         </div>
+
+                                         <div class="content-project-wrapper hg-height shuffle-item shuffle-item--visible" style="background: url(<?php echo e(asset('/app/accueil/'.$infos->projetMg)); ?>); position: absolute; top: 0px; visibility: visible; will-change: transform; left: 0px; opacity: 1; transition-duration: 250ms; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-property: transform, opacity;background-repeat:no-repeat">
+                                            <a href="<?php echo e(route('mg')); ?>">
+                                                <div class="project-inner">
+                                                    <div class="inner-overlay">
+                                                       <div class="content-overlay">
+                                                          <div class="title-project">
+                                                             <h3>Maçonnerie Générale</h3>
+                                                          </div>
+                                                         </div>
+                                                    </div>
+                                                 </div>
+                                            </a>
+                                            
+                                         </div>
+
+
                                         <?php endif; ?>
-                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                       
 
-                                        <?php $__currentLoopData = $projets; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key=>$item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                        <?php if($item->service=='Logement collectif'): ?>
-                                        <div class="content-project-wrapper hg-height shuffle-item shuffle-item--visible" style="background: url(<?php echo e(asset('/app/projet/'.$item->img_principale)); ?>); position: absolute; top: 0px; visibility: visible; will-change: transform; left: 0px; opacity: 1; transition-duration: 250ms; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-property: transform, opacity;">
-                                            <div class="project-inner">
-                                               <div class="inner-overlay">
-                                                  <div class="content-overlay">
-                                                     <div class="content-icone-plus"><a href="#!">+</a></div>
-                                                     <div class="title-project">
-                                                        <h3><?php echo e($item->libelle); ?></h3>
-                                                     </div>
-                                                     <div class="content-title-category"> <?php if($item->service=='Maison individuelle'): ?><?php echo e('Maison contemporaine'); ?><?php else: ?><?php echo e($item->service); ?><?php endif; ?>  </div>
-                                                  </div>
-                                               </div>
-                                            </div>
-                                         </div>
-
-                                        <?php endif; ?>
-                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-
-                                        <?php $__currentLoopData = $projets; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key=>$item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                        <?php if($item->service=='Maçonnerie générale'): ?>
-                                       
-                                        <div class="content-project-wrapper hg-height shuffle-item shuffle-item--visible" style="background: url(<?php echo e(asset('/app/projet/'.$item->img_principale)); ?>); position: absolute; top: 0px; visibility: visible; will-change: transform; left: 0px; opacity: 1; transition-duration: 250ms; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-property: transform, opacity;">
-                                            <div class="project-inner">
-                                               <div class="inner-overlay">
-                                                  <div class="content-overlay">
-                                                     <div class="content-icone-plus"><a href="#!">+</a></div>
-                                                     <div class="title-project">
-                                                        <h3><?php echo e($item->libelle); ?></h3>
-                                                     </div>
-                                                     <div class="content-title-category"> <?php if($item->service=='Maison individuelle'): ?><?php echo e('Maison contemporaine'); ?><?php else: ?><?php echo e($item->service); ?><?php endif; ?>  </div>
-                                                  </div>
-                                               </div>
-                                            </div>
-                                         </div>
                                         
-                                        <?php endif; ?>
-                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
                                          
 
@@ -302,6 +287,8 @@
                                        <div class="my-sizer-element"></div>
                                     </div>
                                  </div>
+
+
 
                                 <br>
 

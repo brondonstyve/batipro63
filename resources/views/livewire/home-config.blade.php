@@ -294,7 +294,132 @@
                                             </div>
                                          </div>
                                     </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="apropos-name" class="form-control-label">Visuel projet maison contemporaine</label>
+                                            <div class="">
+                                                <input wire:model="image10" class="form-control" type="file" accept="image/*"> 
+                                            </div>
+                                            @error('image10') <span class="text text-danger error">Erreur lors du téléchargement</span> @enderror
+
+                                            <button class="btn btn-primary btn-sm mt-2" type="button" disabled wire:loading wire:target='image10'>
+                                                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                                                Patientez le chargement de l'image...
+                                              </button>
+                                            @if ($image10)
+                                            <div class="row">
+                                                <div class="col-xl-6 mx-auto col-md-12 mb-xl-0 mt-2">
+                                                    <div class="card card-blog card-plain">
+                                                        <div class="position-relative">
+                                                            <a class="d-block shadow-xl border-radius-xl">
+                                                                <img src=" {{$image10->temporaryUrl()}} " alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            @else
+                                            @if ($this->home->projetMC)
+                                            <div class="row">
+                                                <div class="col-xl-12 mx-auto col-md-12 mb-xl-0 mt-2">
+                                                    <div class="card card-blog card-plain">
+                                                        <div class="position-relative">
+                                                            <a class="d-block shadow-xl border-radius-xl">
+                                                                <img src=" {{ asset('/app/accueil/'.$this->home->projetMC)}} " alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            @endif
+                                            @endif
+                                        </div>
+                                    </div>
     
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="apropos-name" class="form-control-label">Visuel projet Logement collectif</label>
+                                            <div class="">
+                                                <input wire:model="image11" class="form-control" type="file" accept="image/*"> 
+                                            </div>
+                                            @error('image11') <span class="text text-danger error">Erreur lors du téléchargement</span> @enderror
+
+                                            <button class="btn btn-primary btn-sm mt-2" type="button" disabled wire:loading wire:target='image11'>
+                                                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                                                Patientez le chargement de l'image...
+                                              </button>
+                                            @if ($image11)
+                                            <div class="row">
+                                                <div class="col-xl-6 mx-auto col-md-12 mb-xl-0 mt-2">
+                                                    <div class="card card-blog card-plain">
+                                                        <div class="position-relative">
+                                                            <a class="d-block shadow-xl border-radius-xl">
+                                                                <img src=" {{$image11->temporaryUrl()}} " alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            @else
+                                            @if ($this->home->projetLC)
+                                            <div class="row">
+                                                <div class="col-xl-12 mx-auto col-md-12 mb-xl-0 mt-2">
+                                                    <div class="card card-blog card-plain">
+                                                        <div class="position-relative">
+                                                            <a class="d-block shadow-xl border-radius-xl">
+                                                                <img src=" {{ asset('/app/accueil/'.$this->home->projetLC)}} " alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            @endif
+                                            @endif
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="apropos-name" class="form-control-label">Visuel projet maçonnerie générale</label>
+                                            <div class="">
+                                                <input wire:model="image12" class="form-control" type="file" accept="image/*"> 
+                                            </div>
+                                            @error('image12') <span class="text text-danger error">Erreur lors du téléchargement</span> @enderror
+
+                                            <button class="btn btn-primary btn-sm mt-2" type="button" disabled wire:loading wire:target='image12'>
+                                                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                                                Patientez le chargement de l'image...
+                                              </button>
+                                            @if ($image12)
+                                            <div class="row">
+                                                <div class="col-xl-6 mx-auto col-md-12 mb-xl-0 mt-2">
+                                                    <div class="card card-blog card-plain">
+                                                        <div class="position-relative">
+                                                            <a class="d-block shadow-xl border-radius-xl">
+                                                                <img src=" {{$image12->temporaryUrl()}} " alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            @else
+                                            @if ($this->home->projetMg)
+                                            <div class="row">
+                                                <div class="col-xl-12 mx-auto col-md-12 mb-xl-0 mt-2">
+                                                    <div class="card card-blog card-plain">
+                                                        <div class="position-relative">
+                                                            <a class="d-block shadow-xl border-radius-xl">
+                                                                <img src=" {{ asset('/app/accueil/'.$this->home->projetMg)}} " alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            @endif
+                                            @endif
+                                        </div>
+                                    </div>
 
                                     <h3>Bloc 3</h3>
 
@@ -628,7 +753,7 @@
                                             </div>
                                          </div>
                                     </div>
-
+ 
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="apropos-name" class="form-control-label">Lien de l'offre</label>

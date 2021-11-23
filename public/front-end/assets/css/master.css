@@ -515,9 +515,10 @@ button.active {
 }
 
 .title-project h3 {
-    color: #000;
-    font-size: 14px;
+    color: rgb(0, 0, 0);
+    font-size: 18px;
     text-transform: uppercase;
+    height: 30px;
 }
 
 .inner-overlay:after {
@@ -543,7 +544,7 @@ button.active {
     position: absolute;
     top: -36px;
     left: 0;
-    width: 30px;
+    width: 100%;
     height: 30px;
     background: url(../img/plus.png) no-repeat 50% 50%;
 }
@@ -571,7 +572,7 @@ button.active {
 .content-overlay {
     transform: translateY(20px);
     transition: .3s;
-    opacity: 0;
+    opacity: 1;
 }
 
 .line-3::before {
@@ -2720,7 +2721,7 @@ section#nav-off ul.list li:after {
     content: '';
     position: absolute;
     top: calc( 50% - 5px);
-    right: 0;
+    right: -16px;
     background-color: #cacaca;
     width: 10px;
     height: 10px;
@@ -2752,7 +2753,7 @@ section#nav-off {
     position: fixed;
     right: 30px;
     top: 30px;
-    z-index: 100020;
+    z-index: 9999999;
 }
 
 .content-bloc-image {
@@ -3436,4 +3437,8 @@ section#loading span {
 
 #container-intro-projets1 .projects-categories button {
     color: #8e8e8e;
+}
+
+section#nav-off ul.list li:hover {
+    box-shadow: 0px 0 8px 3px rgb(255 255 255 / 54%);
 }

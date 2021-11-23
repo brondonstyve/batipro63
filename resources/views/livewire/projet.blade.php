@@ -133,11 +133,11 @@
                                                                 
                                         </div>
                                     </div>
-                                    @if ($item->projet_principal==null)
+                                    {{-- @if ($item->projet_principal==null)
                                         <div class="d-flex align-items-center justify-content-between mt-1" >
                                             <button type="button" class="btn btn-info btn-sm mb-0" wire:click="maisonPrinc({{$item->id}},'{{$item->service}}')">Définir comme image accueil pour @if($item->service=='Maison individuelle') Maison contempaoraine @else {{$item->service}} @endif</button>
                                         </div>
-                                    @endif
+                                    @endif --}}
                                    
 
                                 </div>
@@ -469,7 +469,7 @@
                             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
                             </button>
                         </div>
-                        @endif
+                        @endif 
 
                         @if ($showErrorNotification1)
                         <div

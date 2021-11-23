@@ -26,6 +26,9 @@ class HomeConfig extends Component
     public $image7;
     public $image8;
     public $image9;
+    public $image10;
+    public $image11;
+    public $image12;
 
 
     protected $rules=[
@@ -65,6 +68,9 @@ class HomeConfig extends Component
         'home.titreE'=>'',
         'home.descriptionE'=>'',
         'home.imageE'=>'',
+        'home.projetMC'=>'',
+        'home.projetMg'=>'',
+        'home.projetLC'=>'',
     ];
 
 
@@ -151,6 +157,27 @@ class HomeConfig extends Component
         ]);
     }
 
+    public function updatedImage10()
+    {
+        $this->validate([
+            'image10' => 'image|max:100000', // 1MB Max
+        ]);
+    }
+
+    public function updatedImage11()
+    {
+        $this->validate([
+            'image11' => 'image|max:100000', // 1MB Max
+        ]);
+    }
+
+    public function updatedImage12()
+    {
+        $this->validate([
+            'image12' => 'image|max:100000', // 1MB Max
+        ]);
+    }
+
 
     public function save(){
         ini_set('memory_limit', '-1');
@@ -208,8 +235,18 @@ class HomeConfig extends Component
 
                 if ($this->image9) {
                     $this->home->ImageE=Image::traitementHome($this->image9,'png',0,0);
-                    
-    
+                }
+
+                if ($this->image10) {
+                    $this->home->projetMC=Image::traitementHome($this->image10,'png',0,0);
+                }
+
+                if ($this->image11) {
+                    $this->home->projetLC=Image::traitementHome($this->image11,'png',0,0);
+                }
+
+                if ($this->image12) {
+                    $this->home->projetMg=Image::traitementHome($this->image12,'png',0,0);
                 }
                 
             } catch (\Throwable $th) {
@@ -243,6 +280,9 @@ class HomeConfig extends Component
                 $this->image7=null;       
                 $this->image8=null;   
                 $this->image9=null;   
+                $this->image10=null;   
+                $this->image11=null;   
+                $this->image12=null;   
                 $this->erreur=false;    
             }
         } else {
@@ -299,6 +339,18 @@ class HomeConfig extends Component
                     
     
                 }
+
+                if ($this->image10) {
+                    $this->home->projetMC=Image::traitementHome($this->image10,'png',0,0);
+                }
+
+                if ($this->image11) {
+                    $this->home->projetLC=Image::traitementHome($this->image11,'png',0,0);
+                }
+
+                if ($this->image12) {
+                    $this->home->projetMg=Image::traitementHome($this->image12,'png',0,0);
+                }
                 
             } catch (\Throwable $th) {
                     $this->message='erreur lors du traitement des images.';
@@ -321,7 +373,10 @@ class HomeConfig extends Component
             $this->image5=null;
             $this->image6=null;       
             $this->image7=null;       
-            $this->image8=null;   
+            $this->image8=null;  
+            $this->image10=null;   
+                $this->image11=null;   
+                $this->image12=null;  
                 $this->image9=null;   
                 $this->erreur=false;  
 

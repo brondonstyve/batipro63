@@ -186,13 +186,13 @@
                         @if ($infos)
                         <div class="content-text-up">
                             <div class="header-title">
-                                <h3 class="green"> {{$infos->titreVert2}} </h3>
-                                <h4>{{$infos->titre2}} </h4>
+                                <h3 class="green"> {!!$infos->titreVert2!!} </h3>
+                                <h4>{!!$infos->titre2!!} </h4>
                             </div>
                             <div class="content-bloc-description add-square" style="max-width: 60%;text-align: justify; ">
-                                <p class="head green">{{ $infos->slogan2 }}</p>
+                                <p class="head green">{!! $infos->slogan2 !!}</p>
                                 @if ($infos->resume2)
-                                <p class="jost-style jost-style-100">{{$infos->resume2}}</p>
+                                <p class="jost-style jost-style-100">{!!$infos->resume2!!}</p>
                                     
                                 @else
                                 <p class="jost-style jost-style-100">Fort Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
@@ -215,14 +215,6 @@
                         <br>
                         <br>
 
-                            @if (sizeOf($projets)==0)
-                    <br>
-                    <br>
-                                    
-                                        <div class="header-title">
-                                        <h4>Aucun projet enregistré pour le moment.</h4>
-                                        </div>
-                            @endif
                                 {{-- <div class="content-list-projects1 line-plus line-3"> --}}
                                     {{-- <div class="projects-categories filter-options">
                                         @if (sizeOf($projets)!=0)
@@ -367,7 +359,57 @@
                                     <div class="content-projects-wrapper">
                                        <div id="grid" class="flex my-shuffle-container space-around shuffle" style="position: relative; overflow: hidden; height: 995px; transition: height 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s;">
                                           
-                                        @foreach ($projets as $key=>$item)
+                                        @if ($infos)
+
+                                        <div class="content-project-wrapper hg-height shuffle-item shuffle-item--visible" style="background: url({{ asset('/app/accueil/'.$infos->projetMC)}}); position: absolute; top: 0px; visibility: visible; will-change: transform; left: 0px; opacity: 1; transition-duration: 250ms; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-property: transform, opacity;background-repeat:no-repeat">
+                                            <a href="{{route('mc')}}">
+                                                <div class="project-inner">
+                                                    <div class="inner-overlay">
+                                                       <div class="content-overlay">
+                                                          <div class="title-project">
+                                                             <h3>Maisons Contemporaines</h3>
+                                                          </div>
+                                                         </div>
+                                                    </div>
+                                                 </div>
+                                            </a>
+                                            
+                                         </div>
+
+                                         <div class="content-project-wrapper hg-height shuffle-item shuffle-item--visible" style="background: url({{ asset('/app/accueil/'.$infos->projetLC)}}); position: absolute; top: 0px; visibility: visible; will-change: transform; left: 0px; opacity: 1; transition-duration: 250ms; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-property: transform, opacity;background-repeat:no-repeat">
+                                            <a href="{{route('lc')}}">
+                                                <div class="project-inner">
+                                                    <div class="inner-overlay">
+                                                       <div class="content-overlay">
+                                                          <div class="title-project">
+                                                             <h3>Logements Collectifs</h3>
+                                                          </div>
+                                                         </div>
+                                                    </div>
+                                                 </div>
+                                            </a>
+                                            
+                                         </div>
+
+                                         <div class="content-project-wrapper hg-height shuffle-item shuffle-item--visible" style="background: url({{ asset('/app/accueil/'.$infos->projetMg)}}); position: absolute; top: 0px; visibility: visible; will-change: transform; left: 0px; opacity: 1; transition-duration: 250ms; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-property: transform, opacity;background-repeat:no-repeat">
+                                            <a href="{{route('mg')}}">
+                                                <div class="project-inner">
+                                                    <div class="inner-overlay">
+                                                       <div class="content-overlay">
+                                                          <div class="title-project">
+                                                             <h3>Maçonnerie Générale</h3>
+                                                          </div>
+                                                         </div>
+                                                    </div>
+                                                 </div>
+                                            </a>
+                                            
+                                         </div>
+
+
+                                        @endif
+
+                                        {{-- @foreach ($projets as $key=>$item)
                                         @if ($item->service=='Maison individuelle' || $item->service=='Maison contemporaine')
 
                                         <div class="content-project-wrapper hg-height shuffle-item shuffle-item--visible" style="background: url({{ asset('/app/projet/'.$item->img_principale)}}); position: absolute; top: 0px; visibility: visible; will-change: transform; left: 0px; opacity: 1; transition-duration: 250ms; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-property: transform, opacity;">
@@ -424,7 +466,7 @@
                                          </div>
                                         
                                         @endif
-                                        @endforeach
+                                        @endforeach --}}
 
                                          
 
@@ -432,6 +474,8 @@
                                        <div class="my-sizer-element"></div>
                                     </div>
                                  </div>
+
+
 
                                 <br>
 

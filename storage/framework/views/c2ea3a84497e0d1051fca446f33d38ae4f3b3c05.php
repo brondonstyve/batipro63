@@ -52,7 +52,6 @@
 
                         <div class="item">
                             <div class="work-wrap d-md-flex">
-                                <div class="img order-md-last" style="background-image: url(<?php echo e(asset('/app/maison/'.$etape->image1)); ?>);"></div>
                                 <div class="text text-left text-lg-right p-4 px-xl-5 d-flex align-items-center ">
                                     <div class="desc w-100">
                                         <h2 class="mb-2"><?php echo e($etape->etape1); ?></h2>
@@ -73,12 +72,13 @@
                                         
                                     </div>
                                 </div>
+                                <div class="img order-md-last" style="background-image: url(<?php echo e(asset('/app/maison/'.$etape->image1)); ?>);"></div>
+
                             </div>
                         </div>
 
                         <div class="item">
                             <div class="work-wrap d-md-flex">
-                                <div class="img order-md-last" style="background-image: url(<?php echo e(asset('/app/maison/'.$etape->image2)); ?>);"></div>
                                 <div class="text text-left text-lg-right p-4 px-xl-5 d-flex align-items-center ">
                                     <div class="desc w-100">
                                         <h2 class="mb-2"><?php echo e($etape->etape2); ?></h2>
@@ -98,12 +98,13 @@
                                         </p>
                                     </div>
                                 </div>
+                                <div class="img order-md-last" style="background-image: url(<?php echo e(asset('/app/maison/'.$etape->image2)); ?>);"></div>
+
                             </div>
                         </div>
 
                         <div class="item">
                             <div class="work-wrap d-md-flex">
-                                <div class="img order-md-last" style="background-image: url(<?php echo e(asset('/app/maison/'.$etape->image3)); ?>);"></div>
                                 <div class="text text-left text-lg-right p-4 px-xl-5 d-flex align-items-center ">
                                     <div class="desc w-100">
                                         <h2 class="mb-2"><?php echo e($etape->etape3); ?></h2>
@@ -123,13 +124,14 @@
                                         </p>
                                     </div>
                                 </div>
+                                <div class="img order-md-last" style="background-image: url(<?php echo e(asset('/app/maison/'.$etape->image3)); ?>);"></div>
+
                             </div>
                         </div>
 
 
                         <div class="item">
                             <div class="work-wrap d-md-flex">
-                                <div class="img order-md-last" style="background-image: url(<?php echo e(asset('/app/maison/'.$etape->image4)); ?>);"></div>
                                 <div class="text text-left text-lg-right p-4 px-xl-5 d-flex align-items-center ">
                                     <div class="desc w-100">
                                         <h2 class="mb-2"><?php echo e($etape->etape4); ?></h2>
@@ -149,12 +151,13 @@
                                         </p>
                                     </div>
                                 </div>
+                                <div class="img order-md-last" style="background-image: url(<?php echo e(asset('/app/maison/'.$etape->image4)); ?>);"></div>
+
                             </div>
                         </div>
 
                         <div class="item">
                             <div class="work-wrap d-md-flex">
-                                <div class="img order-md-last" style="background-image: url(<?php echo e(asset('/app/maison/'.$etape->image5)); ?>);"></div>
                                 <div class="text text-left text-lg-right p-4 px-xl-5 d-flex align-items-center ">
                                     <div class="desc w-100">
                                         <h2 class="mb-2"><?php echo e($etape->etape5); ?></h2>
@@ -174,6 +177,8 @@
                                         </p>
                                     </div>
                                 </div>
+                                <div class="img order-md-last" style="background-image: url(<?php echo e(asset('/app/maison/'.$etape->image5)); ?>);"></div>
+
                             </div>
                         </div>
 
@@ -199,12 +204,13 @@
                                         </p>
                                     </div>
                                 </div>
+                                <div class="img order-md-last" style="background-image: url(<?php echo e(asset('/app/maison/'.$etape->image5)); ?>);"></div>
+
                             </div>
                         </div>
 
                         <div class="item">
                             <div class="work-wrap d-md-flex">
-                                <div class="img order-md-last" style="background-image: url(<?php echo e(asset('/app/maison/'.$etape->image7)); ?>);"></div>
                                 <div class="text text-left text-lg-right p-4 px-xl-5 d-flex align-items-center ">
                                     <div class="desc w-100">
                                         <h2 class="mb-2"><?php echo e($etape->etape7); ?></h2>
@@ -224,82 +230,13 @@
                                         </p>
                                     </div>
                                 </div>
+                                <div class="img order-md-last" style="background-image: url(<?php echo e(asset('/app/maison/'.$etape->image7)); ?>);"></div>
+
                             </div>
+
                         </div>
 
-                        <div class="item">
-                            <div class="work-wrap d-md-flex">
-                                <div class="img order-md-last" style="background-image: url(<?php echo e(asset('/app/maison/'.$etape->image8)); ?>);"></div>
-                                <div class="text text-left text-lg-right p-4 px-xl-5 d-flex align-items-center ">
-                                    <div class="desc w-100">
-                                        <h2 class="mb-2"><?php echo e($etape->etape8); ?></h2>
-                                        <h3><?php echo e($etape->titre8); ?></h3>
-                                        <div class="row justify-content-end">
-                                            <div class="col-xl-8 text-justify">
-                                                <p>
-                                                    <?php echo e($etape->description8); ?>
-
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <p style="margin-top: 30%">
-                                            <button type="button" class="btn btn-outline-dark mb-2 py-3 px-4" id="precedent8">Précédent</button>
-
-                                            <button type="button" class="btn btn-outline-dark mb-2 py-3 px-4" id="suivant8">Suivant</button>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <div class="work-wrap d-md-flex">
-                                <div class="img order-md-last" style="background-image: url(<?php echo e(asset('/app/maison/'.$etape->image9)); ?>);"></div>
-                                <div class="text text-left text-lg-right p-4 px-xl-5 d-flex align-items-center ">
-                                    <div class="desc w-100">
-                                        <h2 class="mb-2"><?php echo e($etape->etape9); ?></h2>
-                                        <h3><?php echo e($etape->titre9); ?></h3>
-                                        <div class="row justify-content-end">
-                                            <div class="col-xl-8 text-justify">
-                                                <p>
-                                                    <?php echo e($etape->description9); ?>
-
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <p style="margin-top: 30%">
-                                            <button type="button" class="btn btn-outline-dark mb-2 py-3 px-4" id="precedent9">Précédent</button>
-
-                                            <button type="button" class="btn btn-outline-dark mb-2 py-3 px-4" id="suivant9">Suivant</button>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <div class="work-wrap d-md-flex">
-                                <div class="img order-md-last" style="background-image: url(<?php echo e(asset('/app/maison/'.$etape->image10)); ?>);"></div>
-                                <div class="text text-left text-lg-right p-4 px-xl-5 d-flex align-items-center ">
-                                    <div class="desc w-100">
-                                        <h2 class="mb-2"><?php echo e($etape->etape10); ?></h2>
-                                        <h3><?php echo e($etape->titre10); ?></h3>
-                                        <div class="row justify-content-end">
-                                            <div class="col-xl-8 text-justify">
-                                                <p>
-                                                    <?php echo e($etape->description10); ?>
-
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <p style="margin-top: 30%">
-                                            <button type="button" class="btn btn-outline-dark mb-2 py-3 px-4" id="precedent10">Précédentt</button>
-                                            <button type="button" class="btn btn-outline-dark mb-2 py-3 px-4" id="suivant10">Suivant</button>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        
 
 
 
@@ -370,39 +307,41 @@
             $('.owl-next').click();
         });
 
+
+
         $("#precedent1").click(function() {
-    $('.owl-prev').click();
-});
+            $('.owl-prev').click();
+        });
 
-$("#precedent2").click(function() {
-    $('.owl-prev').click();
-});
-$("#precedent3").click(function() {
-    $('.owl-prev').click();
-});
-$("#precedent4").click(function() {
-    $('.owl-prev').click();
-});
-$("#precedent5").click(function() {
-    $('.owl-prev').click();
-});
+        $("#precedent2").click(function() {
+            $('.owl-prev').click();
+        });
+        $("#precedent3").click(function() {
+            $('.owl-prev').click();
+        });
+        $("#precedent4").click(function() {
+            $('.owl-prev').click();
+        });
+        $("#precedent5").click(function() {
+            $('.owl-prev').click();
+        });
 
-$("#precedent6").click(function() {
-    $('.owl-prev').click();
-});
-$("#precedent7").click(function() {
-    $('.owl-prev').click();
-});
-$("#precedent8").click(function() {
-    $('.owl-prev').click();
-});
-$("#precedent9").click(function() {
-    $('.owl-prev').click();
-});
+        $("#precedent6").click(function() {
+            $('.owl-prev').click();
+        });
+        $("#precedent7").click(function() {
+            $('.owl-prev').click();
+        });
+        $("#precedent8").click(function() {
+            $('.owl-prev').click();
+        });
+        $("#precedent9").click(function() {
+            $('.owl-prev').click();
+        });
 
-$("#precedent10").click(function() {
-    $('.owl-prev').click();
-});
+        $("#precedent10").click(function() {
+            $('.owl-prev').click();
+        });
     </script>
     <script src="<?php echo e(asset('/front-end/mo/js/popper.js')); ?>"></script>
     <script src="<?php echo e(asset('/front-end/mo/js/bootstrap.min.js')); ?>"></script>

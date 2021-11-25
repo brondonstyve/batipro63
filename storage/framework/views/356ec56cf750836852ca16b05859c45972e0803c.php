@@ -115,42 +115,55 @@
       </ul>
       <i class="icon" style="display: none;"></i>
       <ul class="list">
-          <li class="call">
-        <a href="tel:<?php echo e($about->telephone1); ?>">
-          <h6>Appelez au</h6>
-          <?php if($about): ?>
-              <p><?php echo e($about->telephone1); ?></p>
-              <p><?php echo e($about->telephone2); ?></p>
-          <?php else: ?>
-          <p>04 73 31 23 97</p>
-          <?php endif; ?>
-      </a>
+        
+        <li >
+          <a href="tel:<?php echo e($about->telephone1); ?>" class="a">
+          <div class="call">
+            <h6>Appelez au</h6>
+            <?php if($about): ?>
+                <p><?php echo e($about->telephone1); ?></p>
+                <p><?php echo e($about->telephone2); ?></p>
+            <?php else: ?>
+            <p>04 73 31 23 97</p>
+            <?php endif; ?>
+          </div>
+        </a> 
+    </li>
+  
+
+
+
+        <li >
+          <a href=" <?php echo e(route('contact')); ?> ">
+          <div class="mail">
+            <h6>Envoyez</h6>
+            <p>Un message</p>
+          </div>
+        </a> 
+       </li>  
+
+        
+  <li>
+    <a href="https://www.facebook.com/messages/t/704364726335638" target="_blank">
+    <div  class="tchat">
+      <h6>Tchatez</h6>
+      <p>Sur messenger</p>
+    </div>
+  </a> 
     </li>
 
 
-
-        <li class="mail">
-      <a href=" <?php echo e(route('contact')); ?> ">
-        <h6>Envoyez</h6>
-          <p>Un message</p>
-        </a>
-      </li>
-
-        <li class="tchat">
-        <a href="#">
-          <h6>Tchatez</h6>
-          <p>Sur messenger</p>
-      </a>
-    </li>
-
-
+  
           
-        <li class="pdf">
+        <li>
           <a href="<?php echo e(route('brochure')); ?>">
-          <h6>Consultez</h6>
-          <p>La brochure</p>
+          <div  class="pdf"> 
+            <h6>Consultez</h6>
+            <p>La brochure</p>
+          </div>
         </a>
         </li>
+
       </ul>
     </div>
 </section>

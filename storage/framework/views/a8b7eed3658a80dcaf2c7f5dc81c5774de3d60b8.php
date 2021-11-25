@@ -1,1 +1,0 @@
-<?php /**PATH /home/styve/dev/laravel/batipro/resources/views/livewire/static-sign-in.blade.php ENDPATH**/ ?>

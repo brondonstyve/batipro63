@@ -22,7 +22,7 @@
                   <div class="left-bloc-text">
                     <div class="content-text-up">
                       <div class="header-title">
-                        <h4>Vous recherchez un terrains pour votre projet?</h4>
+                        <h4>Vous recherchez un terrain pour votre projet?</h4>
                       </div>
                     </div>
                   </div>
@@ -31,15 +31,15 @@
                     <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('send-mail-terrain')->html();
-} elseif ($_instance->childHasBeenRendered('WoV2hfD')) {
-    $componentId = $_instance->getRenderedChildComponentId('WoV2hfD');
-    $componentTag = $_instance->getRenderedChildComponentTagName('WoV2hfD');
+} elseif ($_instance->childHasBeenRendered('XduXZ5L')) {
+    $componentId = $_instance->getRenderedChildComponentId('XduXZ5L');
+    $componentTag = $_instance->getRenderedChildComponentTagName('XduXZ5L');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('WoV2hfD');
+    $_instance->preserveRenderedChild('XduXZ5L');
 } else {
     $response = \Livewire\Livewire::mount('send-mail-terrain');
     $html = $response->html();
-    $_instance->logRenderedChild('WoV2hfD', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('XduXZ5L', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>

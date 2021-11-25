@@ -25,7 +25,7 @@
                   <div class="left-bloc-text">
                     <div class="content-text-up">
                       <div class="header-title">
-                        <h4>Vous recherchez un terrains pour votre projet?</h4>
+                        <h4>Vous recherchez un terrain pour votre projet?</h4>
                       </div>
                     </div>
                   </div>

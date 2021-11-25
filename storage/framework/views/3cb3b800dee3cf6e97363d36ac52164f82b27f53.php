@@ -49,16 +49,27 @@
 
                         <?php if($infos): ?>
                         <h4> <?php echo e($infos->description); ?> </h4>
-
+                        <p><?php echo e($infos->resume); ?></p>
                         <?php else: ?>
                         <h4>Batipro63, spécialiste des Maison contemporaines, vous propose des solutions personnaisées et adaptées </h4>
-                        
-                        <?php endif; ?>
                         <p>Pourquoi construire votre maison avec Batipro63 ?</p>
+                        <?php endif; ?>
+                       
                       </div> 
                     </div>
                     <div class="content-bloc-image">
+                      <?php if($infos): ?>
+                          <?php if($infos->imageDesc): ?>
+                      <img src="<?php echo e(asset('/app/maison/'.$infos->imageDesc)); ?>" alt="">
+                              
+                          <?php else: ?>
                       <img src="<?php echo e(asset('/front-end/assets/img/log-coll.jpg')); ?>" alt="">
+                              
+                          <?php endif; ?>
+                      <?php else: ?>
+                      <img src="<?php echo e(asset('/front-end/assets/img/log-coll.jpg')); ?>" alt="">
+                          
+                      <?php endif; ?>
                     </div>
                   </div>
                 </div>
@@ -115,15 +126,15 @@
               <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('projet3')->html();
-} elseif ($_instance->childHasBeenRendered('2dGYyr1')) {
-    $componentId = $_instance->getRenderedChildComponentId('2dGYyr1');
-    $componentTag = $_instance->getRenderedChildComponentTagName('2dGYyr1');
+} elseif ($_instance->childHasBeenRendered('xcvagj9')) {
+    $componentId = $_instance->getRenderedChildComponentId('xcvagj9');
+    $componentTag = $_instance->getRenderedChildComponentTagName('xcvagj9');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('2dGYyr1');
+    $_instance->preserveRenderedChild('xcvagj9');
 } else {
     $response = \Livewire\Livewire::mount('projet3');
     $html = $response->html();
-    $_instance->logRenderedChild('2dGYyr1', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('xcvagj9', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>

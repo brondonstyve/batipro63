@@ -295,7 +295,7 @@ unset($__errorArgs, $__bag); ?>
                         </div>
                         <?php endif; ?>
 
-          <h3 for="">Bloc 1 et 3</h3>
+          <h3 for="">Bloc 1</h3>
 
           <div class="col-md-6">
             <div class="form-group">
@@ -356,23 +356,86 @@ unset($__errorArgs, $__bag); ?>
              </div>
         </div>
 
-          <div class="col-md-12">
+
+        <div class="col-md-6">
             <div class="form-group">
                 <label for="actualite-name" class="form-control-label">Titre du bloc 1</label>
                 <div class="">
                     <input wire:model.lazy="actualite1.titre" class="form-control" type="text" required>
                 </div>
+                <br>
+                <div class="">
+                <label for="actualite-name" class="form-control-label">Description du bloc 1</label>
+                <textarea name="" id="" rows="3" wire:model.lazy="actualite1.description" class="form-control" required></textarea>
+                </div>
+                <br>
+                <div class="">
+                <label for="actualite-name" class="form-control-label">Resumé avant image</label>
+                <textarea name="" id="" rows="3" wire:model.lazy="actualite1.resume" class="form-control" required></textarea>
+            </div>
              </div>
         </div>
 
-        <div class="col-md-12">
+
+        
+        <div class="col-md-6">
             <div class="form-group">
-                <label for="actualite-name" class="form-control-label">Description du bloc 1</label>
+                <label for="actualite1-name" class="form-control-label">Image descriptif bloc 1</label>
                 <div class="">
-                    <textarea name="" id="" rows="5" wire:model.lazy="actualite1.description" class="form-control" required></textarea>
+                     <input wire:model="imageDesc" class="form-control" type="file"  accept="image/*" > 
                 </div>
+    <?php $__errorArgs = ['imageDesc'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> <span class="text text-danger error">Erreur lors du téléchargement</span> <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+
+                <button class="btn btn-primary btn-sm mt-2" type="button" disabled wire:loading wire:target='imageDesc'>
+                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                    Patientez le chargement de l'image...
+                  </button>
+             </div>
+
+             <div class="form-group">
+                <label for="actualite1-name" class="form-control-label">Visuel</label>
+                <div class="">
+                    <?php if($imageDesc): ?>
+                    <div class="row">
+                        <div class="col-xl-4 mx-auto col-md-12 mb-xl-0 mt-2">
+                            <div class="card card-blog card-plain">
+                                <div class="position-relative">
+                                    <a class="d-block shadow-xl border-radius-xl">
+                                        <img src=" <?php echo e($imageDesc->temporaryUrl()); ?> " alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <?php else: ?>
+                    <?php if($this->actualite1->imageDesc): ?>
+                    <div class="row">
+                        <div class="col-xl-4 mx-auto col-md-12 mb-xl-0 mt-2">
+                            <div class="card card-blog card-plain">
+                                <div class="position-relative">
+                                    <a class="d-block shadow-xl border-radius-xl">
+                                        <img src=" <?php echo e(asset('/app/maison/'.$this->actualite1->imageDesc)); ?> " alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <?php endif; ?>
+                    <?php endif; ?>
+                </div>
+                
              </div>
         </div>
+
+
+        <h3>Bloc3</h3>
 
 
                                     <div class="col-md-4">

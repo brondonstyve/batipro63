@@ -173,15 +173,19 @@ class Billing extends Component
         try {
             
              foreach ($this->image as $key => $value) {
+                 
              $name=$name.'->'.Image::traitement($this->image[$key],'png',1422,500);
+             if($key==0){
+                $this->projet->img_principale=explode('->',$name)[1];
+             }
             }
         } catch (\Throwable $th) {
-            $this->message='erreur lors de l\'enregistrement des images.';
+            $this->message=$th.'erreur lors de l\'enregistrement des images.';
             $this->showSuccesNotification = false;
             $this->showErrorNotification = true;
         }
 
-        $principal=explode('->',$name)[1];
+
         
 
         try {
@@ -189,7 +193,7 @@ class Billing extends Component
             $this->validate(
                 [
                     'projet.libelle'=>'required',
-                    'projet.annee'=>'required|numeric',
+                    'projet.annee'=>'',
                     'projet.duree'=>'',
                     'projet.description'=>'required',
                     'projet.lieu'=>'required',
@@ -199,7 +203,6 @@ class Billing extends Component
                 ]
             );
             $this->projet->image=$name;
-            $this->projet->img_principale=$principal;
             $this->projet->save();
             $this->projet=projet::make();
             $this->message='projet ajouté avec succès.';
@@ -214,12 +217,15 @@ class Billing extends Component
             $this->showSuccesNotification = false;
             $this->showErrorNotification = true;
         }
+        
         }
+
     }
 
 
     public function getListProjectProperty(){
         return projet::where([['service','like',"%$this->service%"]])
+        ->orderBy('id','desc')
         ->paginate(8);
     }
 

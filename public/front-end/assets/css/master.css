@@ -202,7 +202,7 @@ section.container-description .header-title h4 {
 
 .container-navigation {
     margin: 20px 0;
-    color: #989898;
+    color: #000000;
     text-transform: uppercase;
     font-family: 'Jost-Regular';
     padding: 3
@@ -514,11 +514,24 @@ button.active {
     /* opacity: 0; */
 }
 
+.inner-overlay1 {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* transform: translateY(20px); */
+    /* transition: .3s; */
+    /* opacity: 0; */
+}
+
 .title-project h3 {
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     font-size: 18px;
     text-transform: uppercase;
-    height: 30px;
 }
 
 .inner-overlay:after {
@@ -534,9 +547,22 @@ button.active {
     transition: .3s;
 }
 
+.inner-overlay1:after {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: #ffffffa6;
+    content: '';
+    z-index: 1;
+    opacity: 0;
+    transition: .3s;
+}
+
 .content-overlay {
     position: relative;
-    z-index: 2;
+    z-index: 10;
 }
 
 .content-overlay:before {
@@ -546,13 +572,28 @@ button.active {
     left: 0;
     width: 100%;
     height: 30px;
-    background: url(../img/plus.png) no-repeat 50% 50%;
+    background: url(../img/plusb.png) no-repeat 50% 50%;
+}
+
+.content-overlay1 {
+    position: relative;
+    z-index: 10;
+}
+
+.content-overlay1:before {
+    content: '';
+    position: absolute;
+    top: -36px;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    background: url(../img/plusb.png) no-repeat 50% 50%;
 }
 
 .content-title-category {
     font-family: 'jost', cursive;
-    color: #000;
-    font-weight: 300;
+    color: rgb(255, 255, 255);
+    font-weight: 500;
 }
 
 .content-icone-plus {
@@ -562,6 +603,12 @@ button.active {
 
 .content-project-wrapper:hover .inner-overlay:after {
     opacity: 1;
+    background-color: rgb(53, 52, 52, 0.5);
+}
+
+.content-project-wrapper1:hover .inner-overlay1:after {
+    opacity: 1;
+    background-color: rgb(53, 52, 52, 0.5);
 }
 
 .content-project-wrapper:hover .content-overlay {
@@ -573,6 +620,17 @@ button.active {
     transform: translateY(20px);
     transition: .3s;
     opacity: 1;
+}
+
+.content-project-wrapper1:hover .content-overlay1 {
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+.content-overlay1 {
+    transform: translateY(20px);
+    transition: .3s;
+    opacity: 0;
 }
 
 .line-3::before {
@@ -945,6 +1003,9 @@ section.copyright .container {
 section.container-banner {
     height: 650px;
     position: relative;
+    background: no-repeat;
+    background-size: cover;
+    background-position: center center;
 }
 
 .service-page-detail section.container-banner {
@@ -2655,7 +2716,7 @@ section#nav-off .open ul.list {
     opacity: 1;
 }
 
-section#nav-off ul.list li {
+section#nav-off ul.list li div {
     position: relative;
     float: left;
     width: 25%;
@@ -2665,7 +2726,7 @@ section#nav-off ul.list li {
     /* display: none; */
 }
 
-section#nav-off ul.list li h6 {
+section#nav-off ul.list li div h6 {
     margin: 0;
     color: #fff;
     text-transform: uppercase;
@@ -2673,19 +2734,19 @@ section#nav-off ul.list li h6 {
     font-size: 20px;
 }
 
-section#nav-off ul.list li p {
+section#nav-off ul.list li div p {
     color: #ddd;
     margin: 7px 0 0;
     font-size: 13px;
 }
 
-section#nav-off ul.list li p a {
+section#nav-off ul.list li div p a {
     color: #4dc5ba;
     position: relative;
     padding: 4px 25px 8px;
 }
 
-section#nav-off ul.list li p a:after {
+section#nav-off ul.list li div p a:after {
     content: '';
     position: absolute;
     top: 0;
@@ -2697,16 +2758,16 @@ section#nav-off ul.list li p a:after {
     z-index: -1;
 }
 
-section#nav-off ul.list li p a:hover {
+section#nav-off ul.list li div p a:hover {
     color: #fff;
 }
 
-section#nav-off ul.list li p a:hover:after {
+section#nav-off ul.list li div p a:hover:after {
     width: 100%;
     transition: all 0.3s ease-in-out;
 }
 
-section#nav-off ul.list li:before {
+section#nav-off ul.list li div:before {
     content: '';
     position: absolute;
     top: 0;
@@ -2717,7 +2778,7 @@ section#nav-off ul.list li:before {
     height: 60px;
 }
 
-section#nav-off ul.list li:after {
+section#nav-off ul.list li div:after {
     content: '';
     position: absolute;
     top: calc( 50% - 5px);
@@ -2728,23 +2789,31 @@ section#nav-off ul.list li:after {
     border-radius: 50%;
 }
 
-section#nav-off ul.list li.call:before {
+section#nav-off ul.list li div.call:before {
     background-image: url(../img/appelez.png);
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
-section#nav-off ul.list li.mail:before {
+section#nav-off ul.list li div.mail:before {
     background-image: url(../img/ecrivez.png);
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
-section#nav-off ul.list li.tchat:before {
+section#nav-off ul.list li div.tchat:before {
     background-image: url(../img/tchatez.png);
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
-section#nav-off ul.list li.pdf:before {
+section#nav-off ul.list li div.pdf:before {
     background-image: url(../img/consultez.png);
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
-section#nav-off ul.list li.pdf:after {
+section#nav-off ul.list li div.pdf:after {
     display: none;
     z-index: 999999999;
 }
@@ -3383,6 +3452,7 @@ section#loading span {
     height: auto;
     margin: 0 7px 20px;
     background-position: center !important;
+    text-align: center;
 }
 
 #container-intro-projets1 .content-project-wrapper1 .content-project-wrapper1 {
@@ -3405,11 +3475,7 @@ section#loading span {
     margin-top: 25px;
 }
 
-.content-project-wrapper1:hover .inner-overlay:after {
-    opacity: 1;
-}
-
-.content-project-wrapper1:hover .content-overlay {
+.content-project-wrapper1:hover .content-overlay1 {
     transform: translateY(0px);
     opacity: 1;
 }
@@ -3439,6 +3505,22 @@ section#loading span {
     color: #8e8e8e;
 }
 
-section#nav-off ul.list li:hover {
-    box-shadow: 0px 0 8px 3px rgb(255 255 255 / 54%);
+section#nav-off ul.list li div:hover {
+    box-shadow: 0px 0 8px 3px #5aa39c;
+}
+
+section.copyright1 {
+    padding: 2px 0;
+    background: rgb(255, 255, 255);
+    color: #b0adad;
+    margin-top: -130px;
+}
+
+section.copyright1 .container {
+    width: 100%;
+    float: right;
+}
+
+section.copyright1 .container a {
+    margin: 2px;
 }

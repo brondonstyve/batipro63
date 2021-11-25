@@ -26,7 +26,7 @@ class LogementCollectif extends Component
     public $image3;
     public $image4;
     public $image5;
-    public $imageC2;
+    public $imageDesc;
     public $showSuccesNotification  = false; 
     public $showErrorNotification  = false;
 
@@ -63,6 +63,8 @@ class LogementCollectif extends Component
         'actualite1.image'=> '',
         'actualite1.imageEnt'=> '',
         'actualite1.titre'=> '',
+        'actualite1.imageDesc'=> '',
+        'actualite1.resume'=> '',
         ];
 
 
@@ -300,11 +302,13 @@ class LogementCollectif extends Component
         $reponse=lcpage::count();
 
         try {
-            if ($this->imageC2) {
-                $this->actualite1->image=Image::traitementMV($this->imageC2,'png',1700,1133);
-            }
             if ($this->imageEnt) {
-                $this->actualite1->imageEnt=Image::traitementS($this->imageEnt,'png');
+                $this->actualite1->imageEnt=Image::traitementS($this->imageEnt,'jpg');
+                
+            }
+
+            if ($this->imageDesc) {
+                $this->actualite1->imageDesc=Image::traitementS($this->imageDesc,'jpg');
                 
             }
             
@@ -332,13 +336,16 @@ class LogementCollectif extends Component
                         'actualite1.image'=> '',
                         'actualite1.imageEnt'=> '',
                         'actualite1.titre'=> '',
+                        'actualite1.imageDesc'=> '',
+                        'actualite1.resume'=> '',
                     ]
                 );
                 $this->actualite1->save();
                 $this->message='Parramétrage  enregistré avec succès';
                 $this->showSuccesNotification1= true;
                 $this->showErrorNotification1 = false;
-                $this->imageC2=null;   
+                $this->imageEnt=null;   
+                $this->imageDesc=null; 
             
         } else {
 
@@ -346,10 +353,12 @@ class LogementCollectif extends Component
             $this->validate(
                 [
                     'actualite1.description'=> '',
-        'actualite1.description2'=> '',
-        'actualite1.image'=> '',
-        'actualite1.imageEnt'=> '',
-        'actualite1.titre'=> '',
+                    'actualite1.description2'=> '',
+                    'actualite1.image'=> '',
+                    'actualite1.imageEnt'=> '',
+                    'actualite1.titre'=> '',
+                    'actualite1.imageDesc'=> '',
+                    'actualite1.resume'=> '',
                 ]
             );
             
@@ -357,7 +366,8 @@ class LogementCollectif extends Component
             $this->message='Parramétrage mis à jour avec succès';
             $this->showSuccesNotification1 = true;
             $this->showErrorNotification1 = false;
-            $this->imageC2=null; 
+            $this->imageEnt=null; 
+            $this->imageDesc=null; 
 
 
         }

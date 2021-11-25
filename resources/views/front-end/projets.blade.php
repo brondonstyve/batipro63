@@ -53,9 +53,14 @@
        <div class="projects-categories filter-options">
 
          {{-- @if (sizeOf($projets)!=0) --}}
+         @if ($vue==false)
          <button  data-group="Maison contemporaine">Maison Contemporaine</button>
          <button  data-group="Logement collectif">Logement collectif</button>
          <button  data-group="Maçonnerie générale">Maçonnerie générale</button>
+         @else
+         <button  data-group="Maison contemporaine" class="active">{{$vue}}</button>
+         @endif
+         
          {{-- @foreach ($services as $service)
          <button data-group="{{$service->service}}" >{{$service->service}}</button>
          @endforeach --}}
@@ -71,14 +76,14 @@
         @foreach ($projets as $key=>$item)
           <div class="content-project-wrapper1 hg-height" data-groups='["@if($item->service=='Maison individuelle'){{'Maison contemporaine'}}@else{{$item->service}}@endif","all"]'>
             <div class="project-inner">
-              <a href="{{route('detailProjet',encrypt($item->id))}}">
+              <a href="{{route('detailProjet',encrypt($item->id))}}"> 
 
             
-              <img src="{{ asset('/app/projet/'.$item->img_principale)}}" style="width: 100%;height: 300px;">
+              <img src="{{ asset('/app/projet/'.$item->img_principale)}}" style="width: 100%;height: 300px;"> 
             
-
-              <div class="inner-overlay">
-                 <div class="content-overlay"> 
+              {{-- style="background:linear-gradient(rgba(0, 0, 0, 0.35),rgba(0, 0, 0, 0.35))" --}}
+              <div class="inner-overlay1"  >
+                 <div class="content-overlay1"> 
                     <div class="content-icone-plus"></div>           
                     <div class="title-project">
                        <h3> {{$item->libelle}} </h3>
@@ -143,6 +148,40 @@
           <div class="my-sizer-element"></div>
        </div>
 --}}
+<div class="projects-categories filter-options">
+
+ @if ($vue=='Maçonnerie générale')
+ <div class="content-btn-action-" style="margin-bottom: 50px">
+  <a href="{{route('projetLc')}}"><span>Voir Logement collectif</span></a>
+</div>
+
+<div class="content-btn-action-">
+  <a href="{{route('projetMc')}}"><span>Voir Maison Contemporaine</span></a>
+</div>
+ @endif
+
+ @if ($vue=='Maison contemporaine')
+ <div class="content-btn-action-" style="margin-bottom: 50px">
+  <a href="{{route('projetMg')}}"><span>Voir Maçonnerie générale</span></a>
+</div>
+<div class="content-btn-action-">
+<a href="{{route('projetLc')}}"><span>Voir Logement collectif</span></a>
+</div>
+ @endif
+
+ @if ($vue=='Logement collectif')
+ <div class="content-btn-action-" style="margin-bottom: 50px">
+  <a href="{{route('projetMg')}}"><span>Voir Maçonnerie générale</span></a>
+</div>
+
+<div class="content-btn-action-">
+<a href="{{route('projetMc')}}"><span>Voir Maison Contemporaine</span></a>
+</div>
+ @endif
+
+
+
+</div>
 
     </div>
   </div>

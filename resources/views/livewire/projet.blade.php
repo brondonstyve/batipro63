@@ -2,6 +2,18 @@
     <div class="card card-body blur shadow-blur">
 
 
+        @if($liste)
+        <div class="col-xl-4 col-md-8 mb-xl-0 mb-4" wire:click='new()'>
+            <div class="card h-100 card-plain border">
+                <div class="card-body d-flex flex-column justify-content-center text-center">
+                    <a href="javascript:;">
+                        <i class="fa fa-plus text-secondary mb-3"></i>
+                        <h5 class=" text-secondary"> Nouveau projet </h5>
+                    </a>
+                </div>
+            </div>
+        </div>
+        @endif
 
         
 
@@ -29,19 +41,7 @@
             </div>
             @endif
 
-            @if($liste)
-            <div class="col-xl-4 col-md-8 mb-xl-0 mb-4" wire:click='new'>
-                <div class="card h-100 card-plain border">
-                    <div class="card-body d-flex flex-column justify-content-center text-center">
-                        <a href="javascript:;">
-                            <i class="fa fa-plus text-secondary mb-3"></i>
-                            <h5 class=" text-secondary"> Nouveau projet </h5>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            @endif
-
+          
             
 
         @if ($liste)
@@ -50,7 +50,7 @@
             <button class="btn btn-info" wire:click="updateService('Maison contemporaine')">Maison contemporaine</button>
             <button class="btn btn-info" wire:click="updateService('Logement collectif')">Logement collectif</button>
             <button class="btn btn-info" wire:click="updateService('Maconnerie générale')">Maconnerie générale</button>
-            <button class="btn btn-info" wire:click="updateService('Maison Individuelle')">Maison Individuelle</button>
+            {{-- <button class="btn btn-info" wire:click="updateService('Maison Individuelle')">Maison Individuelle</button> --}}
         </div>
         <div class="col-12 mt-4">
             <div class="card mb-4"> 
@@ -91,7 +91,7 @@
 
                         
                         @php
-                        $image=explode('->',$item->image);
+                        $image=explode('->',$item->image); 
                         @endphp
                         
 
@@ -190,7 +190,6 @@
                                             <option value="Maison contemporaine">Maison contemporaine</option>
                                             <option value="Logement collectif">Logement collectif </option>
                                             <option value="Maçonnerie générale">Maçonnerie générale</option>
-
                                             </select>
                                         </div>
                                         @error('projet.service') <div class="text-danger">{{ $message }}</div> @enderror
@@ -210,7 +209,7 @@
                                         <label for="projet-email" class="form-control-label">{{ __('Année de réalisation') }}</label>
                                         <div class="@error('projet.email')border border-danger rounded-3 @enderror">
                                             <input wire:model.lazy="projet.annee" class="form-control" type="number"
-                                                placeholder="Année de réalisation" id="projet-email" required>
+                                                placeholder="Année de réalisation" id="projet-email"  min="1000" max="{{date('Y')}}">
                                         </div>
                                         @error('projet.annee') <div class="text-danger">{{ $message }}</div> @enderror
                                     </div>

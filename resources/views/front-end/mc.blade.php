@@ -48,16 +48,28 @@
 
                         @if ($infos)
                         <h4> {{$infos->description}} </h4>
+                        <p>{{$infos->resume}}</p>
 
                         @else
                         <h4>Batipro63, spécialiste des Maison contemporaines, vous propose des solutions personnaisées et adaptées </h4>
+                        <p>Pourquoi construire votre maison avec Batipro63 ?</p>
                         
                         @endif
-                        <p>Pourquoi construire votre maison avec Batipro63 ?</p>
                       </div>
                     </div>
                     <div class="content-bloc-image">
-                      <img src="{{asset('/front-end/assets/img/mc.jpg')}}" alt="">
+                      @if ($infos)
+                          @if ($infos->imageDesc)
+                      <img src="{{ asset('/app/maison/'.$infos->imageDesc)}}" alt="">
+                              
+                          @else
+                      <img src="{{ asset('/front-end/assets/img/log-coll.jpg')}}" alt="">
+                              
+                          @endif
+                      @else
+                      <img src="{{ asset('/front-end/assets/img/log-coll.jpg')}}" alt="">
+                          
+                      @endif
                     </div>
                   </div>
                 </div>

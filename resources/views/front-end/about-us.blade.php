@@ -141,7 +141,7 @@
         <div class="header-title">
           <h3 class="green">{{$about->titre2 }}</h3>
            
-          <h4 class="text-justify">Après {!!$about->annee_experience !!} ans d'expérience, quelques chiffres clés</h4>
+          <h4 class="text-justify">{{$about->resume2 }}</h4>
          
         </div>
         <div class="content-bloc-description add-square">

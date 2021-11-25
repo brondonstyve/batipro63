@@ -48,16 +48,28 @@
 
                         <?php if($infos): ?>
                         <h4> <?php echo e($infos->description); ?> </h4>
+                        <p><?php echo e($infos->resume); ?></p>
 
                         <?php else: ?>
                         <h4>Batipro63, spécialiste des Maison contemporaines, vous propose des solutions personnaisées et adaptées </h4>
+                        <p>Pourquoi construire votre maison avec Batipro63 ?</p>
                         
                         <?php endif; ?>
-                        <p>Pourquoi construire votre maison avec Batipro63 ?</p>
                       </div>
                     </div>
                     <div class="content-bloc-image">
-                      <img src="<?php echo e(asset('/front-end/assets/img/mc.jpg')); ?>" alt="">
+                      <?php if($infos): ?>
+                          <?php if($infos->imageDesc): ?>
+                      <img src="<?php echo e(asset('/app/maison/'.$infos->imageDesc)); ?>" alt="">
+                              
+                          <?php else: ?>
+                      <img src="<?php echo e(asset('/front-end/assets/img/log-coll.jpg')); ?>" alt="">
+                              
+                          <?php endif; ?>
+                      <?php else: ?>
+                      <img src="<?php echo e(asset('/front-end/assets/img/log-coll.jpg')); ?>" alt="">
+                          
+                      <?php endif; ?>
                     </div>
                   </div>
                 </div>
@@ -116,15 +128,15 @@
               <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('projet3')->html();
-} elseif ($_instance->childHasBeenRendered('T8nD206')) {
-    $componentId = $_instance->getRenderedChildComponentId('T8nD206');
-    $componentTag = $_instance->getRenderedChildComponentTagName('T8nD206');
+} elseif ($_instance->childHasBeenRendered('35TPPGE')) {
+    $componentId = $_instance->getRenderedChildComponentId('35TPPGE');
+    $componentTag = $_instance->getRenderedChildComponentTagName('35TPPGE');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('T8nD206');
+    $_instance->preserveRenderedChild('35TPPGE');
 } else {
     $response = \Livewire\Livewire::mount('projet3');
     $html = $response->html();
-    $_instance->logRenderedChild('T8nD206', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('35TPPGE', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>

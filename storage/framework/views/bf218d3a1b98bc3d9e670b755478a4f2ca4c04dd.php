@@ -50,9 +50,14 @@
        <div class="projects-categories filter-options">
 
          
+         <?php if($vue==false): ?>
          <button  data-group="Maison contemporaine">Maison Contemporaine</button>
          <button  data-group="Logement collectif">Logement collectif</button>
          <button  data-group="Maçonnerie générale">Maçonnerie générale</button>
+         <?php else: ?>
+         <button  data-group="Maison contemporaine" class="active"><?php echo e($vue); ?></button>
+         <?php endif; ?>
+         
          
                 
          
@@ -66,14 +71,14 @@
         <?php $__currentLoopData = $projets; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key=>$item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
           <div class="content-project-wrapper1 hg-height" data-groups='["<?php if($item->service=='Maison individuelle'): ?><?php echo e('Maison contemporaine'); ?><?php else: ?><?php echo e($item->service); ?><?php endif; ?>","all"]'>
             <div class="project-inner">
-              <a href="<?php echo e(route('detailProjet',encrypt($item->id))); ?>">
+              <a href="<?php echo e(route('detailProjet',encrypt($item->id))); ?>"> 
 
             
-              <img src="<?php echo e(asset('/app/projet/'.$item->img_principale)); ?>" style="width: 100%;height: 300px;">
+              <img src="<?php echo e(asset('/app/projet/'.$item->img_principale)); ?>" style="width: 100%;height: 300px;"> 
             
-
-              <div class="inner-overlay">
-                 <div class="content-overlay"> 
+              
+              <div class="inner-overlay1"  >
+                 <div class="content-overlay1"> 
                     <div class="content-icone-plus"></div>           
                     <div class="title-project">
                        <h3> <?php echo e($item->libelle); ?> </h3>
@@ -100,6 +105,40 @@
 
 
 
+<div class="projects-categories filter-options">
+
+ <?php if($vue=='Maçonnerie générale'): ?>
+ <div class="content-btn-action-" style="margin-bottom: 50px">
+  <a href="<?php echo e(route('projetLc')); ?>"><span>Voir Logement collectif</span></a>
+</div>
+
+<div class="content-btn-action-">
+  <a href="<?php echo e(route('projetMc')); ?>"><span>Voir Maison Contemporaine</span></a>
+</div>
+ <?php endif; ?>
+
+ <?php if($vue=='Maison contemporaine'): ?>
+ <div class="content-btn-action-" style="margin-bottom: 50px">
+  <a href="<?php echo e(route('projetMg')); ?>"><span>Voir Maçonnerie générale</span></a>
+</div>
+<div class="content-btn-action-">
+<a href="<?php echo e(route('projetLc')); ?>"><span>Voir Logement collectif</span></a>
+</div>
+ <?php endif; ?>
+
+ <?php if($vue=='Logement collectif'): ?>
+ <div class="content-btn-action-" style="margin-bottom: 50px">
+  <a href="<?php echo e(route('projetMg')); ?>"><span>Voir Maçonnerie générale</span></a>
+</div>
+
+<div class="content-btn-action-">
+<a href="<?php echo e(route('projetMc')); ?>"><span>Voir Maison Contemporaine</span></a>
+</div>
+ <?php endif; ?>
+
+
+
+</div>
 
     </div>
   </div>

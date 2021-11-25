@@ -65,7 +65,8 @@ class frontEndController extends Controller
         ->groupBy('service')
         ->get();
         $infos=projetpage::first();
-        return view('front-end.projets',compact('about','projets','services','infos'));
+        $vue=false;
+        return view('front-end.projets',compact('about','projets','services','infos','vue'));
     }
 
     public function brochure(){
@@ -91,8 +92,9 @@ class frontEndController extends Controller
         ->first();
         $about=propo::first();
 
-        $projets=projet::limit(6)->get();
-        return view('front-end.single-projet',compact('about','projet','projets'));
+        $precedent=projet::find($projet->id-1);
+        $suivant=projet::find($projet->id+1);
+        return view('front-end.single-projet',compact('about','projet','precedent','suivant'));
     }
 
 
@@ -270,6 +272,43 @@ class frontEndController extends Controller
     public function etape(){
         $etape=etape::first();
         return view('front-end.etape',compact('etape'));
+    }
+
+    public function projetMc(){
+        $about=propo::first();
+        $projets=projet::whereService('Maison contemporaine')->get();
+        $services=DB::table('projets')
+        ->select(DB::raw('count(service) as nombre'),'service')
+        ->groupBy('service')
+        ->get();
+        $infos=projetpage::first();
+        $vue='Maison contemporaine';
+        return view('front-end.projets',compact('about','projets','services','infos','vue'));
+    }
+    
+    
+    public function projetLc(){
+        $about=propo::first();
+        $projets=projet::whereService('Logement collectif')->get();
+        $services=DB::table('projets')
+        ->select(DB::raw('count(service) as nombre'),'service')
+        ->groupBy('service')
+        ->get();
+        $infos=projetpage::first();
+        $vue='Logement collectif';
+        return view('front-end.projets',compact('about','projets','services','infos','vue'));
+    }
+
+    public function projetMg(){
+        $about=propo::first();
+        $projets=projet::whereService('Maçonnerie générale')->get();
+        $services=DB::table('projets')
+        ->select(DB::raw('count(service) as nombre'),'service')
+        ->groupBy('service')
+        ->get();
+        $infos=projetpage::first();
+        $vue='Maçonnerie générale';
+        return view('front-end.projets',compact('about','projets','services','infos','vue'));
     }
     
 }

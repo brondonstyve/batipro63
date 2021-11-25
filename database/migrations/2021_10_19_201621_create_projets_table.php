@@ -18,7 +18,7 @@ class CreateProjetsTable extends Migration
             $table->string('service');
             $table->string('libelle');
             $table->text('description');
-            $table->text('annee');
+            $table->text('annee')->nullable();
             $table->text('lieu');
             $table->text('duree')->nullable();
             $table->string('entreprise')->nullable();

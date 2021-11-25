@@ -72,7 +72,7 @@
                                         
                                     </div>
                                 </div>
-                                <div class="img order-md-last" style="background-image: url(<?php echo e(asset('/app/maison/'.$etape->image1)); ?>);"></div>
+                                <div class="img order-md-last" style="background-image: url(<?php echo e(asset('/app/maison/'.$etape->image1)); ?>)"></div>
 
                             </div>
                         </div>
@@ -98,7 +98,7 @@
                                         </p>
                                     </div>
                                 </div>
-                                <div class="img order-md-last" style="background-image: url(<?php echo e(asset('/app/maison/'.$etape->image2)); ?>);"></div>
+                                <div class="img order-md-last" style="background-image: url(<?php echo e(asset('/app/maison/'.$etape->image2)); ?>)"></div>
 
                             </div>
                         </div>
@@ -124,7 +124,7 @@
                                         </p>
                                     </div>
                                 </div>
-                                <div class="img order-md-last" style="background-image: url(<?php echo e(asset('/app/maison/'.$etape->image3)); ?>);"></div>
+                                <div class="img order-md-last" style="background-image: url(<?php echo e(asset('/app/maison/'.$etape->image3)); ?>)"></div>
 
                             </div>
                         </div>
@@ -151,7 +151,7 @@
                                         </p>
                                     </div>
                                 </div>
-                                <div class="img order-md-last" style="background-image: url(<?php echo e(asset('/app/maison/'.$etape->image4)); ?>);"></div>
+                                <div class="img order-md-last" style="background-image: url(<?php echo e(asset('/app/maison/'.$etape->image4)); ?>)"></div>
 
                             </div>
                         </div>
@@ -177,14 +177,13 @@
                                         </p>
                                     </div>
                                 </div>
-                                <div class="img order-md-last" style="background-image: url(<?php echo e(asset('/app/maison/'.$etape->image5)); ?>);"></div>
+                                <div class="img order-md-last" style="background-image: url(<?php echo e(asset('/app/maison/'.$etape->image5)); ?>)"></div>
 
                             </div>
                         </div>
 
                         <div class="item">
                             <div class="work-wrap d-md-flex">
-                                <div class="img order-md-last" style="background-image: url(<?php echo e(asset('/app/maison/'.$etape->image6)); ?>);"></div>
                                 <div class="text text-left text-lg-right p-4 px-xl-5 d-flex align-items-center ">
                                     <div class="desc w-100">
                                         <h2 class="mb-2"><?php echo e($etape->etape6); ?></h2>
@@ -198,16 +197,17 @@
                                             </div>
                                         </div>
                                         <p style="margin-top: 30%">
-                                            <button type="button" class="btn btn-outline-dark mb-2 py-3 px-4" id="precedent6">Précédent</button>
+                                            <button type="button" class="btn btn-outline-dark mb-2 py-3 px-4" id="precedent5">Précédent</button>
 
-                                            <button type="button" class="btn btn-outline-dark mb-2 py-3 px-4" id="suivant6">Suivant</button>
+                                            <button type="button" class="btn btn-outline-dark mb-2 py-3 px-4" id="suivant5">Suivant</button>
                                         </p>
                                     </div>
                                 </div>
-                                <div class="img order-md-last" style="background-image: url(<?php echo e(asset('/app/maison/'.$etape->image5)); ?>);"></div>
+                                <div class="img order-md-last" style="background-image: url(<?php echo e(asset('/app/maison/'.$etape->image6)); ?>)"></div>
 
                             </div>
                         </div>
+                        
 
                         <div class="item">
                             <div class="work-wrap d-md-flex">
@@ -230,10 +230,8 @@
                                         </p>
                                     </div>
                                 </div>
-                                <div class="img order-md-last" style="background-image: url(<?php echo e(asset('/app/maison/'.$etape->image7)); ?>);"></div>
-
+                                <div class="img order-md-last" style="background-image: url(<?php echo e(asset('/app/maison/'.$etape->image7)); ?>)"></div>
                             </div>
-
                         </div>
 
                         

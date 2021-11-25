@@ -228,16 +228,14 @@
                                     <br>
                                     <div class="content-projects-wrapper">
                                        <div id="grid" class="flex my-shuffle-container space-around shuffle" style="position: relative; overflow: hidden; height: 995px; transition: height 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s;">
-                                          
                                         <?php if($infos): ?>
-
-                                        <div class="content-project-wrapper hg-height shuffle-item shuffle-item--visible" style="background: url(<?php echo e(asset('/app/accueil/'.$infos->projetMC)); ?>); position: absolute; top: 0px; visibility: visible; will-change: transform; left: 0px; opacity: 1; transition-duration: 250ms; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-property: transform, opacity;background-repeat:no-repeat">
-                                            <a href="<?php echo e(route('mc')); ?>">
+                                        <div class="content-project-wrapper hg-height shuffle-item shuffle-item--visible" style="background:linear-gradient(rgba(0, 0, 0, 0.35),rgba(0, 0, 0, 0.35)), url(<?php echo e(asset('/app/accueil/'.$infos->projetMC)); ?>); position: absolute; top: 0px; visibility: visible; will-change: transform; left: 0px; opacity: 1; transition-duration: 250ms; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-property: transform, opacity;background-repeat:no-repeat">
+                                            <a href="<?php echo e(route('projetMc')); ?>">
                                                 <div class="project-inner">
                                                     <div class="inner-overlay">
                                                        <div class="content-overlay">
                                                           <div class="title-project">
-                                                             <h3>Maisons Contemporaines</h3>
+                                                             <h3>Maisons<br>Contemporaines</h3>
                                                           </div>
                                                          </div>
                                                     </div>
@@ -246,13 +244,13 @@
                                             
                                          </div>
 
-                                         <div class="content-project-wrapper hg-height shuffle-item shuffle-item--visible" style="background: url(<?php echo e(asset('/app/accueil/'.$infos->projetLC)); ?>); position: absolute; top: 0px; visibility: visible; will-change: transform; left: 0px; opacity: 1; transition-duration: 250ms; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-property: transform, opacity;background-repeat:no-repeat">
-                                            <a href="<?php echo e(route('lc')); ?>">
+                                         <div class="content-project-wrapper hg-height shuffle-item shuffle-item--visible" style="background:linear-gradient(rgba(0, 0, 0, 0.35),rgba(0, 0, 0, 0.35)), url(<?php echo e(asset('/app/accueil/'.$infos->projetLC)); ?>); position: absolute; top: 0px; visibility: visible; will-change: transform; left: 0px; opacity: 1; transition-duration: 250ms; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-property: transform, opacity;background-repeat:no-repeat">
+                                            <a href="<?php echo e(route('projetLc')); ?>">
                                                 <div class="project-inner">
                                                     <div class="inner-overlay">
                                                        <div class="content-overlay">
-                                                          <div class="title-project">
-                                                             <h3>Logements Collectifs</h3>
+                                                          <div class="title-project"> 
+                                                             <h3>Logements<br>Collectifs</h3>
                                                           </div>
                                                          </div>
                                                     </div>
@@ -261,13 +259,13 @@
                                             
                                          </div>
 
-                                         <div class="content-project-wrapper hg-height shuffle-item shuffle-item--visible" style="background: url(<?php echo e(asset('/app/accueil/'.$infos->projetMg)); ?>); position: absolute; top: 0px; visibility: visible; will-change: transform; left: 0px; opacity: 1; transition-duration: 250ms; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-property: transform, opacity;background-repeat:no-repeat">
-                                            <a href="<?php echo e(route('mg')); ?>">
+                                         <div class="content-project-wrapper hg-height shuffle-item shuffle-item--visible" style="background:linear-gradient(rgba(0, 0, 0, 0.35),rgba(0, 0, 0, 0.35)), url(<?php echo e(asset('/app/accueil/'.$infos->projetMg)); ?>); position: absolute; top: 0px; visibility: visible; will-change: transform; left: 0px; opacity: 1; transition-duration: 250ms; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-property: transform, opacity;background-repeat:no-repeat">
+                                            <a href="<?php echo e(route('projetMg')); ?>">
                                                 <div class="project-inner">
                                                     <div class="inner-overlay">
                                                        <div class="content-overlay">
                                                           <div class="title-project">
-                                                             <h3>Maçonnerie Générale</h3>
+                                                             <h3>Maçonnerie<br>Générale</h3>
                                                           </div>
                                                          </div>
                                                     </div>

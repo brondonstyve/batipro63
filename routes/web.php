@@ -67,6 +67,9 @@ Route::name("down")->get('/download', 'App\Http\Controllers\frontEndController@d
 Route::name("politique")->get('/Politique-de-confidentialité', 'App\Http\Controllers\frontEndController@politique');
 Route::name("mention")->get('/Mentions-légales', 'App\Http\Controllers\frontEndController@mention');
 Route::name("temoignage")->get('/Vidéos', 'App\Http\Controllers\frontEndController@temoignage');
+Route::name("projetMc")->get('/Projet-Maisons-Contemporaines', 'App\Http\Controllers\frontEndController@projetMc');
+Route::name("projetLc")->get('/Projet-Logements-Collectifs', 'App\Http\Controllers\frontEndController@projetLc');
+Route::name("projetMg")->get('/Projet-Maçonnerie-Générale', 'App\Http\Controllers\frontEndController@projetMg');
 
 
 /*

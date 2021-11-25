@@ -26,6 +26,7 @@ class MaisonContemporaine extends Component
     public $image4;
     public $image5;
     public $imageC2;
+    public $imageDesc;
     public $showSuccesNotification  = false;
     public $showErrorNotification  = false;
 
@@ -61,6 +62,8 @@ class MaisonContemporaine extends Component
         'actualite1.description2'=> '',
         'actualite1.image'=> '',
         'actualite1.titre'=> '',
+        'actualite1.imageDesc'=> '',
+        'actualite1.resume'=> '',
         ];
 
 
@@ -298,24 +301,24 @@ class MaisonContemporaine extends Component
 
         $reponse=mcpage::count();
         
-        if ($reponse==0) {
-          
-            try {
-                if ($this->imageC2) {
-                    $this->actualite1->image=Image::traitementMV($this->imageC2,'png',1700,1133);
-                }
-
-                if ($this->imageEnt) {
-                    $this->actualite1->imageEnt=Image::traitementS($this->imageEnt,'png');
-                    
-                }
+        try {
+            if ($this->imageEnt) {
+                $this->actualite1->imageEnt=Image::traitementS($this->imageEnt,'jpg');
                 
+            }
+
+            if ($this->imageDesc) {
+                $this->actualite1->imageDesc=Image::traitementS($this->imageDesc,'jpg');
+                
+            }
+            
         } catch (\Throwable $th) {
             $this->message='erreur lors du traitement de l\'images.';
             $this->showSuccesNotification1 = false;
             $this->showErrorNotification1 = true;
         }
-                
+
+        if ($reponse==0) {
     
                 mcpage::where([
                     ['id','<>',0]
@@ -329,38 +332,29 @@ class MaisonContemporaine extends Component
                         'actualite1.description2'=> '',
                         'actualite1.image'=> '',
                         'actualite1.titre'=> '',
+                        'actualite1.imageDesc'=> '',
+                        'actualite1.resume'=> '',
                     ]
                 );
                 $this->actualite1->save();
                 $this->message='Parramétrage  enregistré avec succès';
                 $this->showSuccesNotification1= true;
                 $this->showErrorNotification1 = false;
-                $this->imageC2=null;   
+                $this->imageEnt=null;   
+                $this->imageDesc=null;   
             
         } else {
 
-            try {
-                if ($this->imageC2) {
-                    $this->actualite1->image=Image::traitementMV($this->imageC2,'png',1700,1133);
-                }
-
-                if ($this->imageEnt) {
-                    $this->actualite1->imageEnt=Image::traitementS($this->imageEnt,'png');
-                    
-                }
-                
-        } catch (\Throwable $th) {
-            $this->message='erreur lors du traitement de l\'images.';
-            $this->showSuccesNotification1 = false;
-            $this->showErrorNotification1 = true;
-        }
+           
 
             $this->validate(
                 [
                     'actualite1.description'=> '',
-        'actualite1.description2'=> '',
-        'actualite1.image'=> '',
-        'actualite1.titre'=> '',
+                    'actualite1.description2'=> '',
+                    'actualite1.image'=> '',
+                    'actualite1.titre'=> '',
+                    'actualite1.imageDesc'=> '',
+                    'actualite1.resume'=> '',
                 ]
             );
             
@@ -368,7 +362,8 @@ class MaisonContemporaine extends Component
             $this->message='Parramétrage mis à jour avec succès';
             $this->showSuccesNotification1 = true;
             $this->showErrorNotification1 = false;
-            $this->imageC2=null; 
+            $this->imageEnt=null;   
+                $this->imageDesc=null; 
 
 
         }

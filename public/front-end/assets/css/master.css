@@ -3447,10 +3447,18 @@ section#loading span {
     height: 100%;
 }
 
-.content-project-wrapper1 {
+
+/* .content-project-wrapper1 {
     width: 30%;
     height: auto;
     margin: 0 7px 20px;
+    background-position: center !important;
+    text-align: center;
+} */
+
+.content-project-wrapper1 {
+    width: 30%;
+    margin: 0 5px 5px;
     background-position: center !important;
     text-align: center;
 }
@@ -3461,9 +3469,9 @@ section#loading span {
 
 #container-intro-projets1 .content-project-wrapper1 {
     margin-bottom: 10px !important;
-    width: 31% !important;
+    width: 40% !important;
     margin: 0 10px 10px;
-    height: 400px;
+    height: 320px;
 }
 
 #container-intro-projets1 .content-project-wrapper1:nth-child(2n+2) {

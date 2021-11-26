@@ -47,7 +47,7 @@
             
            <div class="container-main">
 
-              <section class="container-banner" style="background-image:url(<?php echo e(asset('/app/projet/'.$projet->img_principale)); ?>);">
+              <section class="container-banner" style="background-image:url(<?php echo e(asset('/app/projet/'.$projet->img_principale)); ?>);background-size: cover;background-position: center;background-repeat: no-repeat;">
                 <div class="container">
                   <div class="inner-container">
                       <div class="content-title-banner">

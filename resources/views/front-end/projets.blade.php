@@ -73,15 +73,14 @@
        <div class="content-projects-wrapper1">
         <div id="grid" class="flex my-shuffle-container space-around">
           
-        @foreach ($projets as $key=>$item)
-          <div class="content-project-wrapper1 hg-height" data-groups='["@if($item->service=='Maison individuelle'){{'Maison contemporaine'}}@else{{$item->service}}@endif","all"]'>
+        @foreach ($projets as $key=>$projet)
+          {{-- <div class="content-project-wrapper1 hg-height" data-groups='["@if($item->service=='Maison individuelle'){{'Maison contemporaine'}}@else{{$item->service}}@endif","all"]'>
             <div class="project-inner">
               <a href="{{route('detailProjet',encrypt($item->id))}}"> 
 
             
               <img src="{{ asset('/app/projet/'.$item->img_principale)}}" style="width: 100%;height: 300px;"> 
             
-              {{-- style="background:linear-gradient(rgba(0, 0, 0, 0.35),rgba(0, 0, 0, 0.35))" --}}
               <div class="inner-overlay1"  >
                  <div class="content-overlay1"> 
                     <div class="content-icone-plus"></div>           
@@ -98,8 +97,25 @@
         </a>
           </div>
         </div>
-  
-            
+   --}}
+
+   <div class="content-project-wrapper1 hg-height"  data-groups='["@if($projet->service=='Maison individuelle'){{'Maison contemporaine'}}@else{{$projet->service}}@endif","all"]' style="background:url(../app/projet/{{$projet->img_principale}});background-size: cover;background-position: center;background-repeat: no-repeat;height:320px">
+    <div class="project-inner">
+  <a href="{{route('detailProjet',encrypt($projet->id))}}">
+
+       <div class="inner-overlay1">
+          <div class="content-overlay1"> 
+             <div class="content-icone-plus"></div>
+             <div class="title-project">
+                <h3> {{$projet->libelle}} </h3>
+             </div>
+             <div class="content-title-category">{{$projet->libelleS}}</div>
+          </div>
+       </div>
+     </a>
+    </div>
+ </div>
+
         @endforeach
         
       </div>

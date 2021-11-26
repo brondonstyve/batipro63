@@ -68,33 +68,26 @@
        <div class="content-projects-wrapper1">
         <div id="grid" class="flex my-shuffle-container space-around">
           
-        <?php $__currentLoopData = $projets; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key=>$item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-          <div class="content-project-wrapper1 hg-height" data-groups='["<?php if($item->service=='Maison individuelle'): ?><?php echo e('Maison contemporaine'); ?><?php else: ?><?php echo e($item->service); ?><?php endif; ?>","all"]'>
-            <div class="project-inner">
-              <a href="<?php echo e(route('detailProjet',encrypt($item->id))); ?>"> 
+        <?php $__currentLoopData = $projets; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key=>$projet): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+          
 
-            
-              <img src="<?php echo e(asset('/app/projet/'.$item->img_principale)); ?>" style="width: 100%;height: 300px;"> 
-            
-              
-              <div class="inner-overlay1"  >
-                 <div class="content-overlay1"> 
-                    <div class="content-icone-plus"></div>           
-                    <div class="title-project">
-                       <h3> <?php echo e($item->libelle); ?> </h3>
-                    </div>
-                    <div class="content-title-category">
-                      <?php if($item->service=='Maison individuelle'): ?><?php echo e('Maison contemporaine'); ?><?php else: ?><?php echo e($item->service); ?><?php endif; ?>  
-                    </div>
-                 </div>
-              </div>
+   <div class="content-project-wrapper1 hg-height"  data-groups='["<?php if($projet->service=='Maison individuelle'): ?><?php echo e('Maison contemporaine'); ?><?php else: ?><?php echo e($projet->service); ?><?php endif; ?>","all"]' style="background:url(../app/projet/<?php echo e($projet->img_principale); ?>);background-size: cover;background-position: center;background-repeat: no-repeat;height:320px">
+    <div class="project-inner">
+  <a href="<?php echo e(route('detailProjet',encrypt($projet->id))); ?>">
 
-
-        </a>
+       <div class="inner-overlay1">
+          <div class="content-overlay1"> 
+             <div class="content-icone-plus"></div>
+             <div class="title-project">
+                <h3> <?php echo e($projet->libelle); ?> </h3>
+             </div>
+             <div class="content-title-category"><?php echo e($projet->libelleS); ?></div>
           </div>
-        </div>
-  
-            
+       </div>
+     </a>
+    </div>
+ </div>
+
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         
       </div>

@@ -23,25 +23,26 @@
                     <div class="content-text-up">
                       <div class="header-title">
                         <h3 class="green">Plans & maisons</h3>
-                        <h4>Gagnez du temps en téléchargeant gratuitement notre brochure des maisons</h4>
+                        <h4>Téléchargez gratuitement notre brochure des maisons</h4>
                       </div>
                     </div>
                   </div>
                   <div class="content-form " >
-                    <p>En un clic, remplissez les informations demandées ci-dessous et débloquez le téléchargement du catalogue en pdf :</p>
+                    <p>Remplissez les informations  ci-dessous et téléchargez la brochure
+                    </p>
 
                     <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('brochure')->html();
-} elseif ($_instance->childHasBeenRendered('H72ixdt')) {
-    $componentId = $_instance->getRenderedChildComponentId('H72ixdt');
-    $componentTag = $_instance->getRenderedChildComponentTagName('H72ixdt');
+} elseif ($_instance->childHasBeenRendered('MV2F4YD')) {
+    $componentId = $_instance->getRenderedChildComponentId('MV2F4YD');
+    $componentTag = $_instance->getRenderedChildComponentTagName('MV2F4YD');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('H72ixdt');
+    $_instance->preserveRenderedChild('MV2F4YD');
 } else {
     $response = \Livewire\Livewire::mount('brochure');
     $html = $response->html();
-    $_instance->logRenderedChild('H72ixdt', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('MV2F4YD', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>

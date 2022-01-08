@@ -34,8 +34,8 @@ class SendMailTerrain extends Component
                     'body' => 'une nouvelle personne demande à avoir un terrain disponible',
                     'email' => $this->email,
                     'telephone' => $this->telephone,
-                    'postal' => $this->postal,
-                    'ville' => $this->ville,
+                    'postal' => null,
+                    'ville' => null,
     
                     'nom' => $this->nom.' '.$this->prenom,
                 ];
@@ -51,7 +51,7 @@ class SendMailTerrain extends Component
                 $this->telephone=null;
                
             } catch (\Throwable $th) {
-                session()->flash('error','erreur lors de l\'envoie du message');
+                session()->flash('error','erreur lors de l\'envoie du message. SVP veuillez reéssayer ou nous contacter via les adresses et numéro figurant dans le site.');
             }
         }
        

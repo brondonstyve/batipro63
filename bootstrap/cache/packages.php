@@ -74,4 +74,11 @@
       0 => 'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider',
     ),
   ),
+  'statikbe/laravel-cookie-consent' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Statikbe\\CookieConsent\\CookieConsentServiceProvider',
+    ),
+  ),
 );

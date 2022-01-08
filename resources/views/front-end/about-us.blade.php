@@ -160,12 +160,22 @@
         </div>
 
         <div class="content-key-figure-wrapper flex">
+          <div class="content-number number-key">+<span class="spin">30</span></div>
+          <div class="content-text-key-figure ">
+            <h3>Entreprises partenaires</h3>
+            <p class="text-justify"></p>
+          </div>
+        </div>
+
+        <div class="content-key-figure-wrapper flex">
           <div class="content-number number-key">+<span class="spin">{{$about->nombre4 }}</span></div>
           <div class="content-text-key-figure ">
             <h3>{{$about->titre4 }}</h3>
             <p class="text-justify">{!!$about->description4 !!}</p>
           </div>
         </div>
+
+       
 
         
 

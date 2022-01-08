@@ -14,7 +14,7 @@
                 <li><a class="{{ Route::currentRouteName() == 'maisonVirtuelle' ? 'active' : '' }}" href="{{ route('maisonVirtuelle') }}">Maisons virtuelles</a></li>
                 <li><a class="@if(in_array(Route::currentRouteName(), ['actualite-front','detailActualite']))   active @endif "  href=" {{route('actualite-front')}} ">Actualités</a></li>
                 <li><a class="{{ Route::currentRouteName() == 'brochure' ? 'active' : '' }}"   href="{{ route('brochure') }}">Brochure</a></li>
-                <li><a class="{{ Route::currentRouteName() == 'temoignage' ? 'active' : '' }}"   href="{{ route('temoignage') }}">Vidéos</a></li>
+                <li><a class="{{ Route::currentRouteName() == 'temoignage' ? 'active' : '' }}"   href="{{ route('temoignage') }}">Avis & Vidéos</a></li>
             </ul>
         </div>
     </div>
@@ -38,7 +38,7 @@
                     <li><a class="{{ Route::currentRouteName() == 'maisonVirtuelle' ? 'active' : '' }}" href="{{ route('maisonVirtuelle') }}">Maisons virtuelles</a></li>
                     <li><a class="@if(in_array(Route::currentRouteName(), ['actualite-front','detailActualite']))   active @endif "  href=" {{route('actualite-front')}} ">Actualités</a></li>
                     <li><a class="{{ Route::currentRouteName() == 'brochure' ? 'active' : '' }}"   href="{{ route('brochure') }}">Brochure</a></li>
-                    <li><a class="{{ Route::currentRouteName() == 'temoignage' ? 'active' : '' }}"   href="{{ route('temoignage') }}">Vidéos</a></li>
+                    <li><a class="{{ Route::currentRouteName() == 'temoignage' ? 'active' : '' }}"   href="{{ route('temoignage') }}">Avis & Vidéos</a></li>
                 </ul>
         </div>
      </div>

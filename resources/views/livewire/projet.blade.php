@@ -46,11 +46,18 @@
 
         @if ($liste)
         <div style="float: right;text-align: right">
+            {{--
             <button class="btn btn-info" wire:click="updateService('')">Tout</button>
             <button class="btn btn-info" wire:click="updateService('Maison contemporaine')">Maison contemporaine</button>
             <button class="btn btn-info" wire:click="updateService('Logement collectif')">Logement collectif</button>
             <button class="btn btn-info" wire:click="updateService('Maconnerie générale')">Maconnerie générale</button>
-            {{-- <button class="btn btn-info" wire:click="updateService('Maison Individuelle')">Maison Individuelle</button> --}}
+            <button class="btn btn-info" wire:click="updateService('Maison Individuelle')">Maison Individuelle</button> --}}
+
+            <button class="btn btn-info" wire:click="updateService('')">Tout</button>
+            <button class="btn btn-info" wire:click="updateService('Maison contemporaine')">Maison contemporaine</button>
+            <button class="btn btn-info" wire:click="updateService('Logement collectif')">Maçonnerie Logement collectif</button>
+            <button class="btn btn-info" wire:click="updateService('Maconnerie générale')">Maconnerie Maison</button>
+
         </div>
         <div class="col-12 mt-4">
             <div class="card mb-4"> 
@@ -99,15 +106,24 @@
                             <div class="card card-blog card-plain">
                                 <div class="position-relative">
 
+                                    
+                                    @if ($item->image==null)
+                                    <a class="d-block shadow-xl border-radius-xl">
+                                        <img src="" alt="Erreur d'image"
+                                            class="img-fluid shadow border-radius-xl">
+                                    </a>
+                                    @else
                                     <a class="d-block shadow-xl border-radius-xl">
                                         <img src="@if($urlSeeImage!=null && $item->id==$idVue ){{asset('/app/projet/'.$urlSeeImage)}}@else{{asset('/app/projet/'.$image[1])}}@endif" alt="img-blur-shadow"
                                             class="img-fluid shadow border-radius-xl">
                                     </a>
+                                    @endif
+                                    
 
                                 </div>
                                 <div class="card-body px-1 pb-0">
                                     <p class="text-gradient text-dark mb-2 text-sm">projet : {{$item->libelle}} </p>
-                                    <p class="text-gradient text-dark mb-2 text-sm">service : {{$item->service}} </p>
+                                    <p class="text-gradient text-dark mb-2 text-sm">service : @if($item->service=='Logement collectif') Maçonnerie Logement collectif @else @if($item->service=='Maçonnerie générale') Maçonnerie Maison @else {{$item->service}} @endif @endif </p>
                                     <a href="javascript:;">
                                         <h5>
                                             Libellé : {{$item->lieu}} 
@@ -188,8 +204,8 @@
                                             <select wire:model.lazy="projet.service" class="form-control" required>
                                             <option value=""></option>
                                             <option value="Maison contemporaine">Maison contemporaine</option>
-                                            <option value="Logement collectif">Logement collectif </option>
-                                            <option value="Maçonnerie générale">Maçonnerie générale</option>
+                                            <option value="Logement collectif">Maconnerie Logement collectif </option>
+                                            <option value="Maçonnerie générale">Maçonnerie Maison</option>
                                             </select>
                                         </div>
                                         @error('projet.service') <div class="text-danger">{{ $message }}</div> @enderror
@@ -225,7 +241,7 @@
                                         @error('projet.lieu') <div class="text-danger">{{ $message }}</div> @enderror
                                     </div>
                                 </div>
-                                <div class="col-md-3">
+                                {{-- <div class="col-md-3">
                                     <div class="form-group">
                                         <label for="projet-email" class="form-control-label">{{ __('durée de réalisation (en semaine)') }}</label>
                                         <div class="@error('projet.email')border border-danger rounded-3 @enderror">
@@ -234,7 +250,7 @@
                                         </div>
                                         @error('projet.duree') <div class="text-danger">{{ $message }}</div> @enderror
                                     </div>
-                                </div>
+                                </div> --}}
 
                                 <div class="col-md-3">
                                     <div class="form-group">
@@ -251,7 +267,7 @@
                                     <div class="form-group">
                                         <label for="projet-name" class="form-control-label">Nom de l'entreprise ou du particulier</label>
                                         <div class="">
-                                            <input wire:model.lazy="projet.entreprise" class="form-control" type="text"  placeholder="Nom de l'entreprise ou du particulier" id="projet-name" required>
+                                            <input wire:model.lazy="projet.entreprise" class="form-control" type="text" disabled placeholder="Nom de l'entreprise ou du particulier" id="projet-name">
                                         </div>
                                         @error('projet.entreprise') <div class="text-danger">{{ $message }}</div> @enderror
                                     </div>
@@ -264,7 +280,7 @@
                                     <div class="form-group">
                                         <label for="projet-name" class="form-control-label">Ajouter un visuel uniquement</label>
                                         <div class="">
-                                            <input wire:model="image" class="form-control" type="file" placeholder="Visuel du projet" id="projet-name" accept="image/*"> 
+                                            <input wire:model="image" class="form-control" type="file" placeholder="Visuel du projet" id="projet-name" accept="image/*" multiple > 
                                         </div>
 
                                         <button class="btn btn-primary btn-sm mt-2" type="button" disabled wire:loading wire:target='image'>
@@ -281,7 +297,7 @@
                                     <div class="form-group">
                                         <label for="projet-name" class="form-control-label">Visuel</label>
                                         <div class="">
-                                            <input wire:model="image" class="form-control" type="file" required  placeholder="Visuel du projet" id="projet-name" required accept="image/*" multiple max="2"> 
+                                            <input wire:model="image" class="form-control" type="file" required  placeholder="Visuel du projet" id="projet-name" required accept="image/*" multiple > 
                                         </div>
 
                                         <button class="btn btn-primary btn-sm mt-2" type="button" disabled wire:loading wire:target='image'>
@@ -303,6 +319,23 @@
                                         <textarea wire:model.lazy="projet.description" class="form-control" id="about" rows="7" placeholder="à propos du projet" required></textarea>
                                     </div>
                                  </div>
+
+                                 <h4>SEO</h4>
+
+                                 <div class="form-group col-md-6">
+                                    <label for="about">Titre de la page</label>
+                                    <div class="">
+                                        <textarea class="form-control" wire:model.lazy="projet.titreSeo" id="about" rows="1" placeholder="titre de la page" maxlength="62"></textarea>
+                                    </div>
+                                 </div>
+    
+                                 <div class="form-group col-md-6">
+                                    <label for="about">Description de la méta</label>
+                                    <div class="">
+                                        <textarea class="form-control" wire:model.lazy="projet.descriptionSeo" id="about" rows="2" placeholder="Description de la page" maxlength="122"></textarea>
+                                    </div>
+                                 </div>
+
                             </div>
     
 
@@ -327,15 +360,20 @@
                                     </div>
                                     <div class="card-body p-3">
                                         <div class="row">
+                                            @foreach ($image as $key=>$item)
                                             <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
                                                 <div class="card card-blog card-plain">
                                                     <div class="position-relative">
                                                         <a class="d-block shadow-xl border-radius-xl">
-                                                            <img src=" {{$image->temporaryUrl()}} " alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
+                                                            <img src=" {{$item->temporaryUrl()}} " alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
                                                         </a>
+                                                    </div>
+                                                    <div class="card-body px-1 pb-0">
+                                                        <p class="text-gradient text-dark mb-2 text-sm">Visuel {{$key+1}} </p>
                                                     </div>
                                                 </div>
                                             </div>
+                                            @endforeach
                                             
                                             
                                         </div>
@@ -398,10 +436,11 @@
                                                             
                                                             <img src="{{asset('/app/projet/'.$img)}}" alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">  
                                                         </a>
-                                                        <button type="button" class="btn bg-gradient-danger btn-md mt-4 mb-4" wire:click='removeImg("{{$img}}")'>Enlever</button>
 
                                                         @if ($projet->img_principale!=$img)
-                                                             <button type="button" class="btn bg-gradient-primary btn-md mt-4 mb-4" wire:click='definrP("{{$img}}")'>Image Principale</button> 
+                                                        <button type="button" class="btn bg-gradient-danger btn-md mt-4 mb-4" wire:click='removeImg("{{$img}}")'>Enlever</button>
+                                                             
+                                                        <button type="button" class="btn bg-gradient-primary btn-md mt-4 mb-4" wire:click='definrP("{{$img}}")'>Image Principale</button> 
                                                         @endif
 
                                                     </div>
@@ -428,12 +467,14 @@
                               @if ($modification==true)
                                 
                               <button type="button" class="btn bg-gradient-danger btn-md mt-4 mb-4 mr-" wire:click='annuler'>Annuler</button>
-                              <button type="submit" class="btn bg-gradient-dark btn-md mt-4 mb-4" >Enregistrer les modification</button>
+                              <button type="submit" class="btn bg-gradient-dark btn-md mt-4 mb-4" wire:loading.remove wire:target='image'>Enregistrer les modification</button>
+                              <button type="button" class="btn bg-gradient-dark btn-md mt-4 mb-4"  wire:loading wire:target='image'>Patientez le chargement de(s) images ...</button>
                               
                               @else                            
                               <button type="button" class="btn bg-gradient-danger btn-md mt-4 mb-4 mr-" wire:click='annuler'>Annuler</button>
 
-                              <button type="submit" class="btn bg-gradient-dark btn-md mt-4 mb-4">Enregistrer</button>
+                              <button type="submit" class="btn bg-gradient-dark btn-md mt-4 mb-4" wire:loading.remove wire:target='image'>Enregistrer</button>
+                              <button type="button" class="btn bg-gradient-dark btn-md mt-4 mb-4"  wire:loading wire:target='image'>Patientez le chargement de(s) images ...</button>
                               
                               @endif
                             </div>

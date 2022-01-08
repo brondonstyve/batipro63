@@ -22,7 +22,7 @@ class CreateProjetsTable extends Migration
             $table->text('lieu');
             $table->text('duree')->nullable();
             $table->string('entreprise')->nullable();
-            $table->string('image');
+            $table->text('image');
             $table->string('img_principale')->nullable();
             $table->timestamps();
         });

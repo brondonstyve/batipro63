@@ -9,17 +9,11 @@
     <script src="{{ asset('/front-end/assets/masterslider/masterslider.min.js') }}"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
  
-    <link rel="stylesheet" href="{{ asset('/modal/fonts/icomoon/style.css')}}">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{{ asset('/modal/css/bootstrap.min.css')}}">
-
-    <!-- Style -->
-    <link rel="stylesheet" href="{{ asset('/modal/css/style.css')}}">
+  
 @endsection
 
 @section('content')
-    <section class="container-banner line-plus line-3">
+    <section class="container-banner line-plus line-2">
         <!-- masterslider -->
         <div class="master-slider ms-skin-default" id="masterslider">
         <!-- new slide -->
@@ -41,8 +35,8 @@
             <div class="ms-thumb" onmouseover="bigImg()">
                 <a href=" {{route('mc')}} ">
                     <div class="content-thumbs">
-                        <h3>Maison</h3>
-                        <p>Contemporaine</p>
+                        <h3>MAÎTRISE D'ŒUVRE </h3>
+                        <p>DE MAISONS CONTEMPORAINES</p>
                     </div>
                 </a>
                 
@@ -50,7 +44,7 @@
         </div>
         <!-- end of slide -->
         <!-- new slide -->
-        <div class="ms-slide">
+        {{-- <div class="ms-slide">
             <!-- slide background -->
             @if ($infos)
             @if ($infos->imageMc)
@@ -74,7 +68,7 @@
             </a>
 
             </div>
-        </div>
+        </div> --}}
         <!-- end of slide -->
         <!-- new slide -->
         <div class="ms-slide">
@@ -133,8 +127,8 @@
                     @endif    
                     </div>
                     <div class="content-text-">
-                    <p class="jost-style jost-style-100">En construction</p>
-                    <p class="caveat-style">ans d'expérience</p>
+                    <p class="jost-style jost-style-100">Ans d'expérience</p>
+                    <p class="caveat-style">En construction</p>
                     </div>
                 </div>
             </div>
@@ -374,7 +368,7 @@
                                             
                                          </div>
 
-                                         <div class="content-project-wrapper hg-height shuffle-item shuffle-item--visible" style="background:linear-gradient(rgba(0, 0, 0, 0.35),rgba(0, 0, 0, 0.35)), url({{ asset('/app/accueil/'.$infos->projetLC)}}); position: absolute; top: 0px; visibility: visible; will-change: transform; left: 0px; opacity: 1; transition-duration: 250ms; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-property: transform, opacity;background-repeat:no-repeat">
+                                         {{-- <div class="content-project-wrapper hg-height shuffle-item shuffle-item--visible" style="background:linear-gradient(rgba(0, 0, 0, 0.35),rgba(0, 0, 0, 0.35)), url({{ asset('/app/accueil/'.$infos->projetLC)}}); position: absolute; top: 0px; visibility: visible; will-change: transform; left: 0px; opacity: 1; transition-duration: 250ms; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-property: transform, opacity;background-repeat:no-repeat">
                                             <a href="{{route('projetLc')}}">
                                                 <div class="project-inner">
                                                     <div class="inner-overlay">
@@ -387,7 +381,7 @@
                                                  </div>
                                             </a>
                                             
-                                         </div>
+                                         </div> --}}
 
                                          <div class="content-project-wrapper hg-height shuffle-item shuffle-item--visible" style="background:linear-gradient(rgba(0, 0, 0, 0.35),rgba(0, 0, 0, 0.35)), url({{ asset('/app/accueil/'.$infos->projetMg)}}); position: absolute; top: 0px; visibility: visible; will-change: transform; left: 0px; opacity: 1; transition-duration: 250ms; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-property: transform, opacity;background-repeat:no-repeat">
                                             <a href="{{route('projetMg')}}">
@@ -669,35 +663,6 @@
         
     @endif
 
-    
-
-          <input type="hidden" name="" data-toggle="modal" data-target="#exampleModalCenter" id='s'>
-  
-      <!-- Modal -->
-      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-          <div class="modal-content rounded-0">
-            <div class="modal-body py-0">
-  
-              
-              <div class="d-flex main-content">
-                <div class="bg-image promo-img mr-3" style="background-image: url({{asset('app/accueil/DIrmfSRaeVLKxRlp1636971327.jpg')}});">
-                  <span class="price">$2000</span>
-                </div>
-                <div class="content-text p-4 px-5 align-item-stretch">
-                  <div class="text-center">
-                      <a href="#" class="share"><span class="icon-share"></span></a>
-                      <h3 class="mb-3 line">Grand Prix 4000</h3>
-                      <p class="mb-5">All their equipment and instruments are alive. The sky was this is cloudless and of a deep dark blue. A shining crescent far beneath the flying vessel.</p>
-  
-                  </div>
-                </div>
-              </div>
-  
-            </div>
-          </div>
-        </div>
-      </div>
   
     
 
@@ -732,11 +697,6 @@
 
    
 </script>
-
-
-<script src="{{asset('/modal/js/jquery-3.3.1.min.js')}}"></script>
-    <script src="{{asset('/modal/js/popper.min.js')}}"></script>
-    <script src="{{asset('/modal/js/bootstrap.min.js')}}"></script>
 
     <script>
         /*$( document ).ready(function() {

@@ -87,6 +87,7 @@ class ComposerStaticInit99bc07910f3381c9db72658fa9dbc32c
             'Symfony\\Component\\ErrorHandler\\' => 31,
             'Symfony\\Component\\CssSelector\\' => 30,
             'Symfony\\Component\\Console\\' => 26,
+            'Statikbe\\CookieConsent\\' => 23,
         ),
         'R' => 
         array (
@@ -317,6 +318,10 @@ class ComposerStaticInit99bc07910f3381c9db72658fa9dbc32c
         array (
             0 => __DIR__ . '/..' . '/symfony/console',
         ),
+        'Statikbe\\CookieConsent\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/statikbe/laravel-cookie-consent/src',
+        ),
         'Ramsey\\Uuid\\' => 
         array (
             0 => __DIR__ . '/..' . '/ramsey/uuid/src',
@@ -545,6 +550,7 @@ class ComposerStaticInit99bc07910f3381c9db72658fa9dbc32c
         'App\\Http\\Livewire\\Auth\\Logout' => __DIR__ . '/../..' . '/app/Http/Livewire/Auth/Logout.php',
         'App\\Http\\Livewire\\Auth\\ResetPassword' => __DIR__ . '/../..' . '/app/Http/Livewire/Auth/ResetPassword.php',
         'App\\Http\\Livewire\\Auth\\SignUp' => __DIR__ . '/../..' . '/app/Http/Livewire/Auth/SignUp.php',
+        'App\\Http\\Livewire\\Avisvideo' => __DIR__ . '/../..' . '/app/Http/Livewire/Avisvideo.php',
         'App\\Http\\Livewire\\Billing' => __DIR__ . '/../..' . '/app/Http/Livewire/Billing.php',
         'App\\Http\\Livewire\\Brochure' => __DIR__ . '/../..' . '/app/Http/Livewire/Brochure.php',
         'App\\Http\\Livewire\\Dashboard' => __DIR__ . '/../..' . '/app/Http/Livewire/Dashboard.php',
@@ -565,6 +571,7 @@ class ComposerStaticInit99bc07910f3381c9db72658fa9dbc32c
         'App\\Http\\Livewire\\Rtl' => __DIR__ . '/../..' . '/app/Http/Livewire/Rtl.php',
         'App\\Http\\Livewire\\SendMail' => __DIR__ . '/../..' . '/app/Http/Livewire/SendMail.php',
         'App\\Http\\Livewire\\SendMailTerrain' => __DIR__ . '/../..' . '/app/Http/Livewire/SendMailTerrain.php',
+        'App\\Http\\Livewire\\Seo' => __DIR__ . '/../..' . '/app/Http/Livewire/Seo.php',
         'App\\Http\\Livewire\\StaticSignIn' => __DIR__ . '/../..' . '/app/Http/Livewire/StaticSignIn.php',
         'App\\Http\\Livewire\\StaticSignUp' => __DIR__ . '/../..' . '/app/Http/Livewire/StaticSignUp.php',
         'App\\Http\\Livewire\\Tables' => __DIR__ . '/../..' . '/app/Http/Livewire/Tables.php',
@@ -597,6 +604,7 @@ class ComposerStaticInit99bc07910f3381c9db72658fa9dbc32c
         'App\\Models\\projet' => __DIR__ . '/../..' . '/app/Models/projet.php',
         'App\\Models\\projetpage' => __DIR__ . '/../..' . '/app/Models/projetpage.php',
         'App\\Models\\propo' => __DIR__ . '/../..' . '/app/Models/propo.php',
+        'App\\Models\\seo' => __DIR__ . '/../..' . '/app/Models/seo.php',
         'App\\Models\\service' => __DIR__ . '/../..' . '/app/Models/service.php',
         'App\\Models\\servicepage' => __DIR__ . '/../..' . '/app/Models/servicepage.php',
         'App\\Models\\temoignage' => __DIR__ . '/../..' . '/app/Models/temoignage.php',
@@ -2010,6 +2018,7 @@ class ComposerStaticInit99bc07910f3381c9db72658fa9dbc32c
         'Illuminate\\Database\\Eloquent\\Casts\\AsCollection' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Eloquent/Casts/AsCollection.php',
         'Illuminate\\Database\\Eloquent\\Casts\\AsEncryptedArrayObject' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Eloquent/Casts/AsEncryptedArrayObject.php',
         'Illuminate\\Database\\Eloquent\\Casts\\AsEncryptedCollection' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Eloquent/Casts/AsEncryptedCollection.php',
+        'Illuminate\\Database\\Eloquent\\Casts\\AsStringable' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Eloquent/Casts/AsStringable.php',
         'Illuminate\\Database\\Eloquent\\Collection' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Eloquent/Collection.php',
         'Illuminate\\Database\\Eloquent\\Concerns\\GuardsAttributes' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/GuardsAttributes.php',
         'Illuminate\\Database\\Eloquent\\Concerns\\HasAttributes' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/HasAttributes.php',
@@ -2579,6 +2588,7 @@ class ComposerStaticInit99bc07910f3381c9db72658fa9dbc32c
         'Illuminate\\Support\\HtmlString' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/HtmlString.php',
         'Illuminate\\Support\\InteractsWithTime' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/InteractsWithTime.php',
         'Illuminate\\Support\\ItemNotFoundException' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Collections/ItemNotFoundException.php',
+        'Illuminate\\Support\\Js' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/Js.php',
         'Illuminate\\Support\\LazyCollection' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Collections/LazyCollection.php',
         'Illuminate\\Support\\Manager' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/Manager.php',
         'Illuminate\\Support\\MessageBag' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/MessageBag.php',
@@ -2652,6 +2662,7 @@ class ComposerStaticInit99bc07910f3381c9db72658fa9dbc32c
         'Illuminate\\Validation\\Rule' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Validation/Rule.php',
         'Illuminate\\Validation\\Rules\\DatabaseRule' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Validation/Rules/DatabaseRule.php',
         'Illuminate\\Validation\\Rules\\Dimensions' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Validation/Rules/Dimensions.php',
+        'Illuminate\\Validation\\Rules\\Enum' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Validation/Rules/Enum.php',
         'Illuminate\\Validation\\Rules\\Exists' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Validation/Rules/Exists.php',
         'Illuminate\\Validation\\Rules\\In' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Validation/Rules/In.php',
         'Illuminate\\Validation\\Rules\\NotIn' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Validation/Rules/NotIn.php',
@@ -4877,6 +4888,8 @@ class ComposerStaticInit99bc07910f3381c9db72658fa9dbc32c
         'SebastianBergmann\\Type\\UnknownType' => __DIR__ . '/..' . '/sebastian/type/src/UnknownType.php',
         'SebastianBergmann\\Type\\VoidType' => __DIR__ . '/..' . '/sebastian/type/src/VoidType.php',
         'SebastianBergmann\\Version' => __DIR__ . '/..' . '/sebastian/version/src/Version.php',
+        'Statikbe\\CookieConsent\\CookieConsentMiddleware' => __DIR__ . '/..' . '/statikbe/laravel-cookie-consent/src/CookieConsentMiddleware.php',
+        'Statikbe\\CookieConsent\\CookieConsentServiceProvider' => __DIR__ . '/..' . '/statikbe/laravel-cookie-consent/src/CookieConsentServiceProvider.php',
         'Stringable' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',
         'Symfony\\Component\\Console\\Application' => __DIR__ . '/..' . '/symfony/console/Application.php',
         'Symfony\\Component\\Console\\Attribute\\AsCommand' => __DIR__ . '/..' . '/symfony/console/Attribute/AsCommand.php',

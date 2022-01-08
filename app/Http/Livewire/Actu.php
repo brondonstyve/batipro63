@@ -54,6 +54,8 @@ class Actu extends Component
         'actualite.titre5'=> '',
         'actualite.article5'=> '',
         'actualite.video5'=> '',
+        'actualite.titreSeo'=> '',
+        'actualite.descriptionSeo'=> ''
         ];
 
 

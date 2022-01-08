@@ -119,5 +119,9 @@
            </div>
         </div>
       </div>
+
+
    </body>
 </html>
+<script src='https://unpkg.com/shufflejs@5'></script>
+<script  src="{{ asset('/front-end/assets/js/script.js') }}"></script>

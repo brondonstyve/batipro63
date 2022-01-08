@@ -14,6 +14,7 @@ class SendMail extends Component
     public $email;
     public $sujet;
     public $message;
+    public $telephone;
     public $reponse;
 
     public function send(){
@@ -34,11 +35,17 @@ class SendMail extends Component
             $reponse=false;
         }
 
+        if ($this->telephone==null) {
+            session()->flash('error','veuillez entrer votre numéro de téléphone.');
+            $reponse=false;
+        }
+
 
         if ($reponse!=false) {
         try {
             $details = [
                 'title' => $this->sujet,
+                'telephone' => $this->telephone,
                 'body' => $this->message,
                 'email' => $this->email,
                 'nom' => $this->nom.' '.$this->prenom,
@@ -49,12 +56,13 @@ class SendMail extends Component
             session()->flash('success','Message envoyé avec succès. nous vous repondrons le plus vite possible.');
             $this->sujet=null;
             $this->message=null;
+            $this->telephone=null;
             $this->email=null;
             $this->nom=null;
             $this->prenom=null;
            
         } catch (\Throwable $th) {
-            session()->flash('error','erreur lors de l\'envoie du message');
+            session()->flash('error','erreur lors de l\'envoie du message. SVP veuillez reéssayer ou nous contacter via les adresses et numéro figurant dans le site.');
         }
        }
         

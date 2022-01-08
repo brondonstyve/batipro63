@@ -1,15 +1,44 @@
-@extends('front-end/defaut/base', ['title' => 'Projets | ', 'body_class' => 'projet-realisation'] )
-{{--  @extends('front-end/partials/base', ['title' => 'Batipro63 – Notre métier, la construction sur mesure ', 'body_class' => 'detail-service corporate home2-corporate'] )  --}}
+<!DOCTYPE html>
+<html lang="en">
 
-@section('css_js')
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   @if (isset($seo))
 
-    
-@endsection
+   <meta name="description" content="{{$seo->description}}">
+   <title>{{ $seo->titre}}</title>
+   @else
+   
+   @if (isset($projet))
+   <meta name="description" content="{{$projet->descriptionSeo}}">
+   @if ($projet->titreSeo)
+   <title>{{ $projet->titreSeo}}</title>
+   @else
+   <title>{{'Projet | Batipro63'}}</title>       
+   @endif
+   @else
+   <title>{{ 'Projet | '.env('APP_NAME') }}</title>
+       
+   @endif
+   
+   @endif
+  
+
+   <link rel="stylesheet" href="{{ asset('/front-end/assets/css/master.css') }}">
+
+   <script src="{{ asset('/front-end/assets/js/jquery-1.8.2.min.js') }}"></script>
+
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+   <link rel="stylesheet" href="{{asset('/visuel/magnific-popup.css')}}">
+
+@livewireStyles
+
+</head>
 
 
-    <!-- Magnific Popup core CSS file -->
-    <link rel="stylesheet" href="{{asset('/visuel/magnific-popup.css')}}">
 
    
 
@@ -43,10 +72,10 @@
         </style>
 
 
-@section('content')
    <body class="about-us-page single-projet ">
       <div class="container-main-bloc">
         <div class="container flex">
+         @include ("front-end/partials/header")
             
            <div class="container-main">
 
@@ -110,16 +139,16 @@
                        </div>
                        <div class="line-info- flex">
                          <span class="green">Entreprise :</span>
-                         <span > {{$projet->entreprise}}</span>
+                         <span > GROUPE BATIPRO</span>
                        </div>
                        <div class="line-info- flex">
                          <span class="green">Lieu :</span>
                          <span > {{$projet->lieu}}</span>
                        </div>
-                       <div class="line-info- flex">
+                       {{-- <div class="line-info- flex">
                          <span class="green">Durée du projet :</span>
                          <span > {{$projet->duree}} semaines</span>
-                       </div>
+                       </div> --}}
                      </div>
 
                     
@@ -153,12 +182,12 @@
                   </div>
                 </div>
               </section>
-                
+              @include("front-end/partials/footer")
            </div>
         </div>
       </div>
 
-      @section('script')
+ 
       <script
       src="https://code.jquery.com/jquery-3.6.0.js"
       integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
@@ -188,9 +217,10 @@
           });
         });
       </script>
-      @endsection
+      
     
 
    </body>
+   @livewireScripts
 </html>
 

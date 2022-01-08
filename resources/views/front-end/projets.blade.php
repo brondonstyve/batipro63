@@ -50,13 +50,13 @@
      </div> 
  @endif
     <div class="content-list-projects1">
-       <div class="projects-categories filter-options">
+       <div class="projects-categories filter-options"> 
 
          {{-- @if (sizeOf($projets)!=0) --}}
          @if ($vue==false)
          <button  data-group="Maison contemporaine">Maison Contemporaine</button>
-         <button  data-group="Logement collectif">Logement collectif</button>
-         <button  data-group="Maçonnerie générale">Maçonnerie générale</button>
+         <button  data-group="Logement collectif">Maçonnerie Logement collectif</button>
+         <button  data-group="Maçonnerie générale">Maçonnerie Maison</button>
          @else
          <button  data-group="Maison contemporaine" class="active">{{$vue}}</button>
          @endif
@@ -166,7 +166,7 @@
 --}}
 <div class="projects-categories filter-options">
 
- @if ($vue=='Maçonnerie générale')
+ @if ($vue=='Maçonnerie Maison')
  <div class="content-btn-action-" style="margin-bottom: 50px">
   <a href="{{route('projetLc')}}"><span>Voir Logement collectif</span></a>
 </div>
@@ -185,7 +185,7 @@
 </div>
  @endif
 
- @if ($vue=='Logement collectif')
+ @if ($vue=='Maçonnerie Logement collectif')
  <div class="content-btn-action-" style="margin-bottom: 50px">
   <a href="{{route('projetMg')}}"><span>Voir Maçonnerie générale</span></a>
 </div>

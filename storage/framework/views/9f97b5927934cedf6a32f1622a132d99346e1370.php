@@ -14,7 +14,7 @@
                 <li><a class="<?php echo e(Route::currentRouteName() == 'maisonVirtuelle' ? 'active' : ''); ?>" href="<?php echo e(route('maisonVirtuelle')); ?>">Maisons virtuelles</a></li>
                 <li><a class="<?php if(in_array(Route::currentRouteName(), ['actualite-front','detailActualite'])): ?>   active <?php endif; ?> "  href=" <?php echo e(route('actualite-front')); ?> ">Actualités</a></li>
                 <li><a class="<?php echo e(Route::currentRouteName() == 'brochure' ? 'active' : ''); ?>"   href="<?php echo e(route('brochure')); ?>">Brochure</a></li>
-                <li><a class="<?php echo e(Route::currentRouteName() == 'temoignage' ? 'active' : ''); ?>"   href="<?php echo e(route('temoignage')); ?>">Vidéos</a></li>
+                <li><a class="<?php echo e(Route::currentRouteName() == 'temoignage' ? 'active' : ''); ?>"   href="<?php echo e(route('temoignage')); ?>">Avis & Vidéos</a></li>
             </ul>
         </div>
     </div>
@@ -38,7 +38,7 @@
                     <li><a class="<?php echo e(Route::currentRouteName() == 'maisonVirtuelle' ? 'active' : ''); ?>" href="<?php echo e(route('maisonVirtuelle')); ?>">Maisons virtuelles</a></li>
                     <li><a class="<?php if(in_array(Route::currentRouteName(), ['actualite-front','detailActualite'])): ?>   active <?php endif; ?> "  href=" <?php echo e(route('actualite-front')); ?> ">Actualités</a></li>
                     <li><a class="<?php echo e(Route::currentRouteName() == 'brochure' ? 'active' : ''); ?>"   href="<?php echo e(route('brochure')); ?>">Brochure</a></li>
-                    <li><a class="<?php echo e(Route::currentRouteName() == 'temoignage' ? 'active' : ''); ?>"   href="<?php echo e(route('temoignage')); ?>">Vidéos</a></li>
+                    <li><a class="<?php echo e(Route::currentRouteName() == 'temoignage' ? 'active' : ''); ?>"   href="<?php echo e(route('temoignage')); ?>">Avis & Vidéos</a></li>
                 </ul>
         </div>
      </div>

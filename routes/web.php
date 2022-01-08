@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Livewire\Auth\ForgotPassword;
 use App\Http\Livewire\Auth\ResetPassword;
-use App\Http\Livewire\Auth\SignUp;
 use App\Http\Livewire\Auth\Login;
 use App\Http\Livewire\Dashboard;
 use App\Http\Livewire\Billing;
@@ -25,6 +24,7 @@ use App\Http\Livewire\MaisonContemporaine as LivewireMaisonContemporaine;
 use App\Http\Livewire\MaisonVirtuelle;
 use App\Http\Livewire\MoconnerieGenerale as LivewireMoconnerieGenerale;
 use App\Http\Livewire\SendMail;
+use App\Http\Livewire\Seo;
 use App\Http\Livewire\Temoignage;
 use App\Http\Livewire\Terain;
 use Illuminate\Http\Request;
@@ -70,6 +70,7 @@ Route::name("temoignage")->get('/Vidéos', 'App\Http\Controllers\frontEndControl
 Route::name("projetMc")->get('/Projet-Maisons-Contemporaines', 'App\Http\Controllers\frontEndController@projetMc');
 Route::name("projetLc")->get('/Projet-Logements-Collectifs', 'App\Http\Controllers\frontEndController@projetLc');
 Route::name("projetMg")->get('/Projet-Maçonnerie-Générale', 'App\Http\Controllers\frontEndController@projetMg');
+Route::name("cookies")->get('/cookies', 'App\Http\Controllers\frontEndController@cookies');
 
 
 /*
@@ -121,5 +122,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/laravel-user-management', UserManagement::class)->name('user-management');
     Route::get('/témoignage-admin', Temoignage::class)->name('temoignageAdmin');
     Route::get('/etape-admin', Etape::class)->name('etapeAdmin');
+    Route::get('/seo', Seo::class)->name('seo');
 });
 
+Route::fallback(function() {
+    return redirect()->route('home-front'); // la vue 404.blade.php
+ });

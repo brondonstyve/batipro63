@@ -197,9 +197,9 @@
                                             </div>
                                         </div>
                                         <p style="margin-top: 30%">
-                                            <button type="button" class="btn btn-outline-dark mb-2 py-3 px-4" id="precedent5">Précédent</button>
+                                            <button type="button" class="btn btn-outline-dark mb-2 py-3 px-4" id="precedent6">Précédent</button>
 
-                                            <button type="button" class="btn btn-outline-dark mb-2 py-3 px-4" id="suivant5">Suivant</button>
+                                            <button type="button" class="btn btn-outline-dark mb-2 py-3 px-4" id="suivant6">Suivant</button>
                                         </p>
                                     </div>
                                 </div>

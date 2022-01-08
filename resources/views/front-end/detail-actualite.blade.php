@@ -1,18 +1,47 @@
-@extends('front-end/defaut/base', ['title' => 'Projets | ', 'body_class' => 'projet-realisation'] )
-{{--  @extends('front-end/partials/base', ['title' => 'Batipro63 – Notre métier, la construction sur mesure ', 'body_class' => 'detail-service corporate home2-corporate'] )  --}}
+<!DOCTYPE html>
+<html lang="en">
 
-@section('css_js')
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-    
-@endsection
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   @if (isset($seo))
 
-@section('content')
+   <meta name="description" content="{{$seo->description}}">
+   <title>{{ $seo->titre}}</title>
+   @else
 
+   @if (isset($actualite))
+   <meta name="description" content="{{$actualite->descriptionSeo}}">
+   @if ($actualite->titreSeo)
+   <title>{{ $actualite->titreSeo}}</title>
+   @else
+   <title>{{'Actualité | Batipro63'}}</title>       
+   @endif
+   @else
+   <title>{{ env('APP_NAME') }}</title>
+       
+   @endif
+   
+   @endif
+  
 
-   <body class=" blog blog-detail">
-      <div class="container-main-bloc">
-        <div class="container flex">
-           <div class="container-main">
+   <link rel="stylesheet" href="{{ asset('/front-end/assets/css/master.css') }}">
+
+   <script src="{{ asset('/front-end/assets/js/jquery-1.8.2.min.js') }}"></script>
+
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+@livewireStyles
+
+</head>
+
+<body class="blog blog-detail" >
+   <div class="container-main-bloc">
+      <div class="container flex">
+         @include ("front-end/partials/header")
+         <div class="container-main">
+
             <section class="container-banner" style="background-image:url({{asset('assets/img/bg-detail-blog.jpg')}});">
 
                 <div class="container">
@@ -183,8 +212,14 @@
                 </div>
 
               </section>
-           </div>
-        </div>
-      </div>
-   </body>
+          
+@include("front-end/partials/footer")
+   
+    </div>
+</div>
+</div>
+</div>
+
+</body>
+@livewireScripts
 </html>

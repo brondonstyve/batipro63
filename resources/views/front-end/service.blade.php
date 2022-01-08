@@ -135,22 +135,17 @@
       </div>
       <div class="key-figure-wrapper">
         @if ($about)
-        @if ($about->annee_experience)
-        <span class="number-key">{{$about->annee_experience}}</span>
-    @else
-      <span class="number-key">11 </span>
+        <span class="number-key">{{date('Y')-$about->anneeCreat}}</span>
+      @else
+        <span class="number-key">{{date('Y')-2008}} </span>
+          
+      @endif
         
-    @endif
-        @else
-      <span class="number-key">11 </span>
-            
-        @endif
-       
-          <p>années de <br>savoir-faire</p>
+          <p>années de <br>savoir-faire</p> 
       </div>
     </div>
 </section>
-<section class="container-facebook-testimonials">
+{{-- <section class="container-facebook-testimonials">
   <div class="container flex between">
     <div class="content-text-up">
       <div class="header-title">
@@ -175,7 +170,7 @@
     </div>
     <div class="content-icone-facebook"><img src="{{ asset('/front-end/assets/img/facebook.png') }}" alt=""></div>
   </div>
-</section>
+</section> --}}
 @if ($infos)
     @if ($infos->imagebas)
 <section class="container-cta container-facebook-testimonials" style="background-image:url({{asset('app/service/'.$infos->imagebas)}})">

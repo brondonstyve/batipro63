@@ -273,27 +273,7 @@ unset($__errorArgs, $__bag); ?>
           <form wire:submit.prevent='save_mcPage()' class="col-md-11 mx-auto">
               <div class="row">
 
-                <?php if($showSuccesNotification1): ?>
-                        <div
-                            class="mt-3 alert alert-success alert-dismissible fade show" role="alert">
-                            <span class="alert-icon text-white"><i class="ni ni-like-2"></i></span>
-                            <span
-                                class="alert-text text-white"><?php echo e($message); ?></span>
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-                            </button>
-                        </div>
-                        <?php endif; ?>
-
-                        <?php if($showErrorNotification1): ?>
-                        <div
-                            class="mt-3 alert alert-danger alert-dismissible fade show" role="alert">
-                            <span class="alert-icon text-white"><i class="ni ni-like-2"></i></span>
-                            <span
-                                class="alert-text text-white"><?php echo e($message); ?></span>
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-                            </button>
-                        </div>
-                        <?php endif; ?>
+               
 
           <h3 for="">Bloc 1</h3>
 
@@ -504,7 +484,27 @@ unset($__errorArgs, $__bag); ?>
                                     <?php endif; ?>
                                 </div>
                             </div>
-                                  
+                            <?php if($showSuccesNotification1): ?>
+                            <div
+                                class="mt-3 alert alert-success alert-dismissible fade show" role="alert">
+                                <span class="alert-icon text-white"><i class="ni ni-like-2"></i></span>
+                                <span
+                                    class="alert-text text-white"><?php echo e($message); ?></span>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                                </button>
+                            </div>
+                            <?php endif; ?>
+    
+                            <?php if($showErrorNotification1): ?>
+                            <div
+                                class="mt-3 alert alert-danger alert-dismissible fade show" role="alert">
+                                <span class="alert-icon text-white"><i class="ni ni-like-2"></i></span>
+                                <span
+                                    class="alert-text text-white"><?php echo e($message); ?></span>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                                </button>
+                            </div>
+                            <?php endif; ?>     
                             <br>
                             <span class="mb-2 text-xs "><span class="text-danger ms-2 font-weight-bold ">
                                 S'il vout plait patientez le chargement des images avant de passer à l'enregistrement.    

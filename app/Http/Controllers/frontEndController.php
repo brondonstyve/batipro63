@@ -16,6 +16,7 @@ use App\Models\mgpage;
 use App\Models\projet;
 use App\Models\projetpage;
 use App\Models\propo;
+use App\Models\seo;
 use App\Models\service;
 use App\Models\servicepage;
 use App\Models\temoignage;
@@ -23,38 +24,35 @@ use App\Models\terrain;
 use App\Models\tpage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Route;
 
 class frontEndController extends Controller
 {
     public function index(){
         $about=propo::first();
-        
-        $projets=projet::where([
-            ['projet_principal','<>',null]
-        ])
-        ->get();
 
         $services=DB::table('projets')
         ->select(DB::raw('count(service) as nombre'),'service')
         ->groupBy('service')
         ->get();
-
-
         $infos=home::first();
-        return view('front-end.home',compact('about','projets','services','infos'));
+        $seo=seo::wherePage(Route::currentRouteName())->first();
+        return view('front-end.home',compact('about','services','infos','seo'));
     }
 
     public function aboutUs(){ 
         $about=propo::first();
         $membres=membre::get();
-        return view('front-end.about-us',compact('about','membres'));
+        $seo=seo::wherePage(Route::currentRouteName())->first();
+        return view('front-end.about-us',compact('about','membres','seo'));
     }
     
     public function blog(){
         $about=propo::first();
         $actus=actualite::get();
         
-        return view('front-end.blog',compact('about','actus'));
+        $seo=seo::wherePage(Route::currentRouteName())->first();
+        return view('front-end.blog',compact('about','actus','seo'));
     }
 
     public function projets(){
@@ -66,12 +64,14 @@ class frontEndController extends Controller
         ->get();
         $infos=projetpage::first();
         $vue=false;
-        return view('front-end.projets',compact('about','projets','services','infos','vue'));
+        $seo=seo::wherePage(Route::currentRouteName())->first();
+        return view('front-end.projets',compact('about','projets','services','infos','vue','seo'));
     }
 
     public function brochure(){
         $about=propo::first();
-        return view('front-end.brochure',compact('about'));
+        $seo=seo::wherePage(Route::currentRouteName())->first();
+        return view('front-end.brochure',compact('about','seo'));
     }
 
     public function service(){
@@ -80,7 +80,8 @@ class frontEndController extends Controller
         $about=propo::first();
         $infos=servicepage::first();
 
-        return view('front-end.service',compact('about','services','projetC','infos'));
+        $seo=seo::wherePage(Route::currentRouteName())->first();
+        return view('front-end.service',compact('about','services','projetC','infos','seo'));
     }
 
     public function detailProjet(Request $request){
@@ -117,7 +118,8 @@ class frontEndController extends Controller
     public function terrain(){
         $about=propo::first();
         $projets=terrain::get();
-        return view('front-end.terrains',compact('about','projets'));
+        $seo=seo::wherePage(Route::currentRouteName())->first();
+        return view('front-end.terrains',compact('about','projets','seo'));
     }
 
     
@@ -137,7 +139,8 @@ class frontEndController extends Controller
         $about=propo::first();
         $maisons=maison::get();
         $infos=maisonpage::first();
-        return view('front-end.maison',compact('about','maisons','infos'));
+        $seo=seo::wherePage(Route::currentRouteName())->first();
+        return view('front-end.maison',compact('about','maisons','infos','seo'));
     }
 
     
@@ -157,7 +160,8 @@ class frontEndController extends Controller
         $about=propo::first();
         $infos=mcpage::first();
         $blog=maisonContemporaine::get();
-        return view('front-end.mc',compact('about','infos','blog'));
+        $seo=seo::wherePage(Route::currentRouteName())->first();
+        return view('front-end.mc',compact('about','infos','blog','seo'));
     }
 
     public function mg(){
@@ -165,7 +169,8 @@ class frontEndController extends Controller
         $about=propo::first();
         $infos=mgpage::first();
 
-        return view('front-end.mg',compact('about','infos'));
+        $seo=seo::wherePage(Route::currentRouteName())->first();
+        return view('front-end.mg',compact('about','infos','seo'));
     }
 
     public function lc(){
@@ -173,12 +178,14 @@ class frontEndController extends Controller
         $infos=lcpage::first();
         $blog=logementCollectif::get();
 
-        return view('front-end.lc',compact('about','infos','blog'));
+        $seo=seo::wherePage(Route::currentRouteName())->first();
+        return view('front-end.lc',compact('about','infos','blog','seo'));
     }
 
     public function contact(){
         $about=propo::first();
-        return view('front-end.contact',compact('about'));
+        $seo=seo::wherePage(Route::currentRouteName())->first();
+        return view('front-end.contact',compact('about','seo'));
     }
 
     public function detailMc(Request $request){
@@ -231,7 +238,8 @@ class frontEndController extends Controller
             $filePath = public_path('brochure/BROCHUREBATIPRO.pdf');
             $headers = ['Content-Type: application/pdf'];
             $fileName = 'BROCHUREBATIPRO.pdf';
-            return response()->download($filePath, $fileName, $headers);
+            return response()
+            ->download($filePath, $fileName, $headers);
         } catch (\Throwable $th) {
             session()->flash('error','erreur au niveau du téléchargement. veuillez reéssayer s\il vout plait.');
             return redirect('/brochure-batipro');
@@ -259,14 +267,16 @@ class frontEndController extends Controller
         $temoignage=temoignage::get();
         $infos=tpage::first();
 
-        return view('front-end.temoignage',compact('about','temoignage','infos'));
+        $seo=seo::wherePage(Route::currentRouteName())->first();
+        return view('front-end.temoignage',compact('about','temoignage','infos','seo'));
     }
 
     public function mo(){ 
 
         $about=propo::first();
 
-        return view('front-end.maitriseOeuvre',compact('about'));
+        $seo=seo::wherePage(Route::currentRouteName())->first();
+        return view('front-end.maitriseOeuvre',compact('about','seo'));
     }
 
     public function etape(){
@@ -283,7 +293,8 @@ class frontEndController extends Controller
         ->get();
         $infos=projetpage::first();
         $vue='Maison contemporaine';
-        return view('front-end.projets',compact('about','projets','services','infos','vue'));
+        $seo=seo::wherePage(Route::currentRouteName())->first();
+        return view('front-end.projets',compact('about','projets','services','infos','vue','seo'));
     }
     
     
@@ -295,8 +306,9 @@ class frontEndController extends Controller
         ->groupBy('service')
         ->get();
         $infos=projetpage::first();
-        $vue='Logement collectif';
-        return view('front-end.projets',compact('about','projets','services','infos','vue'));
+        $vue='Maçonnerie Logement collectif';
+        $seo=seo::wherePage(Route::currentRouteName())->first();
+        return view('front-end.projets',compact('about','projets','services','infos','vue','seo'));
     }
 
     public function projetMg(){
@@ -307,8 +319,15 @@ class frontEndController extends Controller
         ->groupBy('service')
         ->get();
         $infos=projetpage::first();
-        $vue='Maçonnerie générale';
-        return view('front-end.projets',compact('about','projets','services','infos','vue'));
+        $vue='Maçonnerie Maison';
+        $seo=seo::wherePage(Route::currentRouteName())->first();
+        return view('front-end.projets',compact('about','projets','services','infos','vue','seo'));
+    }
+
+    public function cookies(){
+        $about=propo::first();
+
+        return view('front-end.cookies',compact('about'));
     }
     
 }

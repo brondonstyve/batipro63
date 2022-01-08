@@ -195,6 +195,22 @@
                                     <textarea class="form-control" wire:model.lazy="actualite.desc_auteur" id="about" rows="5" placeholder="à propos de l'auteur" required></textarea>
                                 </div>
                              </div>
+
+                             <h5>SEO</h5>
+
+                             <div class="form-group">
+                                <label for="about">Titre de la page</label>
+                                <div class="">
+                                    <textarea class="form-control" wire:model.lazy="actualite.titreSeo" id="about" rows="1" placeholder="titre de la page" maxlength="62"></textarea>
+                                </div>
+                             </div>
+
+                             <div class="form-group">
+                                <label for="about">Meta Description</label>
+                                <div class="">
+                                    <textarea class="form-control" wire:model.lazy="actualite.descriptionSeo" id="about" rows="2" placeholder="Description de la page" maxlength="122"></textarea>
+                                </div>
+                             </div>
                         </div>
 
                         @for ($i = 1; $i < 6; $i++)

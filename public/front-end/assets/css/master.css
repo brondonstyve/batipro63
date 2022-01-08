@@ -340,7 +340,7 @@ section.container-why {
     position: absolute;
     width: 0.5px;
     height: 100%;
-    left: calc(100% - 67%);
+    left: calc(100% - 50%);
     background-color: rgba(171, 171, 171, 0.16);
     top: 0;
     transition: all 1s ease-in-out;
@@ -363,7 +363,7 @@ section.container-banner.line-plus:after {
     position: absolute;
     width: 1px;
     height: 100%;
-    left: calc(100% - 66.7%);
+    left: calc(100% - 50%);
     background-color: rgb(171 171 171 / 83%);
     top: 0;
     transition: all 1s ease-in-out;
@@ -375,7 +375,7 @@ section.container-banner.line-plus:after {
     color: #5aa39c;
     position: absolute;
     bottom: calc(100% - 95%);
-    left: calc(100% - 67.4%);
+    left: calc(100% - 50.4%);
     width: 10px;
     height: 10px;
     z-index: 1;
@@ -440,7 +440,7 @@ section.container-projects p {
 }
 
 .content-project-wrapper {
-    width: 28%;
+    width: 45%;
     margin: 0 16px 75px;
     background-position: center !important;
 }
@@ -450,14 +450,14 @@ section.container-projects p {
 }
 
 #container-intro-projets .content-project-wrapper {
-    margin-bottom: 30px !important;
+    margin-bottom: 0px !important;
     width: 22% !important;
     margin: 0 10px 30px;
     height: 420px;
 }
 
 #container-intro-projets .content-project-wrapper:nth-child(2n+2) {
-    margin-top: 30px;
+    margin-top: 0px;
     margin-bottom: 0;
 }
 
@@ -635,10 +635,12 @@ button.active {
 
 .line-3::before {
     left: calc(100% - 37.2%);
+    display: none;
 }
 
 .line-3::after {
     left: calc(100% - 37.7%);
+    display: none;
 }
 
 .content-separator.after-black:before {
@@ -947,7 +949,7 @@ section.copyright .container {
 }
 
 .ms-thumb-frame {
-    width: 30% !important;
+    width: 50% !important;
     margin: 0 !important;
     /* height: auto !important; */
     padding: 30px;
@@ -1032,10 +1034,6 @@ section.container-banner:before {
 
 .projet-realisation section.inner-banner:before {
     right: 0;
-}
-
-.service-page-detail section.container-banner:before {
-    background: rgb(0 0 0 / 64%);
 }
 
 section.container-banner .container {
@@ -1332,7 +1330,7 @@ section.container-experience p {
     bottom: 0;
     background: #2b5f5b;
     color: #fff;
-    width: 77%;
+    width: 87%;
     left: 14%;
     right: 0;
     flex-wrap: nowrap;
@@ -1343,12 +1341,16 @@ section.container-experience {
 }
 
 .content-key-figure-wrapper {
-    width: 50%;
+    width: 33%;
     flex-wrap: nowrap;
     align-items: center;
 }
 
 .content-key-figure-wrapper:nth-child(1) {
+    border-right: 1px solid rgb(255 255 255 / 41%);
+}
+
+.content-key-figure-wrapper:nth-child(2) {
     border-right: 1px solid rgb(255 255 255 / 41%);
 }
 
@@ -1362,7 +1364,7 @@ section.container-experience {
 
 .content-text-key-figure {
     width: 70%;
-    padding: 0 30px;
+    padding: 0 50px;
 }
 
 .content-text-key-figure h3 {
@@ -2007,7 +2009,7 @@ section#container-maison-terrain {
     bottom: 0;
     top: 30%;
     content: '';
-    background-image: url(/front-end/assets/img/bg-pla-maison.png);
+    /*background-image: url(/front-end/assets/img/bg-pla-maison.png);*/
     width: 90%;
     margin: 0 auto;
 }

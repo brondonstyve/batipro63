@@ -11,7 +11,7 @@
     
 @endsection
 @section('content')
-              <section class="container-banner" style="background-image:url({{asset('/front-end/assets/img/bg-brochure.jpg')}})">
+              <section class="container-banner" style="background-color: #0dc5b3;">
                 <div class="container">
                   <div class="inner-container">
                       <div class="content-title-banner">

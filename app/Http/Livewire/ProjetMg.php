@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Models\projet;
+use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -11,8 +12,10 @@ class ProjetMg extends Component
     use WithPagination;
     protected $paginationTheme='bootstrap';
 
-    public function getProjetProperty(){
-        return projet::whereService('Maçonnerie générale')->paginate(3);
+    public $indice='';
+
+    public function getProjetsProperty(){
+        return DB::table('projets')->whereIn('service',['Maçonnerie générale','Logement collectif'])->get();
     }
     
     public function render()

@@ -17,11 +17,11 @@ class CreateClientsTable extends Migration
             $table->bigIncrements('id');
             $table->string('nom');
             $table->string('prenom')->nullable();
-            $table->string('ville');
+            $table->string('ville')->nullable();
             $table->string('email');
-            $table->string('postal');
+            $table->string('postal')->nullable();
             $table->string('telephone');
-            $table->string('message');
+            $table->string('message')->nullable();
             $table->timestamps();
         });
     }

@@ -2,7 +2,7 @@
 
 
     <form class="" action="" method="" wire:submit.prevent='save'>
-
+@csrf
             
         @if (session()->has('success'))
         <div style="text-align: center;color: rgb(27, 80, 43);size: 60px;">
@@ -20,6 +20,8 @@
         </div>    
         @endif
 
+       
+
         <br>
         <br>
         <div class="line-input flex">
@@ -27,27 +29,27 @@
             <input type="text" wire:model.lazy="prenom" placeholder="Prénom">
           </div>
           <div class="cel-input ">
-            <input type="text" wire:model.lazy="nom" placeholder="Nom" required>
+            <input type="text" wire:model.lazy="nom" id='nom' placeholder="Nom" required>
           </div>
         </div>
-        <div class="line-input flex">
+        {{-- <div class="line-input flex">
           <div class="cel-input ">
-            <input type="text" wire:model.lazy="ville" placeholder="Ville" required>
+            <input type="text" wire:model.lazy="ville" id='ville' placeholder="Ville" required>
           </div>
           <div class="cel-input ">
             <input type="text" wire:model.lazy="postal" placeholder="Boite postale" >
           </div>
-        </div>
+        </div> --}}
         <div class="line-input flex">
           <div class="cel-input ">
-            <input type="email" wire:model.lazy="email" placeholder="Email*" required>
+            <input type="email" wire:model.lazy="email" id='email' placeholder="Email*" required>
           </div>
           <div class="cel-input ">
-            <input type="tel" wire:model.lazy="telephone" placeholder="Téléphone" required>
+            <input type="tel" wire:model.lazy="telephone" id="phone" placeholder="Téléphone" required>
           </div>
         </div>
         <div class="line-input full ">
-          <textarea wire:model.lazy='message' rows="8" cols="80" placeholder="Votre message ..." required> </textarea>
+          <textarea wire:model.lazy='message' rows="8" cols="80" placeholder="Votre message ..." > </textarea>
         </div>
 
         <div class="line-input flex">
@@ -58,10 +60,9 @@
         </div>
 
         <div style="text-align: center;color: rgb(27, 80, 43);size: 60px;">
-            <span wire:loading wire:target='save' >Patienter un instant...</span>
-    
-                </div>
-        
+            <span wire:loading wire:target='save' >Votre téléchargement démarre dans un instant. veuillez Patienter...</span>
+        </div>
+                
 
         <div class="line-input1 flex">
           
@@ -70,7 +71,7 @@
           </div>
           <div class="line-input1 flex " >
             <div class="line-input1 full">
-              <input type="submit"  Value="Télécharger" wire:loading.remove wire:target='save()' class="btn-sub">
+              <input type="submit"  Value="Télécharger" wire:loading.remove wire:target='save' id='telech' class="btn-sub">
 
             </div>
           </div>

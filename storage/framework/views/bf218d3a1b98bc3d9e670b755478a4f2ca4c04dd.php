@@ -47,13 +47,13 @@
      </div> 
  <?php endif; ?>
     <div class="content-list-projects1">
-       <div class="projects-categories filter-options">
+       <div class="projects-categories filter-options"> 
 
          
          <?php if($vue==false): ?>
          <button  data-group="Maison contemporaine">Maison Contemporaine</button>
-         <button  data-group="Logement collectif">Logement collectif</button>
-         <button  data-group="Maçonnerie générale">Maçonnerie générale</button>
+         <button  data-group="Logement collectif">Maçonnerie Logement collectif</button>
+         <button  data-group="Maçonnerie générale">Maçonnerie Maison</button>
          <?php else: ?>
          <button  data-group="Maison contemporaine" class="active"><?php echo e($vue); ?></button>
          <?php endif; ?>
@@ -100,7 +100,7 @@
 
 <div class="projects-categories filter-options">
 
- <?php if($vue=='Maçonnerie générale'): ?>
+ <?php if($vue=='Maçonnerie Maison'): ?>
  <div class="content-btn-action-" style="margin-bottom: 50px">
   <a href="<?php echo e(route('projetLc')); ?>"><span>Voir Logement collectif</span></a>
 </div>
@@ -119,7 +119,7 @@
 </div>
  <?php endif; ?>
 
- <?php if($vue=='Logement collectif'): ?>
+ <?php if($vue=='Maçonnerie Logement collectif'): ?>
  <div class="content-btn-action-" style="margin-bottom: 50px">
   <a href="<?php echo e(route('projetMg')); ?>"><span>Voir Maçonnerie générale</span></a>
 </div>

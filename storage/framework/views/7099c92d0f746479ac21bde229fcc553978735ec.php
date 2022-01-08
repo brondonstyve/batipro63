@@ -8,7 +8,7 @@
     
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('content'); ?>
-              <section class="container-banner" style="background-image:url(<?php echo e(asset('/front-end/assets/img/bg-brochure.jpg')); ?>)">
+              <section class="container-banner" style="background-color: #0dc5b3;">
                 <div class="container">
                   <div class="inner-container">
                       <div class="content-title-banner">
@@ -31,15 +31,15 @@
                     <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('send-mail-terrain')->html();
-} elseif ($_instance->childHasBeenRendered('XduXZ5L')) {
-    $componentId = $_instance->getRenderedChildComponentId('XduXZ5L');
-    $componentTag = $_instance->getRenderedChildComponentTagName('XduXZ5L');
+} elseif ($_instance->childHasBeenRendered('yjnrh1L')) {
+    $componentId = $_instance->getRenderedChildComponentId('yjnrh1L');
+    $componentTag = $_instance->getRenderedChildComponentTagName('yjnrh1L');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('XduXZ5L');
+    $_instance->preserveRenderedChild('yjnrh1L');
 } else {
     $response = \Livewire\Livewire::mount('send-mail-terrain');
     $html = $response->html();
-    $_instance->logRenderedChild('XduXZ5L', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('yjnrh1L', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>

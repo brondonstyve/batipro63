@@ -43,6 +43,8 @@ class Billing extends Component
         'projet.entreprise'=>'',
         'projet.service'=>'required',
         'projet.superficie'=>'',
+        'projet.titreSeo'=>'',
+        'projet.descriptionSeo'=>'',
 
         'projet_page.titre'=>'',
         'projet_page.description'=>'',
@@ -59,6 +61,7 @@ class Billing extends Component
         }
 
         $this->projet=projet::make();
+        $this->projet->entreprise='GROUPE BATIPRO';
     }
 
     public function new(){
@@ -73,10 +76,10 @@ class Billing extends Component
         ]);
         if (!$this->modification) {
             
-            if (sizeOf($this->image)>6) {
+            if (sizeOf($this->image)>50) {
                 $this->image=null;
                 $this->fill(['image'=>null]);
-                session()->flash('image','Vous ne pouvez télécharger que 6 images maximun');
+                session()->flash('image','Vous ne pouvez télécharger que 50 images maximun');
             }
             
         }
@@ -85,6 +88,10 @@ class Billing extends Component
     }
 
     public function save(){
+
+        if ($this->projet->entreprise==null) {
+            $this->projet->entreprise='GROUPE BATIPRO';
+        }
 
         ini_set('memory_limit', '-1');
 
@@ -99,9 +106,14 @@ class Billing extends Component
         if ($this->modification) {
             if ($this->image) {
                 try {
-                    $name=Image::traitement($this->image,'png',1422,500);
+            
+                    foreach ($this->image as $key => $value) {
+                    $name=$this->projet->image;
+                    $name=$name.'->'.Image::traitement($this->image[$key],'png',1422,500);
+                    
+                   }
                } catch (\Throwable $th) {
-                   $this->message='erreur lors de l\'enregistrement de l\'image.';
+                   $this->message='erreur lors de l\'enregistrement des images.';
                    $this->showSuccesNotification = false;
                    $this->showErrorNotification = true;
                }
@@ -118,11 +130,14 @@ class Billing extends Component
                         'projet.entreprise'=>'',
                         'projet.service'=>'required',
                         'projet.superficie'=>'',
+                        'projet.titreSeo'=>'',
+                        'projet.descriptionSeo'=>'',
                     ]
                 );
                 $this->projet->image=$this->projet->image.'->'.$name;
                 $this->projet->save();
                 $this->projet=projet::make();
+                $this->projet->entreprise='GROUPE BATIPRO';
                 $this->message='projet Modifié avec succès.';
                 $this->showSuccesNotification = true;
                 $this->showErrorNotification = false;
@@ -131,7 +146,7 @@ class Billing extends Component
                 $this->liste=true;
     
             } catch (\Throwable $th) {
-                $this->message=$th.'erreur lors de la modification du projet.';
+                $this->message='erreur lors de la modification du projet.';
                 $this->showSuccesNotification = false;
                 $this->showErrorNotification = true;
             }
@@ -149,10 +164,14 @@ class Billing extends Component
                             'projet.entreprise'=>'',
                             'projet.service'=>'required',
                             'projet.superficie'=>'',
+                            'projet.titreSeo'=>'',
+                            'projet.descriptionSeo'=>'',
                         ]
                     );
                     $this->projet->save();
                     $this->projet=projet::make();
+
+                    $this->projet->entreprise='GROUPE BATIPRO';
                     $this->message='projet Modifié avec succès.';
                     $this->showSuccesNotification = true;
                     $this->showErrorNotification = false;
@@ -180,7 +199,7 @@ class Billing extends Component
              }
             }
         } catch (\Throwable $th) {
-            $this->message=$th.'erreur lors de l\'enregistrement des images.';
+            $this->message='erreur lors de l\'enregistrement des images.';
             $this->showSuccesNotification = false;
             $this->showErrorNotification = true;
         }
@@ -200,11 +219,14 @@ class Billing extends Component
                     'projet.entreprise'=>'required',
                     'projet.service'=>'required',
                     'projet.superficie'=>'',
+                    'projet.titreSeo'=>'',
+                    'projet.descriptionSeo'=>'',
                 ]
             );
             $this->projet->image=$name;
             $this->projet->save();
             $this->projet=projet::make();
+            $this->projet->entreprise='GROUPE BATIPRO';
             $this->message='projet ajouté avec succès.';
             $this->showSuccesNotification = true;
             $this->showErrorNotification = false;
@@ -269,6 +291,8 @@ class Billing extends Component
         $this->showSuccesNotification = false;
         $this->showErrorNotification = false;
         $this->image = null;
+        $this->projet->entreprise='GROUPE BATIPRO';
+
     }
 
     public function removeImg($id){

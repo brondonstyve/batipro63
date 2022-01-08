@@ -1,12 +1,45 @@
-<?php $__env->startSection('css_js'); ?>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<!DOCTYPE html>
+<html lang="en">
 
-    
-<?php $__env->stopSection(); ?>
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <?php if(isset($seo)): ?>
+
+   <meta name="description" content="<?php echo e($seo->description); ?>">
+   <title><?php echo e($seo->titre); ?></title>
+   <?php else: ?>
+   
+   <?php if(isset($projet)): ?>
+   <meta name="description" content="<?php echo e($projet->descriptionSeo); ?>">
+   <?php if($projet->titreSeo): ?>
+   <title><?php echo e($projet->titreSeo); ?></title>
+   <?php else: ?>
+   <title><?php echo e('Projet | Batipro63'); ?></title>       
+   <?php endif; ?>
+   <?php else: ?>
+   <title><?php echo e('Projet | '.env('APP_NAME')); ?></title>
+       
+   <?php endif; ?>
+   
+   <?php endif; ?>
+  
+
+   <link rel="stylesheet" href="<?php echo e(asset('/front-end/assets/css/master.css')); ?>">
+
+   <script src="<?php echo e(asset('/front-end/assets/js/jquery-1.8.2.min.js')); ?>"></script>
+
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+   <link rel="stylesheet" href="<?php echo e(asset('/visuel/magnific-popup.css')); ?>">
+
+<?php echo \Livewire\Livewire::styles(); ?>
 
 
-    <!-- Magnific Popup core CSS file -->
-    <link rel="stylesheet" href="<?php echo e(asset('/visuel/magnific-popup.css')); ?>">
+</head>
+
+
 
    
 
@@ -40,10 +73,10 @@
         </style>
 
 
-<?php $__env->startSection('content'); ?>
    <body class="about-us-page single-projet ">
       <div class="container-main-bloc">
         <div class="container flex">
+         <?php echo $__env->make("front-end/partials/header", \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
             
            <div class="container-main">
 
@@ -107,16 +140,13 @@
                        </div>
                        <div class="line-info- flex">
                          <span class="green">Entreprise :</span>
-                         <span > <?php echo e($projet->entreprise); ?></span>
+                         <span > GROUPE BATIPRO</span>
                        </div>
                        <div class="line-info- flex">
                          <span class="green">Lieu :</span>
                          <span > <?php echo e($projet->lieu); ?></span>
                        </div>
-                       <div class="line-info- flex">
-                         <span class="green">Durée du projet :</span>
-                         <span > <?php echo e($projet->duree); ?> semaines</span>
-                       </div>
+                       
                      </div>
 
                     
@@ -150,12 +180,12 @@
                   </div>
                 </div>
               </section>
-                
+              <?php echo $__env->make("front-end/partials/footer", \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
            </div>
         </div>
       </div>
 
-      <?php $__env->startSection('script'); ?>
+ 
       <script
       src="https://code.jquery.com/jquery-3.6.0.js"
       integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
@@ -185,11 +215,12 @@
           });
         });
       </script>
-      <?php $__env->stopSection(); ?>
+      
     
 
    </body>
+   <?php echo \Livewire\Livewire::scripts(); ?>
+
 </html>
 
-
-<?php echo $__env->make('front-end/defaut/base', ['title' => 'Projets | ', 'body_class' => 'projet-realisation'] , \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /home/styve/dev/laravel/batipro/resources/views/front-end/single-projet.blade.php ENDPATH**/ ?>
+<?php /**PATH /home/styve/dev/laravel/batipro/resources/views/front-end/single-projet.blade.php ENDPATH**/ ?>

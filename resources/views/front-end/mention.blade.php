@@ -50,7 +50,7 @@
         <h2>Droits d’auteur</h2>
         <p>Ce site doit être considéré comme un tout indissociable. Les informations y figurant sont réservées à un usage exclusivement personnel et ne peuvent être en tout ou partie ni reproduites, ni communiquées. Certaines des données (textes, publications, sons ou images) figurant sur les pages de ce site ont fait l’objet d’une autorisation de publication, de diffusion ou d’un droit d’usage acquis auprès de tiers. Toute reproduction, représentation ou diffusion, à des fins autres que personnelles ou celles explicitement autorisées, en tout ou partie du contenu du site sur quelque support ou par tout procédé que ce soit, est interdite.</p>
         <p>Le non-respect de cette interdiction constitue une contrefaçon susceptible d’engager la responsabilité civile et pénale du contrefacteur. Il est strictement interdit d’utiliser ou de reproduire les logos, seuls ou associés, à quelque titre que ce soit, et notamment à des fins publicitaires, sans l’accord préalable écrit des différentes structures .</p>
-        <p>Conceptions architecturales, 3D : Jony Coelho, Architecte DPLG, Riom (France)<br>
+        <p><br>
         Réalisations : Batipro63</p>
         <p>Photos : Batipro63</p>
         

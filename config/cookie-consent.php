@@ -11,7 +11,7 @@ return [
     'cookie_value_none' => 'false',
     'cookie_expiration_days' => '365',
     'gtm_event' => 'cookie_refresh',
-    'ignored_paths' => [],
+    'ignored_paths' => ['/cookies'],
     'policy_url_en' => "Route('cookies')",
     'policy_url_fr' => "route('cookies')",
     'policy_url_nl' => "route('cookies')",

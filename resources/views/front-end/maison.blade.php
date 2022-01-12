@@ -41,10 +41,10 @@
           @endif
         </div>
       </div>
-    </div> 
+    </div>
 
     <div class="containerEmbed">
-      <iframe class="responsive-iframe" src="http://preprod2.batipro63.fr/BatiPro%2063%20-%20Web/" allow="autoplay; fullscreen" allowfullscreen=""></iframe>
+      <iframe class="responsive-iframe" src="https://batipro63.fr/public/virtuel/BatiPro 63 - Web" allow="autoplay; fullscreen" allowfullscreen=""></iframe>
     </div>
     {{-- @if (sizeOf($maisons)==0)
                

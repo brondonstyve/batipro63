@@ -25,8 +25,7 @@
                   <div class="left-bloc-text">
                     <div class="content-text-up">
                       <div class="header-title">
-                        <h3 class="green">Plans & maisons</h3>
-                        <h4>Téléchargez gratuitement notre brochure des maisons</h4>
+                        <h4>Téléchargez gratuitement notre brochure</h4>
                       </div>
                     </div>
                   </div>

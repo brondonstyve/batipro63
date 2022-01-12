@@ -33,7 +33,7 @@
           Les cookies n’identifient pas directement un utilisateur, ce dernier est anonymisé via la création d’un identifiant.<br>
           <br>
  
-          Les cookies utilisés par Gedimat et ses partenaires servent à faciliter votre navigation, pour vous proposer des contenus et des publicités personnalisées et produire des statistiques. 
+          Les cookies utilisés par Batipro63 et ses partenaires servent à faciliter votre navigation, pour vous proposer des contenus et des publicités personnalisées et produire des statistiques. 
           <br><br>
           Pour voir la liste des cookies que nous pouvons utiliser et pour accepter ou pas leur utilisation, veuillez cliquer ici
           <br><br>
@@ -62,21 +62,14 @@ Veuillez consulter les politiques de confidentialité spécifiques de chacun de 
         <h2> 5. Cookie publicité</h2> 
           <br>
           <p>
-          Gedimat.fr utilise le service Facebook afin de vous proposer du contenu personnalisé sur des sites tiers.
+          Batipro63.fr utilise le service Facebook afin de vous proposer du contenu personnalisé sur des sites tiers.
         </p>
         <h2>6. Contenus multimédias</h2> 
           <br>
           <p>
-          Le site de Gedimat utilise Youtube pour vous proposer des contenus vidéos enrichis. Ce service nécessite le dépôt de cookies. 
+          Le site de Batipro63 utilise Youtube pour vous proposer des contenus vidéos enrichis. Ce service nécessite le dépôt de cookies. 
         </p>
-        <h2>7. Développement et amélioration de l'expérience utilisateur</h2> 
-          <br>
-          <p>
-          Le site de Gedimat utilise Bazaarvoice pour mettre en contact les consommateurs et leur permettre de choisir des produits et d’acheter en toute confiance.
-          <br>
-          <br>
-          Celui-ci sert également à mieux vous comprendre et vous satisfaire.
-        </p>
+        
 
 
         <p>Batipro63<br>

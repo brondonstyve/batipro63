@@ -5,7 +5,7 @@ return [
     'alert_settings' => 'Personmaliser',
     'alert_settings_lien' => 'Personmaliser Cookies',
     'alert_text' => 'Nous utilisons des cookies à des fins de mesure d\'audience, de personnalisation de votre parcours et d\'amélioration de la qualité de nos services. Pour en savoir plus sur les catégories de cookies ainsi que sur les émetteurs de cookie sur notre site, <a href="'.route("cookies").'" style="color:#5aa39c">consultez ici notre notice dédiée à la gestion des cookies</a>.',
-    'alert_title' => 'BATIPRO respecte votre vie privée.',
+    'alert_title' => 'Le GROUPE BATIPRO respecte votre vie privée.',
     'setting_analytics' => 'Cookies analytiques,',
     'setting_analytics_text' => 'Nous permettent d\'analyser l\'utilisation du site Web et d\'améliorer l\'expérience du visiteur.',
     'setting_essential' => 'Cookies fonctionnels',

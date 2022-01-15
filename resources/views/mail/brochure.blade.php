@@ -45,7 +45,7 @@
                                         <p>Si vous souhaitez un devis personnélisé, nous vous invitons à nous contacter via notr site <a href="http://batipro63.fr" rel="nofollow noopener noreferrer nofollow noopener noreferrer" target="_blank" data-saferedirecturl="https://www.google.com/url?q=http://batipro63.fr&amp;source=gmail&amp;ust=1641478464356000&amp;usg=AOvVaw1kR--KcD1JaUna7w3PtsoP">batipro63.fr</a></p>
                                         <p>Très cordialement,</p>
                                         <p>L'équipe Batipro63</p>
-                                        <p>Tél. : 04 73 31 23 97 - <a href="mailto:contact@batipro63.fr" target="_blank">contact@batipro63.fr</a></p>
+                                        <p>Tél. : {{ $details['telephone']}} - <a href="mailto:contact@batipro63.fr" target="_blank">contact@batipro63.fr</a></p>
 
                                         <hr>
 

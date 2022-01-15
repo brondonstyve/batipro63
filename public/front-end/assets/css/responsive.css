@@ -262,6 +262,7 @@
             -webkit-transition: all 0.3s ease-in-out;
             transition: all 0.3s ease-in-out;
             background-color: #101010;
+            margin-right: 10px;
         }
         .content-btn-responsive {
             display: inline-block;

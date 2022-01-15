@@ -66,14 +66,7 @@ Veuillez consulter les politiques de confidentialité spécifiques de chacun de 
           <p>
           Le site de Batipro63 utilise Youtube pour vous proposer des contenus vidéos enrichis. Ce service nécessite le dépôt de cookies. 
         </p>
-        <h2>7. Développement et amélioration de l'expérience utilisateur</h2> 
-          <br>
-          <p>
-          Le site de Batipro63 utilise Bazaarvoice pour mettre en contact les consommateurs et leur permettre de choisir des produits et d’acheter en toute confiance.
-          <br>
-          <br>
-          Celui-ci sert également à mieux vous comprendre et vous satisfaire.
-        </p>
+        
 
 
         <p>Batipro63<br>

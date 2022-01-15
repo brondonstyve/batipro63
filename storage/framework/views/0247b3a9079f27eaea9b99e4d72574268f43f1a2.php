@@ -42,7 +42,7 @@
                                         <p><?php echo e($details['body']); ?></p>
                                         <p>Très cordialement,</p>
                                         <p>Nom: <?php echo e($details['nom']); ?></p>
-                                        <p>Tél. : 04 73 31 23 97 - Email : <a href="mailto:<?php echo e($details['email']); ?>" target="_blank"><?php echo e($details['email']); ?></a></p>
+                                        <p>Tél. :<?php echo e($details['telephone']); ?> - Email : <a href="mailto:<?php echo e($details['email']); ?>" target="_blank"><?php echo e($details['email']); ?></a></p>
 
                                         <hr>
 

@@ -12,18 +12,18 @@
         <div class="line-input flex">
           
           <div class="cel-input ">
-            <input type="text"  placeholder="Prénom"  wire:model.lazy='prenom'>
+            <input type="text"  placeholder="Prénom"  wire:model='prenom'>
           </div>
           <div class="cel-input ">
-            <input type="text"  placeholder="Nom"  wire:model.lazy='nom'>
+            <input type="text"  placeholder="Nom"  wire:model='nom'>
           </div>
         </div>
         <div class="line-input flex">
           <div class="cel-input ">
-            <input type="email"  placeholder="Email*"  wire:model.lazy='email'>
+            <input type="email"  placeholder="Email*"  wire:model='email'>
           </div>
           <div class="cel-input ">
-            <input type="tel"  placeholder="Téléphone"  wire:model.lazy='telephone'>
+            <input type="tel"  placeholder="Téléphone"  wire:model='telephone'>
           </div>
         </div>
         <div class="line-input full ">

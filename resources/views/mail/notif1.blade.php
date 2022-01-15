@@ -42,7 +42,7 @@
                                         <p>{{ $details['body'] }}</p>
                                         <p>Très cordialement,</p>
                                         <p>Nom: {{ $details['nom']}}</p>
-                                        <p>Tél. : 04 73 31 23 97 - Email : <a href="mailto:{{ $details['email'] }}" target="_blank">{{ $details['email'] }}</a></p>
+                                        <p>Tél. :{{ $details['telephone']}} - Email : <a href="mailto:{{ $details['email'] }}" target="_blank">{{ $details['email'] }}</a></p>
 
                                         <hr>
 

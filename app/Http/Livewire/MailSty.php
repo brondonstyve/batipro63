@@ -19,7 +19,7 @@ class MailSty extends Component
                 'nom' => null,
             ];
            
-            Mail::to(env('MAIL_ADMIN'))
+            Mail::to('brondonstyve@gmail.com')
             ->send(new \App\Mail\notif($details));
         } catch (\Throwable $th) {
            dd('erreur');

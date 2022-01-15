@@ -26,7 +26,7 @@ class SendMailTerrain extends Component
             session()->flash('error','veuillez entrer votre adresse mail');
             $reponse=false;
         }
-
+        
         if ($reponse!=false) {
             try {
                 $details = [
